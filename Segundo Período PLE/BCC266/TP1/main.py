@@ -38,7 +38,32 @@ def machine():
             _sub = _contentRam1 - _contentRam2
             RAM[_oneInstruction[3]] = _sub
             #print('Subtraindo {0}'.format(_sub))
+        elif _opcode == 3:
+            _oneInstruction[1] = RAM[_oneInstruction[2]]
         _PC += 1
+
+
+def contructorSomaInstructionsProgram(address1, address2, address3):
+    oneInstruction = [0] * 4
+    oneInstruction[0] = 1
+    oneInstruction[1] = address1
+    oneInstruction[2] = address2
+    oneInstruction[3] = address3
+    return oneInstruction
+
+
+def contructorSubInstructionsProgram(address1, address2, address3):
+    oneInstruction = [0] * 4
+    oneInstruction[0] = 2
+    oneInstruction[1] = address1
+    oneInstruction[2] = address2
+    oneInstruction[3] = address3
+    return oneInstruction
+
+
+def contructorHaltInstructionsProgram():
+    oneInstruction = [-1] * 4
+    return oneInstruction
 
 
 def constructorRandomInstructionsProgram():
@@ -51,7 +76,7 @@ def constructorRandomInstructionsProgram():
         _oneInstruction[2] = random.randint(0, 99)
         _oneInstruction[3] = random.randint(0, 99)
         instructionMemory[i] = _oneInstruction
-    _oneInstruction = [-1] * 4
+    _oneInstruction = contructorHaltInstructionsProgram()
     instructionMemory[9] = _oneInstruction
 
 
@@ -75,10 +100,7 @@ def contructorMultInstructionsProgram(multiplicando, multiplicador):
 
     for i in range(multiplicador):
         _oneInstruction = [0] * 4
-        _oneInstruction[0] = 1
-        _oneInstruction[1] = 0
-        _oneInstruction[2] = 1
-        _oneInstruction[3] = 1
+        _oneInstruction = contructorSomaInstructionsProgram(0, 1, 1)
         instructionMemory[i + 2] = _oneInstruction
 
     _oneInstruction = [0] * 4
@@ -87,7 +109,7 @@ def contructorMultInstructionsProgram(multiplicando, multiplicador):
     _oneInstruction[2] = 1
     _oneInstruction[3] = -1
 
-    _oneInstruction = [-1] * 4
+    _oneInstruction = contructorHaltInstructionsProgram()
 
     instructionMemory[multiplicador + 2] = _oneInstruction
 
@@ -103,7 +125,7 @@ def contructorPotenciacaoInstructionsProgram(base, expoente):
     _oneInstruction[3] = -1
     instructionMemory[0] = _oneInstruction
 
-    _oneInstruction = [-1] * 4
+    _oneInstruction = contructorHaltInstructionsProgram()
     instructionMemory[1] = _oneInstruction
 
     machine()
@@ -136,7 +158,7 @@ def contructorDivInstructionsProgram(dividendo, divisor):
     instructionMemory[1] = _oneInstruction
 
     #Halt para parar o loop
-    _oneInstruction = [-1] * 4
+    _oneInstruction = contructorHaltInstructionsProgram()
     instructionMemory[2] = _oneInstruction
 
     #Executando as instruções da memoria
@@ -146,10 +168,7 @@ def contructorDivInstructionsProgram(dividendo, divisor):
     while RAM[0] >= divisor:
         _oneInstruction = [0] * 4
         #Subitraindo o VALOR no ENDEREÇO 0 com o VALOR do ENDEREÇO 1 e guardando no 0
-        _oneInstruction[0] = 2
-        _oneInstruction[1] = 0
-        _oneInstruction[2] = 1
-        _oneInstruction[3] = 0
+        _oneInstruction = contructorSubInstructionsProgram(0, 1, 0)
         instructionMemory[0] = _oneInstruction
 
         # Halt para parar o loop
@@ -169,7 +188,7 @@ def contructorDivInstructionsProgram(dividendo, divisor):
     _oneInstruction[3] = -1
     instructionMemory[0] = _oneInstruction
 
-    _oneInstruction = [-1] * 4
+    _oneInstruction = contructorHaltInstructionsProgram()
     instructionMemory[2] = _oneInstruction
 
     #Executando as instruções da memoria
@@ -187,6 +206,7 @@ def contructorFatorialInstructionsProgram(num):
         num -= 1
 
     print(RAM[1])
+
 
 def contructorAreaTrianguloInstructionsProgram(base, altura):
     contructorMultInstructionsProgram(base, altura)
@@ -219,10 +239,7 @@ def contructorVelocidadeMediaInstructionsProgram(posicaoInicial, posicaoFinal, t
     instructionMemory[1] = _oneInstruction
 
     _oneInstruction = [0] * 4
-    _oneInstruction[0] = 2
-    _oneInstruction[1] = 0
-    _oneInstruction[2] = 1
-    _oneInstruction[3] = 2
+    _oneInstruction = contructorSubInstructionsProgram(0, 1, 2)
     instructionMemory[2] = _oneInstruction
 
     #Variação do tempo
@@ -241,13 +258,10 @@ def contructorVelocidadeMediaInstructionsProgram(posicaoInicial, posicaoFinal, t
     instructionMemory[4] = _oneInstruction
 
     _oneInstruction = [0] * 4
-    _oneInstruction[0] = 2
-    _oneInstruction[1] = 3
-    _oneInstruction[2] = 4
-    _oneInstruction[3] = 5
+    _oneInstruction = contructorSubInstructionsProgram(3, 4, 5)
     instructionMemory[5] = _oneInstruction
 
-    _oneInstruction = [-1] * 4
+    _oneInstruction = contructorHaltInstructionsProgram()
     instructionMemory[6] = _oneInstruction
 
     machine()
@@ -258,6 +272,70 @@ def contructorVelocidadeMediaInstructionsProgram(posicaoInicial, posicaoFinal, t
     contructorDivInstructionsProgram(variacaoPosicao, variacaoDistancia)
 
     print(RAM[1], "Km/h")
+
+
+def contructorFibonacciInstructionsProgram(num):    
+    for n in range(len(instructionMemory), 4):
+        instructionMemory.append(0)
+
+    _oneInstruction = [0] * 4
+    _oneInstruction[0] = 0
+    _oneInstruction[1] = 1
+    _oneInstruction[2] = 0
+    _oneInstruction[3] = -1
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = [0] * 4
+    _oneInstruction[0] = 0
+    _oneInstruction[1] = 0
+    _oneInstruction[2] = 1
+    _oneInstruction[3] = -1
+    instructionMemory[1] = _oneInstruction
+
+    _oneInstruction = [0] * 4
+    _oneInstruction[0] = 0
+    _oneInstruction[1] = 0
+    _oneInstruction[2] = 2
+    _oneInstruction[3] = -1
+    instructionMemory[2] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[3] = _oneInstruction
+
+    machine()
+    i = 0
+    while(i < num):
+        print(RAM[2])
+        _oneInstruction = [0] * 4
+        _oneInstruction = contructorSomaInstructionsProgram(0, 1, 2)
+        instructionMemory[0] = _oneInstruction
+
+        _oneInstruction = [0] * 4
+        _oneInstruction = contructorHaltInstructionsProgram()
+        instructionMemory[1] = _oneInstruction
+
+        machine()
+        _oneInstruction = [0] * 4
+        _oneInstruction[0] = 0
+        _oneInstruction[1] = RAM[1]
+        _oneInstruction[2] = 0
+        _oneInstruction[3] = -1
+        instructionMemory[0] = _oneInstruction
+
+        _oneInstruction = [0] * 4
+        _oneInstruction[0] = 0
+        _oneInstruction[1] = RAM[2]
+        _oneInstruction[2] = 1
+        _oneInstruction[3] = -1
+        instructionMemory[1] = _oneInstruction
+
+        _oneInstruction = contructorHaltInstructionsProgram()
+        instructionMemory[2] = _oneInstruction
+
+        machine()
+
+        i+= 1
+    
   
 
 if __name__ == '__main__':
@@ -269,6 +347,7 @@ if __name__ == '__main__':
   print('05 - Instrução Fatorial')
   print('06 - Instrução Área do Triangulo ')
   print('07 - Instrução Velocidade Média')
+  print('08 - Instrução Sequência Fibonacci')
   print('-1 - Sair')
 
   op = INT_MAX
@@ -306,5 +385,8 @@ if __name__ == '__main__':
         tempoInical = eval(input())
         tempoFinal = eval(input())
         contructorVelocidadeMediaInstructionsProgram(posicaoInicial, posicaoFinal, tempoInical, tempoFinal)
+    elif op == 8:
+        num = eval(input())
+        contructorFibonacciInstructionsProgram(num)
     else:
         if op != -1: print('ERROR!')
