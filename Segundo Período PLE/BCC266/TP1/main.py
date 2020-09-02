@@ -118,6 +118,9 @@ def contructorPotenciacaoInstructionsProgram(base, expoente):
     for n in range(len(instructionMemory), 3):
         instructionMemory.append(0)
 
+    if base < 0 and expoente % 2 == 0:
+        base *= -1
+
     _oneInstruction = [0] * 4
     _oneInstruction[0] = 0
     _oneInstruction[1] = base
@@ -130,9 +133,14 @@ def contructorPotenciacaoInstructionsProgram(base, expoente):
 
     machine()
 
+    result = RAM[1]
+
+    print(RAM[1])
+
     for i in range(expoente - 1):
-        contructorMultInstructionsProgram(RAM[1], base)
+        contructorMultInstructionsProgram(result, base)
         machine()
+        result = RAM[1]
 
     print(RAM[1])
 
@@ -335,8 +343,76 @@ def contructorFibonacciInstructionsProgram(num):
         machine()
 
         i+= 1
+
+
+def contructorPorcentagemInstructionsProgram(num, porcentual):
+    for n in range(len(instructionMemory), 4):
+        instructionMemory.append(0)
+
+        #RAM[1]
+
+    contructorMultInstructionsProgram(porcentual, num)
+    machine()
+
+    result = RAM[1]
+
+    contructorDivInstructionsProgram(result, 100)
+
+    print(RAM[1])
+
+def contructorLevarParaMemoriaInstructionsProgram(value, address):
+    _oneInstruction = [0] * 4
+    _oneInstruction[0] = 0
+    _oneInstruction[1] = value
+    _oneInstruction[2] = address
+    _oneInstruction[3] = -1
+    return _oneInstruction
+
+def contructorDeltaInstructionsProgram(a, b, c):
+    for n in range(len(instructionMemory), 2):
+        instructionMemory.append(0)
+    #Potenciação b²
+    contructorPotenciacaoInstructionsProgram(b, 2)
+    result = RAM[1]
+
+    print(RAM[1])
+    #Guardando na RAM[5] o resultado
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(result, 5)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[1] = _oneInstruction
+
+    machine()
+
+    #Multiplicação 4 x a
+    contructorMultInstructionsProgram(4, a)
+    machine()
+    result = RAM[1]
+    #Multiplicação 4 x a x c
+    contructorMultInstructionsProgram(result, c)
+    machine()
     
-  
+    #Guardando na RAM[6] o resultado
+    result = RAM[1]
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(result, 6)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[1] = _oneInstruction
+    
+    machine()
+
+    _oneInstruction = contructorSubInstructionsProgram(5, 6, 7)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[1] = _oneInstruction
+
+    machine()
+    
+    print(RAM[7])
+
 
 if __name__ == '__main__':
   print('OPÇÕES DO MENU')
@@ -348,6 +424,8 @@ if __name__ == '__main__':
   print('06 - Instrução Área do Triangulo ')
   print('07 - Instrução Velocidade Média')
   print('08 - Instrução Sequência Fibonacci')
+  print('09 - Instrução Porcentagem')
+  print('10 - Instrução Delta')
   print('-1 - Sair')
 
   op = INT_MAX
@@ -388,5 +466,15 @@ if __name__ == '__main__':
     elif op == 8:
         num = eval(input())
         contructorFibonacciInstructionsProgram(num)
+    elif op == 9:
+        num = eval(input())
+        porcentual = eval(input())
+        contructorPorcentagemInstructionsProgram(num, porcentual)
+    elif op == 10:
+        a = eval(input())
+        b = eval(input())
+        c = eval(input())
+        #7 3 4
+        contructorDeltaInstructionsProgram(a, b, c)
     else:
         if op != -1: print('ERROR!')
