@@ -566,6 +566,82 @@ def contructorTeoremaPitagorasInstructionsProgram(b, c):
 
     contructorRaizQuadradaInstructionsProgram(_resultMul)
     
+
+def contructorDistancia2PontosInstructionsProgram(xa, xb, ya, yb):
+    for n in range(len(instructionMemory), 3):
+        instructionMemory.append(0)
+
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(xa, 0)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(xb, 1)
+    instructionMemory[1] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[2] = _oneInstruction
+    
+    machine()
+
+    _oneInstruction = contructorSubInstructionsProgram(0, 1, 1)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[1] = _oneInstruction
+
+    machine()
+
+    resultX = RAM[1]
+
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(ya, 0)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(yb, 1)
+    instructionMemory[1] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[2] = _oneInstruction
+    
+    machine()
+
+    _oneInstruction = contructorSubInstructionsProgram(0, 1, 1)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[1] = _oneInstruction
+
+    machine()
+
+    resultY = RAM[1]
+
+    contructorPotenciacaoInstructionsProgram(resultX, 2)
+
+    resultX = RAM[1]
+    
+
+    contructorPotenciacaoInstructionsProgram(resultY, 2)
+
+    resultY = RAM[1]
+
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(resultX, 3)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[1] = _oneInstruction
+    
+    machine()
+
+    _oneInstruction = contructorSomaInstructionsProgram(1, 3, 1)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[1] = _oneInstruction
+
+    machine()
+
+    resultXY = RAM[1]
+
+    contructorRaizQuadradaInstructionsProgram(resultXY)
+
 if __name__ == '__main__':
   print('01 - Instruções Aleatorias')
   print('02 - Multiplicação')
@@ -583,7 +659,8 @@ if __name__ == '__main__':
   print('14 - Celsius para Kelvin')
   print('15 - Kelvin para Fahrenheit')
   print('16 - Raiz Quadrada Exata')
-  print('17 - Teorema de Pitágoras**')
+  print('17 - Teorema de Pitágoras')
+  print('18 - Distancia Entre Dois Pontos')
   print('-1 - Sair')
 
   op = INT_MAX
@@ -673,6 +750,13 @@ if __name__ == '__main__':
         b = eval(input())
         c = eval(input())
         contructorTeoremaPitagorasInstructionsProgram(b, c)
+        print('#Resultado:', RAM[1])
+    elif op == 18:
+        xa = eval(input())
+        xb = eval(input())
+        ya = eval(input())
+        yb = eval(input())
+        contructorDistancia2PontosInstructionsProgram(xa, xb, ya, yb)
         print('#Resultado:', RAM[1])
     else:
         if op != -1: print('ERROR!')
