@@ -180,11 +180,33 @@ def contructorDivInstructionsProgram(dividendo, divisor):
 
 
 def contructorFatorialInstructionsProgram(num):
-    aux = 1
+    for n in range(len(instructionMemory), 3):
+      instructionMemory.append(0)
+
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(1, 1)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[1] = _oneInstruction
+
+    machine()
+
+    aux = RAM[1]
+
     while num != 0:
         contructorMultInstructionsProgram(aux, num)
+
+        _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(RAM[1], 1)
+        instructionMemory[0] = _oneInstruction
+
+        _oneInstruction = contructorHaltInstructionsProgram()
+        instructionMemory[1] = _oneInstruction
+
+        machine()
+        
         aux = RAM[1]
         num -= 1
+
 
 def contructorAreaTrianguloInstructionsProgram(base, altura):
     contructorMultInstructionsProgram(base, altura)
@@ -287,7 +309,6 @@ def contructorPorcentagemInstructionsProgram(num, porcentual):
     contructorDivInstructionsProgram(result, 100)
 
 
-
 def contructorDeltaInstructionsProgram(a, b, c):
     for n in range(len(instructionMemory), 2):
         instructionMemory.append(0)
@@ -324,7 +345,7 @@ def contructorDeltaInstructionsProgram(a, b, c):
     
     machine()
 
-    _oneInstruction = contructorSubInstructionsProgram(5, 6, 7)
+    _oneInstruction = contructorSubInstructionsProgram(5, 6, 1)
     instructionMemory[0] = _oneInstruction
 
     _oneInstruction = contructorHaltInstructionsProgram()
@@ -477,6 +498,7 @@ def contructorKelvinToFahrenheitInstructionsProgram(kelvin):
 
     machine()
 
+
 def contructorRaizQuadradaInstructionsProgram(num):
     #Numero primos entre 1 e 100
     #22
@@ -519,6 +541,7 @@ def contructorRaizQuadradaInstructionsProgram(num):
             i = 5
         else:
             i += 1 
+            
     valuesOrganizados = sorted(values)
     f = []
     
@@ -536,6 +559,7 @@ def contructorRaizQuadradaInstructionsProgram(num):
         contructorMultInstructionsProgram(f[i], result)
         result = RAM[1]
     
+
 def contructorTeoremaPitagorasInstructionsProgram(b, c):
     for n in range(len(instructionMemory), 3):
         instructionMemory.append(0)
@@ -642,6 +666,55 @@ def contructorDistancia2PontosInstructionsProgram(xa, xb, ya, yb):
 
     contructorRaizQuadradaInstructionsProgram(resultXY)
 
+
+def somaInstructionsProgram(num1, num2):
+    for n in range(len(instructionMemory), 3):
+      instructionMemory.append(0)
+
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(num1, 0)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(num2, 1)
+    instructionMemory[1] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[2] = _oneInstruction
+    
+    machine()
+
+    _oneInstruction = contructorSomaInstructionsProgram(0, 1, 1)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[1] = _oneInstruction
+
+    machine()
+
+
+def subInstructionsProgram(num1, num2):
+    for n in range(len(instructionMemory), 3):
+      instructionMemory.append(0)
+
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(num1, 0)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorLevarParaMemoriaInstructionsProgram(num2, 1)
+    instructionMemory[1] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[2] = _oneInstruction
+    
+    machine()
+
+    _oneInstruction = contructorSubInstructionsProgram(0, 1, 1)
+    instructionMemory[0] = _oneInstruction
+
+    _oneInstruction = contructorHaltInstructionsProgram()
+    instructionMemory[1] = _oneInstruction
+
+    machine()
+
+
 if __name__ == '__main__':
   print('01 - Instruções Aleatorias')
   print('02 - Multiplicação')
@@ -661,6 +734,8 @@ if __name__ == '__main__':
   print('16 - Raiz Quadrada Exata')
   print('17 - Teorema de Pitágoras')
   print('18 - Distancia Entre Dois Pontos')
+  print('19 - Soma')
+  print('20 - Subtração')
   print('-1 - Sair')
 
   op = INT_MAX
@@ -675,33 +750,27 @@ if __name__ == '__main__':
         multiplicando = eval(input())
         multiplicador = eval(input())
         contructorMultInstructionsProgram(multiplicando, multiplicador)
-        print('#Resultado:', RAM[1])
     elif op == 3:
         dividendo = eval(input())
         divisor = eval(input())
         contructorDivInstructionsProgram(dividendo, divisor)
-        print('#Resultado:', RAM[1])
     elif op == 4:
         base = eval(input())
         expoente = eval(input())
         contructorPotenciacaoInstructionsProgram(base, expoente)
-        print('#Resultado:', RAM[1])
     elif op == 5:
         num = eval(input())
         contructorFatorialInstructionsProgram(num)
-        print('#Resultado:', RAM[1])
     elif op == 6:
         base = eval(input())
         altura = eval(input())
         contructorAreaTrianguloInstructionsProgram(base, altura)
-        print('#Resultado:', RAM[1])
     elif op == 7:
         posicaoInicial = eval(input())
         posicaoFinal = eval(input())
         tempoInical = eval(input())
         tempoFinal = eval(input())
         contructorVelocidadeMediaInstructionsProgram(posicaoInicial, posicaoFinal, tempoInical, tempoFinal)
-        print('#Resultado:', RAM[1])
     elif op == 8:
         num = eval(input())
         contructorFibonacciInstructionsProgram(num)
@@ -709,7 +778,6 @@ if __name__ == '__main__':
         num = eval(input())
         porcentual = eval(input())
         contructorPorcentagemInstructionsProgram(num, porcentual)
-        print('#Resultado:', RAM[1])
     elif op == 10:
         a = eval(input())
         b = eval(input())
@@ -721,42 +789,44 @@ if __name__ == '__main__':
         pEnesimoTermo = eval(input())
         razao = eval(input())
         contructorPAInstructionsProgram(primeiroTermo, pEnesimoTermo, razao)
-        print('#Resultado:', RAM[1])
     elif op == 12:
         primeiroTermo = eval(input())
         pEnesimoTermo = eval(input())
         razao = eval(input())
         contructorPGInstructionsProgram(primeiroTermo, pEnesimoTermo, razao)
-        print('#Resultado:', RAM[1])
     elif op == 13:
         capital = eval(input())
         taxa = eval(input())
         periodo = eval(input())
         contructorJurosSimplesInstructionsProgram(capital, taxa, periodo)
-        print('#Resultado:', RAM[1])
     elif op == 14:
         celsius = eval(input())
         contructorCelsiusToKelvinInstructionsProgram(celsius)
-        print('#Resultado:', RAM[1])
     elif op == 15:
         kelvin = eval(input())
         contructorKelvinToFahrenheitInstructionsProgram(kelvin)
-        print('#Resultado:', RAM[1])
     elif op == 16:
         num = eval(input())
         contructorRaizQuadradaInstructionsProgram(num)
-        print('#Resultado:', RAM[1])
     elif op == 17:
         b = eval(input())
         c = eval(input())
         contructorTeoremaPitagorasInstructionsProgram(b, c)
-        print('#Resultado:', RAM[1])
     elif op == 18:
         xa = eval(input())
         xb = eval(input())
         ya = eval(input())
         yb = eval(input())
         contructorDistancia2PontosInstructionsProgram(xa, xb, ya, yb)
-        print('#Resultado:', RAM[1])
+    elif op == 19:
+        num1 = eval(input())
+        num2 = eval(input())
+        somaInstructionsProgram(num1, num2)
+    elif op == 20:
+        num1 = eval(input())
+        num2 = eval(input())
+        subInstructionsProgram(num1, num2)
     else:
         if op != -1: print('ERROR!')
+        continue
+    print('#Resultado:', RAM[1])
