@@ -1,6 +1,6 @@
 from Endereco import Endereco
 
-class Instrucoes():
+class Instrucao():
 	add1 = Endereco()
 	add2 = Endereco()
 	add3 = Endereco()
