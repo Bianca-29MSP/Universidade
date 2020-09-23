@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/enya/Documentos/UFOP/PLE/Segundo Periodo/PLE-2020/BCC266/TrabalhoPratico-2/venv"
+set -gx VIRTUAL_ENV "/home/enya/Documentos/tp2new/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

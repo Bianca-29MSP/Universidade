@@ -8,7 +8,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/home/enya/Documentos/UFOP/PLE/Segundo Periodo/PLE-2020/BCC266/TrabalhoPratico-2/venv"
+setenv VIRTUAL_ENV "/home/enya/Documentos/tp2new/venv"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"

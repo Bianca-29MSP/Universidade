@@ -1,15 +1,17 @@
-class Endereco:
-	endBloco = 0
-	endPalavra = 0
-	
-	def getEndBloco(self):
-		return self.endBloco
+class Endereco():
+    
+    def __init__(self):
+        self.endBloco = 0
+        self.endPalavra = 0
 
-	def setEndBloco(self, endBloco):
-		self.endBloco = endBloco
+    def getEndBloco(self):
+        return self.endBloco
 
-	def getEndPalavra(self):
-		return self.endPalavra
+    def setEndBloco(self, endBlocoAux):
+        self.endBloco = endBlocoAux
+    
+    def getEndPalavra(self):
+        return self.endPalavra
 
-	def setEndPalavra(self, endPalavra):
-		self.endPalavra = endPalavra
+    def setEndPalavra(self, endPalavraAux):
+        self.endPalavra = endPalavraAux
