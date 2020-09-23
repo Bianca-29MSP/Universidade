@@ -88,6 +88,3 @@ def leastRecentlyUsed(cache): #LRU
             minTime = cache[i].getTimeUtilizado()
             index = i
     return index
-
-
-    

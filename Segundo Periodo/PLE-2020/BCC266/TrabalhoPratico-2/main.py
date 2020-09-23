@@ -219,9 +219,9 @@ def maquina():
     print('C1 hit: {0} | C1 miss: {1}'.format( hitC1, missC1 ))
     print('C2 hit: {0} | C2 miss: {1}'.format( hitC2, missC2 ))
     print('C3 hit: {0} | C3 miss: {1}'.format( hitC3, missC3 ))
-    """
     print('Total de Hits: {0}'.format(totalHits))
     print('Total de Misses: {0}'.format(totalMisses))
+    """
     taxaC1 = (hitC1 * 100) / (hitC1 + missC1)
     taxaC2 = (hitC2 * 100) / (hitC2 + missC2)
     taxaC3 = (hitC3 * 100) / (hitC3 + missC3)
