@@ -4,7 +4,7 @@ from pprint import pprint
 from BlocoMemoria import BlocoMemoria
 from Endereco import Endereco
 from Instrucao import Instrucao
-from MMU import buscarNasMemorias
+from MMU2 import buscarNasMemorias
 
 INT_MAX = sys.maxsize
 INT_MIN = (sys.maxsize * -1) - 1
@@ -16,10 +16,10 @@ cachesM4 = [8, 32, 128]
 cachesM5 = [16, 32, 64]
 
 tamanhoRam = 1000
-tamanhoCache1 = cachesM2[0]
-tamanhoCache2 = cachesM2[1]
-tamanhoCache3 = cachesM2[2]
-tamanhoPrograma = 5001
+tamanhoCache1 = cachesM5[0]
+tamanhoCache2 = cachesM5[1]
+tamanhoCache3 = cachesM5[2]
+tamanhoPrograma = 10001
 quantidadePalavrasBloco = 4
 
 memoriaInstrucoes = []
@@ -80,10 +80,10 @@ def montarInstrucaoGerador():
         memoriaInstrucoes.append(Instrucao())
     
     try:
-        file = open('instructions.txt', 'r')
+        file = open('instrucoes.txt', 'r')
         file.readline()
         fileLines = file.read().split('\n')
-        for i in range(len(fileLines) - 1):
+        for i in range(tamanhoPrograma - 1):
             palavras = [0] * 7
             palavras = fileLines[i].split(' ')
             

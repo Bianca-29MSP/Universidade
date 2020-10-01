@@ -4,8 +4,8 @@ from random import *
 size_memory = 1000 # RAM size
 
 instructions = 5001 # number of instructions generated
-size_block = 20 # size of each repetition block (size of 'for')
-probability = 70 # probability of each block occur (probability of 'for' occur)
+size_block = 10 # size of each repetition block (size of 'for')
+probability = 50 # probability of each block occur (probability of 'for' occur)
 
 num_words = 4 # number of words for each block
 n = 2 # number of available opcodes
