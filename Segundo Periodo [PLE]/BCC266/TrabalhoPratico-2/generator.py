@@ -3,9 +3,9 @@ from random import *
 # -------------------------- Values --------------------------
 size_memory = 1000 # RAM size
 
-instructions = 5001 # number of instructions generated
+instructions = 10001 # number of instructions generated
 size_block = 10 # size of each repetition block (size of 'for')
-probability = 50 # probability of each block occur (probability of 'for' occur)
+probability = 70 # probability of each block occur (probability of 'for' occur)
 
 num_words = 4 # number of words for each block
 n = 2 # number of available opcodes
@@ -18,7 +18,7 @@ repetition = []
 
 # repetition block
 for i in range(size_block):
-	r_value = randint(1, n)
+	r_value = randint(0, n)
 	s = ""
 	for j in range(num_address[r_value - 1]):
 		s = s + separator + str(randint(0, size_memory-1)) + separator + str(randint(0, num_words-1))

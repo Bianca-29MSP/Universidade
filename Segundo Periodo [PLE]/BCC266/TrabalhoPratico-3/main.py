@@ -1,11 +1,12 @@
 import random
 import sys
+import time
 from pprint import pprint
 from BlocoMemoria import BlocoMemoria
 from Endereco import Endereco
 from Instrucao import Instrucao
-from controllerDisco import montarDisco 
-from MMU import buscarNasMemorias
+from hardDiskController import montarDisco 
+from MMU2 import buscarNasMemorias
 from generator import generator
 
 INT_MAX = sys.maxsize
@@ -18,9 +19,10 @@ cachesM4 = [8, 32, 128]
 cachesM5 = [16, 32, 64]
 
 tamanhoRam = 1000
-tamanhoCache1 = cachesM5[0]
-tamanhoCache2 = cachesM5[1]
-tamanhoCache3 = cachesM5[2]
+M = 'M3'
+tamanhoCache1 = cachesM3[0]
+tamanhoCache2 = cachesM3[1]
+tamanhoCache3 = cachesM3[2]
 tamanhoPrograma = 10001
 quantidadePalavrasBloco = 4
 tamanhoProgramaInterrupcao = 101
@@ -30,6 +32,8 @@ RAM = [BlocoMemoria()] * tamanhoRam
 cache1 = [BlocoMemoria()] * tamanhoCache1
 cache2 = [BlocoMemoria()] * tamanhoCache2
 cache3 = [BlocoMemoria()] * tamanhoCache3
+
+fileName = './instructions/INST_20_75'
 
 def montarRam():
     for i in range(tamanhoRam):
@@ -52,37 +56,6 @@ def montarCacheVazia(tamanho, qqCache):
         aux = BlocoMemoria()
         aux.setEndBloco(INT_MIN)
         qqCache[i] = aux
-
-def montarInstrucoesProgramaAleatorio():
-    for _n in range(len(memoriaInstrucoes), tamanhoPrograma):
-        memoriaInstrucoes.append(Instrucao())
-
-    for i in range(tamanhoPrograma - 1):
-        umaInstrucao = Instrucao()
-        umaInstrucao.setOpcode(random.randint(0, 2))
-
-        add1 = Endereco()
-        add1.setEndBloco(random.randint(0, tamanhoRam - 1))
-        add1.setEndPalavra(random.randint(0, quantidadePalavrasBloco - 1))
-        umaInstrucao.setAdd1(add1)
-
-        add2 = Endereco()
-        add2.setEndBloco(random.randint(0, tamanhoRam - 1))
-        add2.setEndPalavra(random.randint(0, quantidadePalavrasBloco - 1))
-        umaInstrucao.setAdd2(add2)
-
-        add3 = Endereco()
-        add3.setEndBloco(random.randint(0, tamanhoRam - 1))
-        add3.setEndPalavra(random.randint(0, quantidadePalavrasBloco - 1))
-        umaInstrucao.setAdd3(add3)
-
-        memoriaInstrucoes[i] = umaInstrucao
-    
-    umaInstrucao = Instrucao()
-    umaInstrucao.setOpcode(-1)
-
-    memoriaInstrucoes[tamanhoPrograma-1] = umaInstrucao
-
 
 def montarInstrucaoGerador(nome, tamanho):
 
@@ -129,13 +102,14 @@ def montarInstrucaoGerador(nome, tamanho):
         umaInstrucao.setOpcode(-1)
         memoriaInstrucoes[tamanho - 1] = umaInstrucao
 
-    except NameError:
+    except FileNotFoundError:
+        print('Arquivo não encontrado!')
+
+    except:
         print("Erro ao abrir arquivo!")
 
-contInt = 0
-
-def maquina(PC, programa):
-    #PC = 0
+def maquina(programa):
+    PC = 0
     opcode = INT_MAX
     custo = 0
     hitC1 = 0
@@ -146,9 +120,12 @@ def maquina(PC, programa):
     missC3 = 0
     hitRAM = 0
     missRAM = 0
+    totalMiss = 0
+    totalHit = 0
+    hitHD = 0
 
-    # totalMisses = 0
-    # totalHits = 0
+    numInterrInternas = 0
+    numInterrExternas = 0
 
     while opcode != -1:
         umaInstrucao = Instrucao()
@@ -179,6 +156,7 @@ def maquina(PC, programa):
                 missC2 += 1
                 missC3 += 1
             elif dadoMemoriaAdd1.getCacheHit() == 5:
+                hitHD += 1
                 missC1 += 1
                 missC2 += 1
                 missC3 += 1
@@ -199,6 +177,7 @@ def maquina(PC, programa):
                 missC2 += 1
                 missC3 += 1
             elif dadoMemoriaAdd2.getCacheHit() == 5:
+                hitHD += 1
                 missC1 += 1
                 missC2 += 1
                 missC3 += 1
@@ -219,100 +198,97 @@ def maquina(PC, programa):
                 missC2 += 1
                 missC3 += 1
             elif dadoMemoriaAdd3.getCacheHit() == 5:
+                hitHD += 1
                 missC1 += 1
                 missC2 += 1
                 missC3 += 1
                 missRAM += 1
 
-            print('Custo até o momendo da execução do progama: {0}'.format( custo ))
+            print('Custo até o momendo da execução do programa: {0}'.format( custo ))
             print('C1 hit: {0} | C1 miss: {1} | C2 hit: {2} | C2 miss: {3} | C3 hit: {4} | C3 miss: {5} | RAM hit: {6} | RAM miss: {7}'
             .format( hitC1, missC1, hitC2, missC2, hitC3, missC3, hitRAM, missRAM ))
 
             if opcode == 0:
                 if programa == "instructions":
-                    chance = random.randint(0, 4)
+                    chance = random.randint(0, 5) #20% de chance
                     if chance == 0:
-                        #pcI = PC
-                        global contInt
-                        contInt += 1
+                        numInterrInternas += 1
                         print('#INICIO - TRATADOR DE INTERRUPCAO')
-                        novaInterrupcao = random.randint(1, tamanhoProgramaInterrupcao)
-                        generator("interrupcao", novaInterrupcao)
-                        montarInstrucaoGerador("interrupcao", novaInterrupcao)
-                        maquina(0, "interrupcao")
+
+                        fileNameIntr = './interruptions/INTR'
+                        tamanho = random.randint(20, tamanhoProgramaInterrupcao)
+                        generator('./interruptions/INTR', tamanho, 10, 70)
+                        montarInstrucaoGerador(fileNameIntr, tamanho)
+                        maquina("interruption")
+
                         print('#FIM - TRATADOR DE INTERRUPCAO')
-                        montarInstrucaoGerador("instructions", tamanhoPrograma)
-                
+                        montarInstrucaoGerador(fileName, tamanhoPrograma)
 
             elif opcode == 1:
                 conteudo1 = dadoMemoriaAdd1.getPalavras()[umaInstrucao.getAdd1().getEndPalavra()]
                 conteudo2 = dadoMemoriaAdd2.getPalavras()[umaInstrucao.getAdd1().getEndPalavra()]
                 soma = conteudo1 + conteudo2
                 dadoMemoriaAdd3.getPalavras()[umaInstrucao.getAdd3().getEndPalavra()] = soma
-                #dadoMemoriaAdd3.setAtualizado()
-                #print('+', soma)
+
             elif opcode == 2:
                 conteudo1 = dadoMemoriaAdd1.getPalavras()[umaInstrucao.getAdd1().getEndPalavra()]
                 conteudo2 = dadoMemoriaAdd2.getPalavras()[umaInstrucao.getAdd1().getEndPalavra()]
                 sub = conteudo1 - conteudo2
                 dadoMemoriaAdd3.getPalavras()[umaInstrucao.getAdd3().getEndPalavra()] = sub
-                #dadoMemoriaAdd3.setAtualizado()
-                #print('-', sub)
                 
             PC += 1
-
+        
         if programa == "instructions":
-            chance = random.randint(0, 4)
+            chance = random.randint(0, 8) #12.5% de chance
             if chance == 0:
+                numInterrExternas += 1
                 print('#INICIO - TRATADOR DE INTERRUPCAO')
-                montarInstrucaoGerador("interrupcao", tamanhoProgramaInterrupcao)
-                maquina(0, "interrupcao")
+
+                fileNameIntr = './interruptions/INTR'
+                tamanho = random.randint(20, tamanhoProgramaInterrupcao)
+                generator('./interruptions/INTR', tamanho, 10, 70)
+                montarInstrucaoGerador( fileNameIntr, tamanho)
+
+                maquina("interruption")
+
                 print('#FIM - TRATADOR DE INTERRUPCAO')
-                montarInstrucaoGerador("instructions", tamanhoPrograma)
+                montarInstrucaoGerador(fileName, tamanhoPrograma)
 
-    # totalHits = hitC1 + hitC2 + hitC3
-    # totalMisses = missC1 + missC2 + missC3
+    if programa == "instructions":
+        totalHit = hitC1 + hitC2 + hitC3 + hitRAM
+        totalMiss = missC1 + missC2 + missC3 + missRAM
 
-    # print("FIM")
-    # print('Custo total do programa: {0}'.format(custo))
-    # print('Hit e Misses do programa:')
-    # print('C1 hit: {0} | C1 miss: {1}'.format( hitC1, missC1 ))
-    # print('C2 hit: {0} | C2 miss: {1}'.format( hitC2, missC2 ))
-    # print('C3 hit: {0} | C3 miss: {1}'.format( hitC3, missC3 ))
-    # print('RAM hit: {0} | RAM miss: {1}'.format( hitRAM, missRAM ))
-    # print('Total de Hits: {0}'.format(totalHits))
-    # print('Total de Misses: {0}'.format(totalMisses))
-    """
-    taxaC1 = (hitC1 * 100) / (hitC1 + missC1)
-    taxaC2 = (hitC2 * 100) / (hitC2 + missC2)
-    taxaC3 = (hitC3 * 100) / (hitC3 + missC3)
-    taxaRam = (hitRAM * 100) / (hitRAM + missRAM)
-    print("{0}% | {1}% | {2}% | {3}% |".format(taxaC1, taxaC2, taxaC3, taxaRam))
-    """
-    print(contInt)
-
-def atualizaRam():
-    for i in range(len(cache1)):
-        if cache1[i].getPalavras() != RAM[cache1[i].getEndBloco()].getPalavras():
-            RAM[cache1[i].getEndBloco()].setPalavras(cache1[i].getPalavras())
-    for i in range(len(cache2)):
-        if cache2[i].getPalavras() == RAM[cache2[i].getEndBloco()].getPalavras():
-            RAM[cache2[i].getEndBloco()].setPalavras(cache2[i].getPalavras())
-    for i in range(len(cache3)):
-        if cache3[i].getPalavras() == RAM[cache3[i].getEndBloco()].getPalavras():
-            RAM[cache3[i].getEndBloco()].setPalavras(cache3[i].getPalavras())
-    
+    if opcode == -1 and programa == "instructions":
+        taxaC1 = round((hitC1 * 100) / (hitC1 + missC1), 2)
+        taxaC2 = round((hitC2 * 100) / (hitC2 + missC2), 2)
+        taxaC3 = round((hitC3 * 100) / (hitC3 + missC3), 2)
+        taxaRam = round((hitRAM * 100) / (hitRAM + missRAM), 2)
+        print("FIM")
+        print('Custo total do programa: {0}'.format(custo))
+        print('Hit e Misses do programa:')
+        print('C1 hit:  {0}  | C1 miss:  {1}'.format( hitC1, missC1 ))
+        print('C2 hit:  {0}  | C2 miss:  {1}'.format( hitC2, missC2 ))
+        print('C3 hit:  {0}  | C3 miss:  {1}'.format( hitC3, missC3 ))
+        print('RAM hit: {0}  | RAM miss: {1}'.format( hitRAM, missRAM ))
+        print('Interrupções  | Internas: {0} | Externas: {1}'.format(numInterrInternas, numInterrExternas))
+        print('Cache C1  | HIT: {0}% | MISS: {1}%'.format(taxaC1, round((100 - taxaC1), 2)))
+        print('Cache C2  | HIT: {0}% | MISS: {1}%'.format(taxaC2, round((100 - taxaC2), 2)))
+        print('Cache C3  | HIT: {0}% | MISS: {1}%'.format(taxaC3, round((100 - taxaC3), 2)))
+        print('Cache RAM | HIT: {0}% | MISS: {1}%'.format(taxaRam, round((100 - taxaRam), 2)))
+        print('HD        | HIT: {0} | MISS: {1}%'.format(hitHD, 0))
+        print('Total     | HIT: {0} | MISS: {1}'.format( totalHit, totalMiss ))
+        
 if __name__ == "__main__":
-    #montarRam()
+    tempo_inicial = time.time()
     montarRamVazia()
     montarDisco()
     montarCacheVazia(tamanhoCache1, cache1)
     montarCacheVazia(tamanhoCache2, cache2)
     montarCacheVazia(tamanhoCache3, cache3)
-    generator("instructions", tamanhoPrograma)
-    generator("interrupcao",tamanhoProgramaInterrupcao)
-    #montarInstrucoesProgramaAleatorio()
-    montarInstrucaoGerador("instructions", tamanhoPrograma)
-    maquina(0, "instructions")
-    #atualizaRam()
+    montarInstrucaoGerador(fileName, tamanhoPrograma)
+    maquina("instructions")
     print('#Done!')
+    tempo_final = time.time()
+    tempoTotal = round( ( ( tempo_final  - tempo_inicial) / 60 ) , 2)
+    print("#Tempo de execução: {0} minutos".format(tempoTotal) )
+    print("File: {0}   {1}".format(fileName, M))

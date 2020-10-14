@@ -1,12 +1,12 @@
 from random import *
 
-def generator(nameFile, tamanho):
-	# -------------------------- Values --------------------------
+# -------------------------- Values --------------------------
+def generator(fileName, tamanho, sizeFor, probability):
 	size_memory = 1000 # RAM size
 
 	instructions = tamanho # number of instructions generated
-	size_block = 10 # size of each repetition block (size of 'for')
-	probability = 70 # probability of each block occur (probability of 'for' occur)
+	size_block = sizeFor # size of each repetition block (size of 'for')
+	probability = probability # probability of each block occur (probability of 'for' occur)
 
 	num_words = 4 # number of words for each block
 	n = 2 # number of available opcodes
@@ -48,7 +48,7 @@ def generator(nameFile, tamanho):
 	# print(array) # uncomment to view final array
 
 	# -------------------------- File --------------------------
-	file = open(nameFile + ".txt", "w")
+	file = open(fileName + ".txt", "w")
 
 	# write the number of instructions at the begining of the file
 	file.write(str(instructions))
@@ -60,3 +60,17 @@ def generator(nameFile, tamanho):
 		file.write("\n")
 		
 	file.close()
+
+def createInstructions(tamanhoFor, probability):
+	fileName = "./instructions/INST_{0}_{1}".format(tamanhoFor, probability)
+	generator(fileName, 10001, tamanhoFor, probability)
+
+def createInterruptions():
+	tamanhos = [101, 91, 81, 71, 61, 51, 41]
+	for i in range(len(tamanhos)):
+		fileName = './interruptions/INTR_0' + str(i)
+		generator(fileName, tamanhos[i], 10, 70)
+
+if __name__ == "__main__":
+	createInstructions(10, 75)
+	#createInterruptions()

@@ -2,7 +2,7 @@ import sys
 from time import time
 from pprint import pprint
 from BlocoMemoria import BlocoMemoria
-from controllerDisco import *
+from hardDiskController import *
 
 def buscarNasMemorias(e, RAM, cache1, cache2, cache3):
     custo = 0
@@ -39,38 +39,21 @@ def buscarNasMemorias(e, RAM, cache1, cache2, cache3):
     custo += 100610
     posicaoRAM = espacoLivreCache(RAM)
     if posicaoRAM  != -1:
-        #RAM[posicaoRAM] = RAM[e.getEndBloco()]
-        RAM[posicaoRAM] = f(e.getEndBloco())
+        RAM[posicaoRAM] = lerDisco(e.getEndBloco())
         RAM[posicaoRAM].setAtualizado()
         RAM[posicaoRAM].setCacheHit(5)
         RAM[posicaoRAM].setTimeUtilizado(time())
         return testaCache3RAM(posicaoRAM, cache1, cache2, cache3, RAM, custo)
     else:
-        print('i')
         posicaoRAM = leastRecentlyUsed(RAM) #melhor posição na RAM
         RAM[posicaoRAM].setNotAtualizado()
         end = RAM[posicaoRAM].getEndBloco()
-        alterarDisco(end, RAM[posicaoRAM])
-        RAM[posicaoRAM] = f(e.getEndBloco())
+        atualizarDisco(end, RAM[posicaoRAM])
+        RAM[posicaoRAM] = lerDisco(e.getEndBloco())
         RAM[posicaoRAM].setAtualizado()
         RAM[posicaoRAM].setCacheHit(5)
         RAM[posicaoRAM].setTimeUtilizado(time())
         return testaCache3RAM(posicaoRAM, cache1, cache2, cache3, RAM, custo)
-
-def f(end):
-    bloco = BlocoMemoria()
-    data = lerDisco(end)
-    #print(data)
-    bloco.setEndBloco(data[0])
-    if data[1]:
-        bloco.setAtualizado()
-    else:
-        bloco.setNotAtualizado()
-    bloco.setCusto(data[2])
-    bloco.setCacheHit(data[3])
-    bloco.setTimeUtilizado(data[4])
-    bloco.setPalavras([ data[5], data[6], data[7], data[8] ])
-    return bloco
 
 def testaCache1Cache2(posicaoCache2, cache1, cache2, custo):
     posicaoCache1 = espacoLivreCache(cache1)

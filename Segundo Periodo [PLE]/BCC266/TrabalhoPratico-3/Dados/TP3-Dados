@@ -1,0 +1,312 @@
+FIM
+Custo total do programa: 287510900
+Hit e Misses do programa:
+C1 hit:  71  | C1 miss:  29929
+C2 hit:  493  | C2 miss:  29436
+C3 hit:  11459  | C3 miss:  17977
+RAM hit: 16980  | RAM miss: 997
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 0.24% | MISS: 99.76%
+Cache C2  | HIT: 1.65% | MISS: 98.35%
+Cache C3  | HIT: 38.93% | MISS: 61.07%
+Cache RAM | HIT: 94.45% | MISS: 5.55%
+HD        | HIT: 997 | MISS: 0%
+Total     | HIT: 29003 | MISS: 78339
+#Done!
+#Tempo de execução: 0.18 minutos
+File: ./instructions/INST_20_75   M1
+-------------------------------------------------------------
+FIM
+Custo total do programa: 154852300
+Hit e Misses do programa:
+C1 hit:  982  | C1 miss:  29018
+C2 hit:  22237  | C2 miss:  6781
+C3 hit:  928  | C3 miss:  5853
+RAM hit: 4856  | RAM miss: 997
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 3.27% | MISS: 96.73%
+Cache C2  | HIT: 76.63% | MISS: 23.37%
+Cache C3  | HIT: 13.69% | MISS: 86.31%
+Cache RAM | HIT: 82.97% | MISS: 17.03%
+HD        | HIT: 997 | MISS: 0%
+Total     | HIT: 29003 | MISS: 42649
+#Done!
+#Tempo de execução: 0.22 minutos
+File: ./instructions/INST_20_75   M2
+-------------------------------------------------------------
+FIM
+Custo total do programa: 147506500
+Hit e Misses do programa:
+C1 hit:  125  | C1 miss:  29875
+C2 hit:  22957  | C2 miss:  6918
+C3 hit:  1815  | C3 miss:  5103
+RAM hit: 4106  | RAM miss: 997
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 0.42% | MISS: 99.58%
+Cache C2  | HIT: 76.84% | MISS: 23.16%
+Cache C3  | HIT: 26.24% | MISS: 73.76%
+Cache RAM | HIT: 80.46% | MISS: 19.54%
+HD        | HIT: 997 | MISS: 0%
+Total     | HIT: 29003 | MISS: 42893
+#Done!
+#Tempo de execução: 0.16 minutos
+File: ./instructions/INST_20_75   M3
+-------------------------------------------------------------
+FIM
+Custo total do programa: 169908400
+Hit e Misses do programa:
+C1 hit:  71  | C1 miss:  29929
+C2 hit:  1338  | C2 miss:  28591
+C3 hit:  22332  | C3 miss:  6259
+RAM hit: 5262  | RAM miss: 997
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 0.24% | MISS: 99.76%
+Cache C2  | HIT: 4.47% | MISS: 95.53%
+Cache C3  | HIT: 78.11% | MISS: 21.89%
+Cache RAM | HIT: 84.07% | MISS: 15.93%
+HD        | HIT: 997 | MISS: 0%
+Total     | HIT: 29003 | MISS: 65776
+#Done!
+#Tempo de execução: 0.18 minutos
+File: ./instructions/INST_20_75   M4
+-------------------------------------------------------------
+FIM
+Custo total do programa: 173614500
+Hit e Misses do programa:
+C1 hit:  125  | C1 miss:  29875
+C2 hit:  1721  | C2 miss:  28154
+C3 hit:  21502  | C3 miss:  6652
+RAM hit: 5655  | RAM miss: 997
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 0.42% | MISS: 99.58%
+Cache C2  | HIT: 5.76% | MISS: 94.24%
+Cache C3  | HIT: 76.37% | MISS: 23.63%
+Cache RAM | HIT: 85.01% | MISS: 14.99%
+HD        | HIT: 997 | MISS: 0%
+Total     | HIT: 29003 | MISS: 65678
+#Done!
+#Tempo de execução: 0.17 minutos
+File: ./instructions/INST_20_75   M5
+-------------------------------------------------------------
+
+
+
+
+-------------------------------------------------------------
+FIM
+Custo total do programa: 189045900
+Hit e Misses do programa:
+C1 hit:  76  | C1 miss:  29924
+C2 hit:  8537  | C2 miss:  21387
+C3 hit:  12872  | C3 miss:  8515
+RAM hit: 7516  | RAM miss: 999
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 0.25% | MISS: 99.75%
+Cache C2  | HIT: 28.53% | MISS: 71.47%
+Cache C3  | HIT: 60.19% | MISS: 39.81%
+Cache RAM | HIT: 88.27% | MISS: 11.73%
+HD        | HIT: 999 | MISS: 0%
+Total     | HIT: 29001 | MISS: 60825
+#Done!
+#Tempo de execução: 0.19 minutos
+File: ./instructions/INST_10_70   M1
+-------------------------------------------------------------
+FIM
+Custo total do programa: 165775700
+Hit e Misses do programa:
+C1 hit:  9383  | C1 miss:  20617
+C2 hit:  12529  | C2 miss:  8088
+C3 hit:  1142  | C3 miss:  6946
+RAM hit: 5947  | RAM miss: 999
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 31.28% | MISS: 68.72%
+Cache C2  | HIT: 60.77% | MISS: 39.23%
+Cache C3  | HIT: 14.12% | MISS: 85.88%
+Cache RAM | HIT: 85.62% | MISS: 14.38%
+HD        | HIT: 999 | MISS: 0%
+Total     | HIT: 29001 | MISS: 36650
+#Done!
+#Tempo de execução: 0.19 minutos
+File: ./instructions/INST_10_70   M2
+-------------------------------------------------------------
+FIM
+Custo total do programa: 157272700
+Hit e Misses do programa:
+C1 hit:  843  | C1 miss:  29157
+C2 hit:  20883  | C2 miss:  8274
+C3 hit:  2273  | C3 miss:  6001
+RAM hit: 5002  | RAM miss: 999
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 2.81% | MISS: 97.19%
+Cache C2  | HIT: 71.62% | MISS: 28.38%
+Cache C3  | HIT: 27.47% | MISS: 72.53%
+Cache RAM | HIT: 83.35% | MISS: 16.65%
+HD        | HIT: 999 | MISS: 0%
+Total     | HIT: 29001 | MISS: 44431
+#Done!
+#Tempo de execução: 0.22 minutos
+File: ./instructions/INST_10_70   M3
+-------------------------------------------------------------
+FIM
+Custo total do programa: 171950900
+Hit e Misses do programa:
+C1 hit:  76  | C1 miss:  29924
+C2 hit:  21267  | C2 miss:  8657
+C3 hit:  1215  | C3 miss:  7442
+RAM hit: 6443  | RAM miss: 999
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 0.25% | MISS: 99.75%
+Cache C2  | HIT: 71.07% | MISS: 28.93%
+Cache C3  | HIT: 14.03% | MISS: 85.97%
+Cache RAM | HIT: 86.58% | MISS: 13.42%
+HD        | HIT: 999 | MISS: 0%
+Total     | HIT: 29001 | MISS: 47022
+#Done!
+#Tempo de execução: 0.2 minutos
+File: ./instructions/INST_10_70   M4
+-------------------------------------------------------------
+FIM
+Custo total do programa: 176858700
+Hit e Misses do programa:
+C1 hit:  843  | C1 miss:  29157
+C2 hit:  20571  | C2 miss:  8586
+C3 hit:  642  | C3 miss:  7944
+RAM hit: 6945  | RAM miss: 999
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 2.81% | MISS: 97.19%
+Cache C2  | HIT: 70.55% | MISS: 29.45%
+Cache C3  | HIT: 7.48% | MISS: 92.52%
+Cache RAM | HIT: 87.42% | MISS: 12.58%
+HD        | HIT: 999 | MISS: 0%
+Total     | HIT: 29001 | MISS: 46686
+#Done!
+#Tempo de execução: 0.2 minutos
+File: ./instructions/INST_10_70   M5
+-------------------------------------------------------------
+
+
+
+
+-------------------------------------------------------------
+FIM
+Custo total do programa: 164719900
+Hit e Misses do programa:
+C1 hit:  61  | C1 miss:  29939
+C2 hit:  87  | C2 miss:  29852
+C3 hit:  24175  | C3 miss:  5677
+RAM hit: 4680  | RAM miss: 997
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 0.2% | MISS: 99.8%
+Cache C2  | HIT: 0.29% | MISS: 99.71%
+Cache C3  | HIT: 80.98% | MISS: 19.02%
+Cache RAM | HIT: 82.44% | MISS: 17.56%
+HD        | HIT: 997 | MISS: 0%
+Total     | HIT: 29003 | MISS: 66465
+#Done!
+#Tempo de execução: 0.16 minutos
+File: ./instructions/INST_10_80   M1
+-------------------------------------------------------------
+FIM
+Custo total do programa: 140599700
+Hit e Misses do programa:
+C1 hit:  24198  | C1 miss:  5802
+C2 hit:  383  | C2 miss:  5419
+C3 hit:  691  | C3 miss:  4728
+RAM hit: 3731  | RAM miss: 997
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 80.66% | MISS: 19.34%
+Cache C2  | HIT: 6.6% | MISS: 93.4%
+Cache C3  | HIT: 12.75% | MISS: 87.25%
+Cache RAM | HIT: 78.91% | MISS: 21.09%
+HD        | HIT: 997 | MISS: 0%
+Total     | HIT: 29003 | MISS: 16946
+#Done!
+#Tempo de execução: 0.14 minutos
+File: ./instructions/INST_10_80   M2
+-------------------------------------------------------------
+FIM
+Custo total do programa: 136624600
+Hit e Misses do programa:
+C1 hit:  104  | C1 miss:  29896
+C2 hit:  24386  | C2 miss:  5510
+C3 hit:  1425  | C3 miss:  4085
+RAM hit: 3088  | RAM miss: 997
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 0.35% | MISS: 99.65%
+Cache C2  | HIT: 81.57% | MISS: 18.43%
+Cache C3  | HIT: 25.86% | MISS: 74.14%
+Cache RAM | HIT: 75.59% | MISS: 24.41%
+HD        | HIT: 997 | MISS: 0%
+Total     | HIT: 29003 | MISS: 40488
+#Done!
+#Tempo de execução: 0.16 minutos
+File: ./instructions/INST_10_80   M3
+-------------------------------------------------------------
+FIM
+Custo total do programa: 146195400
+Hit e Misses do programa:
+C1 hit:  61  | C1 miss:  29939
+C2 hit:  24176  | C2 miss:  5763
+C3 hit:  734  | C3 miss:  5029
+RAM hit: 4032  | RAM miss: 997
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 0.2% | MISS: 99.8%
+Cache C2  | HIT: 80.75% | MISS: 19.25%
+Cache C3  | HIT: 12.74% | MISS: 87.26%
+Cache RAM | HIT: 80.17% | MISS: 19.83%
+HD        | HIT: 997 | MISS: 0%
+Total     | HIT: 29003 | MISS: 41728
+#Done!
+#Tempo de execução: 0.15 minutos
+File: ./instructions/INST_10_80   M4
+-------------------------------------------------------------
+FIM
+Custo total do programa: 149293100
+Hit e Misses do programa:
+C1 hit:  104  | C1 miss:  29896
+C2 hit:  24169  | C2 miss:  5727
+C3 hit:  386  | C3 miss:  5341
+RAM hit: 4344  | RAM miss: 997
+Interrupções  | Internas: 0 | Externas: 0
+Cache C1  | HIT: 0.35% | MISS: 99.65%
+Cache C2  | HIT: 80.84% | MISS: 19.16%
+Cache C3  | HIT: 6.74% | MISS: 93.26%
+Cache RAM | HIT: 81.33% | MISS: 18.67%
+HD        | HIT: 997 | MISS: 0%
+Total     | HIT: 29003 | MISS: 41961
+#Done!
+#Tempo de execução: 0.15 minutos
+File: ./instructions/INST_10_80   M5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
