@@ -1,0 +1,9 @@
+gcc -c jokempo.c
+
+gcc -c players.c
+
+gcc -c moves.c
+
+gcc -c main.c
+
+gcc -o exec jokempo.o players.o moves.o main.o

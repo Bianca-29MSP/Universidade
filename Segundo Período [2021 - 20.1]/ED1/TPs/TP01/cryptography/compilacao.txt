@@ -1,0 +1,5 @@
+gcc -c crypto.c
+
+gcc -c main.c
+
+gcc -o exec crypto.o main.o

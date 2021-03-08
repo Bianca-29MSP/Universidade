@@ -1,0 +1,5 @@
+gcc -c recursividade.c
+
+gcc -c main.c
+
+gcc -o exec recursividade.o main.o

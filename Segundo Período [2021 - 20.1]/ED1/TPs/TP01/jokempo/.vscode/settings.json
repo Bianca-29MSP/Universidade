@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "stdlib.h": "c",
+    "jokempo.h": "c",
+    "moves.h": "c"
+  }
+}

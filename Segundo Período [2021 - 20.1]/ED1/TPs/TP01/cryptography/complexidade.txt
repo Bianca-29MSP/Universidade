@@ -1,0 +1,28 @@
+Função fistStep()
+
+	n = lenght
+        | 0           n = -1
+T(n) =  |
+        | 1 + T(n-1)  n >= 0
+		
+	=> O(n)
+
+
+Função secondyStep()
+
+        | 0           n = -1
+T(n) =  |
+        | 1 + T(n-1)  n >= 0
+	
+	=> O(n)
+
+Função lastStep()
+
+	
+	n = lenght / 2
+        | 0           (lenght > n)
+T(n) =  |
+        | 1 + T(n+1)  (lenght <= n)
+
+	=>O(n)
+

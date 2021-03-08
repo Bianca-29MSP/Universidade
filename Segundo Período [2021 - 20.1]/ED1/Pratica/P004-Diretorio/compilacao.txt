@@ -1,0 +1,7 @@
+gcc -c arquivo.c
+
+gcc -c diretorio.c
+
+gcc -c main.c
+
+gcc -o exec arquivo.o diretorio.o main.o

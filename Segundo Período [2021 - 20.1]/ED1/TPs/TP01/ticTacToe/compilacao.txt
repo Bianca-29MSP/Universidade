@@ -1,0 +1,5 @@
+gcc -c ticTacToe.c
+
+gcc -c main.c
+
+gcc -o exec ticTacToe.o main.o
