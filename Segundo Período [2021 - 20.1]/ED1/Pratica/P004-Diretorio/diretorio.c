@@ -41,7 +41,11 @@ void dir_set_name(Diretorio *diretorio, char *nome)
 
 void dir_free(Diretorio **diretorio)
 {
-  file_free(&(*diretorio)->arquivos);
+  for (int i = 0; i < (*diretorio)->qtd_arquivos; ++i)
+  {
+    free_mem_file(&((*diretorio)->arquivos[i]));
+  }
+  free((*diretorio)->arquivos);
   free(*diretorio);
   *diretorio = NULL;
 }

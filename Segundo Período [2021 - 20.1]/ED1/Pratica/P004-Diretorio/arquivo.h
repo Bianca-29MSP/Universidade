@@ -12,7 +12,7 @@ Arquivo *file_set_values(char *nome, char *extensao, float tamanho);
 
 Arquivo **file_create_array(int n);
 
-void file_free(Arquivo ***arqv);
+void file_free(Arquivo **arqv);
 
 char *file_get_name(Arquivo *arqv);
 

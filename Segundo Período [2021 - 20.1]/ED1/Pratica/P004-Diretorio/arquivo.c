@@ -35,11 +35,10 @@ Arquivo **file_create_array(int n)
   return aux;
 }
 
-void file_free(Arquivo ***arqv)
+void file_free(Arquivo **arqv)
 {
-  free(**arqv);
-  **arqv = NULL;
-  //printf("%p\n", **arqv);
+  free(*arqv);
+  *arqv = NULL;
 }
 
 char *file_get_name(Arquivo *arqv)

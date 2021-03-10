@@ -1,0 +1,9 @@
+gcc -c lista.c
+
+gcc -c lista_vetor.c
+
+gcc -c main.c
+
+gcc lista.o main.o -o exec
+
+gcc lista_vetor.c main.c -o exec
