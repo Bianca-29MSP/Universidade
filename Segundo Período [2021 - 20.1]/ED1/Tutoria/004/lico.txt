@@ -1,0 +1,128 @@
+#include "stdlib.h"
+#include "stdio.h"
+#include "string.h"
+#include "lista.h"
+
+typedef struct listaNo ListaNo;
+
+struct lista
+{
+  ListaNo *prim;
+};
+
+struct pessoa
+{
+  char nome[100];
+  int idade;
+};
+
+struct listaNo
+{
+  Pessoa info;
+  ListaNo *prox;
+};
+
+Lista *lst_cria()
+{
+  Lista *auxL = (Lista *)malloc(sizeof(Lista));
+  auxL->prim = NULL;
+  return auxL;
+}
+
+void lst_imprime(Lista *l)
+{
+  for (ListaNo *lNo = l->prim; lNo != NULL; lNo = lNo->prox)
+    printf("%s %d\n", lNo->info.nome, lNo->info.idade);
+}
+
+int lst_pertence(Lista *l, char *nome)
+{
+  for (ListaNo *lNo = l->prim; lNo != NULL; lNo = lNo->prox)
+    if (!strcmp(nome, lNo->info.nome))
+    {
+      printf("%s %d\n", lNo->info.nome, lNo->info.idade);
+      return 1;
+    }
+
+  return -1;
+}
+
+void lst_insere_inicio(Lista *l, char *nome, int idade)
+{
+  ListaNo *ant = NULL;
+  ListaNo *prox = l->prim;
+
+  ListaNo *novoNo = (ListaNo *)malloc(sizeof(ListaNo));
+  strcpy(novoNo->info.nome, nome);
+  novoNo->info.idade = idade;
+
+  if (prox == NULL)
+  {
+    novoNo->prox = l->prim;
+    l->prim = novoNo;
+  }
+  else
+  {
+    ant = prox;
+    novoNo->prox = ant;
+    l->prim = novoNo;
+  }
+}
+
+void lst_insere_fim(Lista *l, char *nome, int idade)
+{
+  ListaNo *novoNo = (ListaNo *)malloc(sizeof(ListaNo));
+  strcpy(novoNo->info.nome, nome);
+  novoNo->info.idade = idade;
+
+  ListaNo *lNo = l->prim;
+  if (lNo == NULL)
+  {
+    novoNo->prox = l->prim;
+    l->prim = novoNo;
+    return;
+  }
+
+  ListaNo *aux = NULL;
+  for (lNo = l->prim; lNo != NULL; lNo = lNo->prox)
+    aux = lNo;
+  aux->prox = novoNo;
+}
+
+void lst_retira(Lista *l, char *nome, int idade)
+{
+  ListaNo *ant = NULL;
+  ListaNo *prox = l->prim;
+
+  while (prox != NULL && strcmp(nome, prox->info.nome) && prox->info.idade != idade)
+  {
+    ant = prox;
+    prox = prox->prox;
+  }
+
+  if (prox != NULL)
+  {
+    if (ant == NULL)
+    {
+      l->prim = prox->prox;
+    }
+    else
+    {
+      ant->prox = prox->prox;
+    }
+  }
+
+  free(prox);
+}
+
+void lst_liberar(Lista *l)
+{
+  ListaNo *pNo = l->prim;
+  while (pNo != NULL)
+  {
+    ListaNo *auxNo = pNo->prox;
+    free(pNo);
+    pNo = auxNo;
+  }
+  free(l);
+}

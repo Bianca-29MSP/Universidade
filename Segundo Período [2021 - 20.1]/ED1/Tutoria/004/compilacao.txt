@@ -1,0 +1,22 @@
+gcc -c pessoa.c
+
+gcc -c lista.c
+
+gcc -c main.c
+
+gcc pessoa.o lista.o main.o -o exec
+
+./exec
+
+1
+maria 22
+1
+taylor 15
+1
+diana 2
+2
+hugo 55
+6
+3
+paulo 8
+6

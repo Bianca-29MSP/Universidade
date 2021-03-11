@@ -89,14 +89,15 @@ void lst_retira(Lista *l, int valor)
   free(prox);
 }
 
-void lst_liberar(Lista *l)
+void lst_liberar(Lista **l)
 {
-  ListaNo *pNo = l->prim;
+  ListaNo *pNo = (*l)->prim;
   while (pNo != NULL)
   {
     ListaNo *auxNo = pNo->prox;
     free(pNo);
     pNo = auxNo;
   }
-  free(l);
+  free(*l);
+  *l = NULL;
 }
