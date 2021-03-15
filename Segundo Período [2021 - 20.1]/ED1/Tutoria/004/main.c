@@ -1,6 +1,11 @@
-#include "stdlib.h"
-#include "stdio.h"
-#include "string.h"
+/*
+* Enya Luísa Gomes dos Santos
+* 19.2.42.01
+*/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include "lista.h"
 
 int main()
@@ -57,8 +62,8 @@ int main()
     }
   }
 
-  // if (count == 0)
-  //   lst_liberar(pessoas);
+  if (count == 0)
+    lst_liberar(&pessoas);
 
   return 0;
 }

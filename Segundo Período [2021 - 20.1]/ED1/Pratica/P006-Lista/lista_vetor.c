@@ -1,8 +1,8 @@
 #include "lista.h"
-#include "stdlib.h"
-#include "stdio.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-#define MAXTAM 100
+#define MAXTAM 1000
 
 typedef struct lista_vetor ListaVetor;
 
@@ -128,9 +128,10 @@ void lst_retira(Lista *l, int valor)
   }
 }
 
-void lst_liberar(Lista *l)
+void lst_liberar(Lista **l)
 {
-  ListaVetor *aux = l->prim;
+  ListaVetor *aux = (*l)->prim;
   free(aux);
-  free(l);
+  free(*l);
+  *l = NULL;
 }

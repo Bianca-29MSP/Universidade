@@ -1,0 +1,16 @@
+/*Escreva uma função que tem como parâmetros de entrada três números: dia, mês e ano, representando uma data, e modifica esses inteiros
+de forma que eles representem o dia seguinte.*/
+
+#include <stdio.h>
+
+void diaSeguinte(int *dia, int *mes, int *ano);
+
+int main(){
+  int dia, mes, ano;
+  scanf("%d %d %d", &dia, &mes, &ano);
+
+  diaSeguinte(&dia, &mes, &ano);
+
+  printf("%d/%d/%d\n", dia, mes, ano);
+  return 0;
+}

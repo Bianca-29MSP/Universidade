@@ -1,6 +1,6 @@
 #include "lista.h"
-#include "stdlib.h"
-#include "stdio.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 int main()
 {
@@ -30,7 +30,7 @@ int main()
       lst_imprime(l);
       break;
     case 6:
-      lst_liberar(l);
+      lst_liberar(&l);
       count++;
       break;
     default:
@@ -40,6 +40,6 @@ int main()
   }
 
   if (count == 0) //Garantindo o free
-    lst_liberar(l);
+    lst_liberar(&l);
   return 0;
 }

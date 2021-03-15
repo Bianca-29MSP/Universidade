@@ -13,6 +13,6 @@ void lst_insere_ordenado(Lista *, int);
 
 void lst_retira(Lista *, int);
 
-void lst_liberar(Lista *);
+void lst_liberar(Lista **);
 
 #endif

@@ -1,6 +1,11 @@
-#include "stdlib.h"
-#include "stdio.h"
-#include "string.h"
+/*
+* Enya Luísa Gomes dos Santos
+* 19.2.42.01
+*/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include "pessoa.h"
 
 struct pessoa
