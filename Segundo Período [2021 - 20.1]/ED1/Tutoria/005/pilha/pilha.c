@@ -1,11 +1,11 @@
 /*
-* pilha_dinamica.c
-* Pilha alocada dinamicamente
+* pilha.c
+* Enya L. G. Santos
+* 19.2.4201
 */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include "pilha.h"
 
 typedef struct pilhaNo PilhaNo;
@@ -21,7 +21,7 @@ struct pilhaNo
   PilhaNo *prox;
 };
 
-Pilha *inicializaPilha()
+Pilha *pilhaAloca()
 {
   Pilha *aux = (Pilha *)malloc(sizeof(Pilha));
   if (aux == NULL)
@@ -33,36 +33,48 @@ Pilha *inicializaPilha()
   return aux;
 }
 
-void empilha(Pilha *p, int dado)
-{
+void pilhaPush(Pilha *p, int x)
+{ //Função que insere o valor inteiro na pilha
   PilhaNo *ptr = (PilhaNo *)malloc(sizeof(PilhaNo));
   if (ptr == NULL)
   {
     printf("Memória insuficiente.\n");
     exit(0);
   }
-  ptr->dado = dado;
+  ptr->dado = x;
   ptr->prox = p->top;
   p->top = ptr;
 }
 
-int desempilha(Pilha *p)
-{
-  int aux;
+void pilhaPop(Pilha *p, int *px)
+{ //Retira um nó da pilha e retorna o valor inteiro px
   PilhaNo *ptr = p->top;
   if (ptr == NULL)
   {
     printf("Pilha vazia.\n");
-    return -1;
+    return;
   }
   p->top = ptr->prox;
   ptr->prox = NULL;
-  aux = ptr->dado;
+  *px = ptr->dado;
   free(ptr);
-  return aux;
 }
 
-void imprimePilha(Pilha *p)
+void pilhaUnstack(Pilha *p)
+{ //Desempilha completamente a pilha
+  int aux;
+  PilhaNo *ptr = p->top;
+  while (ptr != NULL)
+  {
+    pilhaPop(p, &aux);
+    ptr = p->top;
+    printf("%d ", aux);
+  }
+  printf("\n");
+  free(ptr);
+}
+
+void pilhaRead(Pilha *p)
 {
   PilhaNo *ptr = p->top;
   if (ptr == NULL)
@@ -76,17 +88,5 @@ void imprimePilha(Pilha *p)
     printf("%d ", ptr->dado);
     ptr = ptr->prox;
   }
-  printf("\n");
-}
-
-void pilhaUnstack(Pilha *p)
-{ //Desempilha completamente a pilha
-  PilhaNo *ptr = p->top;
-  while (ptr != NULL)
-  {
-    printf("%d ", desempilha(p));
-    ptr = p->top;
-  }
-  free(ptr);
   printf("\n");
 }

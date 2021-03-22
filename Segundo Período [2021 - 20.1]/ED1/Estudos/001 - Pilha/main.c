@@ -8,14 +8,13 @@
 
 void systemPause()
 {
-  printf("\nPressione ENTER para continuar... \n");
+  printf("\nPressione qualquer tecla para continuar... \n");
   getchar();
 }
 
 int main()
 {
   Pilha *p = inicializaPilha();
-  int n;
 
   imprimePilha(p);
   systemPause();
@@ -27,6 +26,10 @@ int main()
 
   imprimePilha(p);
   systemPause();
+
+  pilhaUnstack(p);
+  systemPause();
+  imprimePilha(p);
 
   for (int i = 0; i < 2; i++)
   {

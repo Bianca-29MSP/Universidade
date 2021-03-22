@@ -17,4 +17,6 @@ int desempilha(Pilha *);
 
 void imprimePilha(Pilha *);
 
+void pilhaUnstack(Pilha *p);
+
 #endif
