@@ -1,3 +1,0 @@
-Sabe-se que o TAD Lista implementado anteriormente é uma lista encadeada. Com esta
-informação, responda: a implementação de uma fila usando as funções disponíveis na TAD Lista
-acima é eficiente? Justifique sua resposta.

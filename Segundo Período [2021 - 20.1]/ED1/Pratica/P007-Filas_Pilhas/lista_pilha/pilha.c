@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "pilha.h"
 #include "lista.h"
 

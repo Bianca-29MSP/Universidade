@@ -1,15 +1,14 @@
-#define N 500
 
 typedef int Item;
 
 typedef struct pilha Pilha;
 
-void Pilha_Inicia(Pilha *pLista);
+void Pilha_Inicia(Pilha **pPilha);
 
-int Pilha_EhVazia(Pilha *pLista);
+int Pilha_EhVazia(Pilha *pPilha);
 
-int Pilha_InsereP(Pilha *pLista, int p, Item x);
+int Pilha_Push(Pilha *pPilha, Item x);
 
-Item Pilha_RetiraP(Pilha *pLista, int p, Item *pX);
+Item Pilha_Pop(Pilha *pPilha);
 
-int Pilha_Tamanho(Pilha *pLista);
+int Pilha_Tamanho(Pilha *pPilha);
