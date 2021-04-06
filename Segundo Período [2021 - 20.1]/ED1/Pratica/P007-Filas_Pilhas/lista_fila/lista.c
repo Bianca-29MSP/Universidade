@@ -42,6 +42,11 @@ void Lista_Insere(Lista *pLista, int p, Item x)
     pLista->prim = nNo;
     pLista->tamanho += 1;
   }
+  else if (p == 0)
+  {
+    nNo->prox = pLista->prim;
+    pLista->prim = nNo;
+  }
   else
   {
     ListaNo *anterior = pLista->prim;

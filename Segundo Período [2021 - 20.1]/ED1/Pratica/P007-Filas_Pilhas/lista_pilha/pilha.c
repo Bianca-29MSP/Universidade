@@ -23,14 +23,15 @@ int Pilha_EhVazia(Pilha *pPilha)
 void Pilha_Push(Pilha *pPilha, Item x)
 {
   Lista_Insere(pPilha->lista, pPilha->topo, x);
-  pPilha->topo = Lista_Tamanho(pPilha->lista);
+  //Lista_Insere(pPilha->lista, pPilha->topo, x);
+  //pPilha->topo = Lista_Tamanho(pPilha->lista);
 }
 
 int Pilha_Pop(Pilha *pPilha, Item *pX)
 {
   int retorno = Lista_Remove(pPilha->lista, pPilha->topo, pX);
-  if (retorno)
-    pPilha->topo = Lista_Tamanho(pPilha->lista);
+  // if (retorno)
+  //   pPilha->topo = Lista_Tamanho(pPilha->lista);
   return retorno;
 }
 

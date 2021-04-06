@@ -40,7 +40,11 @@ void Lista_Insere(Lista *pLista, int p, Item x)
   if (Lista_EhVazia(pLista) && p == 0)
   {
     pLista->prim = nNo;
-    pLista->tamanho += 1;
+  }
+  else if (p == 0)
+  {
+    nNo->prox = pLista->prim;
+    pLista->prim = nNo;
   }
   else
   {
@@ -51,8 +55,9 @@ void Lista_Insere(Lista *pLista, int p, Item x)
 
     nNo->prox = anterior->prox;
     anterior->prox = nNo;
-    pLista->tamanho += 1;
   }
+
+  pLista->tamanho += 1;
 }
 
 int Lista_Remove(Lista *pLista, int p, Item *pX)
