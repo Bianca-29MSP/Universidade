@@ -1,0 +1,1 @@
+void insertionsort(int *vet, int n);

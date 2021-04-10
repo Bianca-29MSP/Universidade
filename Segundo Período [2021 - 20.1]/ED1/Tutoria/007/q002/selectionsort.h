@@ -1,0 +1,1 @@
+void selectionsort(int *vet, int n);

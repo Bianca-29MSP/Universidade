@@ -1,4 +1,6 @@
-typedef int ITEM;
+#include <stdlib.h>
+#include <stdio.h>
+#include "mergesort.h"
 
 void mergesort(ITEM *v, int ini, int fim)
 {
@@ -15,21 +17,19 @@ void merge(ITEM *vet, int ini, int meio, int fim)
 {
   int i, j, k;
   int size_w = fim - ini;
-  ITEM *w = alocaVetor(size_w);
+  ITEM *w = aluno_AlocaVetor(size_w);
   i = ini;
   j = meio;
   k = 0;
 
-  //Armazena de forma ordenada o vetor vet em w até que não haja mais elemento em um dos dois lados do vetor
   while (i < meio && j < fim)
   {
-    if (vet[i] >= vet[j])
+    if (aluno_getMedia(vet[i]) >= aluno_getMedia(vet[j]))
       w[k++] = vet[i++];
     else
       w[k++] = vet[j++];
   }
 
-  //Armazena os valores restantes de vet em w
   while (i < meio)
   {
     w[k++] = vet[i++];
@@ -39,7 +39,6 @@ void merge(ITEM *vet, int ini, int meio, int fim)
     w[k++] = vet[j++];
   }
 
-  //Copia os valores ordenados que está em w para vet
   for (i = ini; i < fim; i++)
     vet[i] = w[i - ini];
 

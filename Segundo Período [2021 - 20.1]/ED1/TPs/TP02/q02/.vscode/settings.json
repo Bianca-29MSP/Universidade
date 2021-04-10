@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "*.md": "bat",
+    "pilha_arvore.h": "c"
+  }
+}

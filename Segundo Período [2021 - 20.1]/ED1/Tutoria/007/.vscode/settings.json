@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.md": "bat",
+    "insertionsort.h": "c",
+    "time.h": "c"
+  }
+}
