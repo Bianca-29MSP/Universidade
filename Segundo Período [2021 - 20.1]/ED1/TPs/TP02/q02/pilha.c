@@ -70,6 +70,7 @@ void Pilha_libera(Pilha **pPilha)
 {
   while ((*pPilha)->tam > 0)
     Pilha_Pop(*pPilha);
+  free((*pPilha)->itens);
   free(*pPilha);
   *pPilha = NULL;
 }

@@ -51,12 +51,12 @@ void print2D(struct Node *root)
   print2DUtil(root, 0);
 }
 
-void exibirArvore2(ArvoreNo *raiz, int level)
+void exibirArvore2(struct Node *raiz, int level)
 {
   if (raiz != NULL)
   {
-    printf("    %c\n", raiz->chave);
-    if (raiz->esq != NULL && raiz->dir != NULL)
+    printf("    %c\n", raiz->data);
+    if (raiz->left != NULL && raiz->right != NULL)
     {
       putchar('+');
       for (int i = 0; i < (4 * 2); i++)
@@ -66,8 +66,8 @@ void exibirArvore2(ArvoreNo *raiz, int level)
       putchar('+');
       printf("\n");
     }
-    exibirArvore(raiz->esq, level + 1);
-    exibirArvore(raiz->dir, level + 1);
+    exibirArvore(raiz->left, level + 1);
+    exibirArvore(raiz->right, level + 1);
   }
 }
 

@@ -5,62 +5,99 @@
 #include "pilha.h"
 #include "pilha_arvore.h"
 #include "arvore.h"
+#include "arquivo.h"
+
+//Erro => 5 * (6 - 4 / 2)
+//        3*(6+3)-8/(2+2)
+//        7 * (2 + 2) / 7
 
 #define MAXTAM 100
 
-void trataString(char *expressao);
+ArvoreNo *geraSubarvore(char *inf, int ini, int fim);
 
-ArvoreNo *constroiSubarvore(char *inf, int ini, int fim);
+void geraArvore(char *expressao);
 
-int primeiroOperador(char *expressao, int ini, int fim);
+void trataString(char *expressao, int n);
+
+int contemEspaco(char *expressao, int n);
+
+int operadorPrincipal(char *expressao, int ini, int fim);
 
 int ehOperador(char c);
 
 int ehOperando(char c);
 
-int calcula(ArvoreNo **raiz);
+int calculaArvore(ArvoreNo **raiz);
 
 int main()
 {
+  int op;
   char expressao[MAXTAM];
 
-  scanf("\n%100[^\n]s", expressao);
+  printf("1 - Digitar expressao\n2 - Ler expressão(ões) através de um arquivo .txt [expressoes.txt]\n");
+  scanf("%d", &op);
 
-  trataString(expressao);
+  if (op == 1)
+  {
+    scanf("\n%100[^\n]s", expressao);
+    geraArvore(expressao);
+  }
+  else if (op == 2)
+  {
+    int nExp;
+    char **expressoes = leArquivo(&nExp);
 
-  int pOperador = primeiroOperador(expressao, 0, strlen(expressao));
-  ArvoreNo *raiz = criaNovoNo(expressao[pOperador], pOperador);
-
-  ArvoreNo *noEsq = constroiSubarvore(expressao, 0, pOperador - 1);
-  raiz = adiciona(raiz, noEsq);
-
-  ArvoreNo *noDir = constroiSubarvore(expressao, pOperador + 1, strlen(expressao));
-  raiz = adiciona(raiz, noDir);
-
-  exibirArvore(raiz);
-  printf("\n");
-
-  int resultado = calcula(&raiz);
-  printf("%d\n", resultado);
-
-  arv_libera(&raiz);
+    for (int i = 0; i < nExp; i++)
+      geraArvore(expressoes[i]);
+  }
 
   return 0;
 }
 
-ArvoreNo *constroiSubarvore(char *exp, int ini, int fim)
+void geraArvore(char *expressao)
 {
-  int n = strlen(exp);
-  PilhaArvore *pRaizes = PilhaArvore_Inicia(n);
+  int n = strlen(expressao);
+
+  trataString(expressao, n);
+
+  n = strlen(expressao);
+
+  int pOperador = operadorPrincipal(expressao, 0, n);
+  ArvoreNo *raiz = criaNovoNo(expressao[pOperador], pOperador);
+  //printf("$ =>%d\n", pOperador);
+
+  ArvoreNo *noEsq = geraSubarvore(expressao, 0, pOperador - 1);
+  raiz = adiciona(raiz, noEsq);
+
+  ArvoreNo *noDir = geraSubarvore(expressao, pOperador + 1, n);
+  raiz = adiciona(raiz, noDir);
+
+  //exibirArvore(raiz);
+  //exibirArvore2(raiz);
+  // printf("\n");
+
+  //printf("%s\n", expressao);
+  int resultado = calculaArvore(&raiz);
+  printf("%d\n", resultado);
+
+  arv_libera(&raiz);
+}
+
+ArvoreNo *geraSubarvore(char *exp, int ini, int fim)
+{
+  PilhaArvore *pRaizes = PilhaArvore_Inicia((fim - ini + 1));
 
   int parenteseOpen = 0;
   int preferencia = 0;
+  int tinhaPreferencia = 0;
 
   for (int i = ini; i <= fim; i++)
   {
     if (exp[i] == '(')
     {
       parenteseOpen += 1;
+      if (preferencia == 1)
+        tinhaPreferencia = 1;
       preferencia = 0;
     }
     else if (exp[i] == ')')
@@ -72,17 +109,31 @@ ArvoreNo *constroiSubarvore(char *exp, int ini, int fim)
         no = adiciona(no, folha);
         PilhaArvore_Push(pRaizes, no);
       }
+      if (tinhaPreferencia == 1)
+        preferencia = 1;
       parenteseOpen -= 1;
     }
     else if (ehOperador(exp[i]))
     {
+      if (preferencia == 1)
+      {
+        if (PilhaArvore_Tamanho(pRaizes) > 1)
+        {
+          ArvoreNo *folha = PilhaArvore_Pop(pRaizes);
+          ArvoreNo *no = PilhaArvore_Pop(pRaizes);
+          no = adiciona(no, folha);
+          PilhaArvore_Push(pRaizes, no);
+        }
+        preferencia = 0;
+      }
+
       ArvoreNo *no = criaNovoNo(exp[i], i); /*Cria subarvore */
       if (!PilhaArvore_EhVazia(pRaizes))
       {
         no = adiciona(no, PilhaArvore_Pop(pRaizes));
       }
       PilhaArvore_Push(pRaizes, no);
-      preferencia = 0;
+
       if (exp[i] == '*' || exp[i] == '/')
         preferencia = 1;
     }
@@ -98,7 +149,7 @@ ArvoreNo *constroiSubarvore(char *exp, int ini, int fim)
       else
       {
         PilhaArvore_Push(pRaizes, folha);
-        preferencia = 0;
+        //preferencia = 0;
       }
     }
   }
@@ -116,24 +167,39 @@ ArvoreNo *constroiSubarvore(char *exp, int ini, int fim)
   ArvoreNo *aux = PilhaArvore_Pop(pRaizes);
 
   PilhaArvore_Libera(&pRaizes);
-  //9 * (6 + 8) - 9 / ( 5 + 4)
 
   return aux;
 }
 
-void trataString(char *expressao)
+int contemEspaco(char *expressao, int n)
 {
-  char *aux = malloc(strlen(expressao) * sizeof(char));
-  for (int j = 0, i = 0; i < strlen(expressao); i++)
+  for (int i = 0; i < n; i++)
+    if (expressao[i] == ' ')
+      return 1;
+
+  return 0;
+}
+
+void trataString(char *expressao, int n)
+{
+  /* verifica se há espaços */
+  if (contemEspaco(expressao, n))
   {
-    if (expressao[i] != ' ')
+    char *aux = calloc(n, sizeof(char));
+
+    for (int j = 0, i = 0; i < n; i++)
     {
-      aux[j] = expressao[i];
-      j++;
+      if (expressao[i] != ' ')
+      {
+        aux[j] = expressao[i];
+        j++;
+      }
     }
+
+    strcpy(expressao, aux);
+
+    free(aux);
   }
-  strcpy(expressao, aux);
-  free(aux);
 }
 
 int ehOperador(char c)
@@ -149,14 +215,20 @@ int ehOperando(char expressao)
 }
 
 /* Função que encontra o primeiro operador, aquele q será a raiz da arvore */
-int primeiroOperador(char *expressao, int ini, int fim)
+int operadorPrincipal(char *expressao, int ini, int fim)
 {
+  //5 * (6 - 4 / 2)
+
   int index = -1;
+
+  //printf("$ %d %d\n", ini, fim);
 
   if (ini == fim)
   {
-    return -1;
+    return ini;
   }
+  else if (ini + 1 == fim)
+    return ini - 1;
 
   if (expressao[0] == '(' || expressao[ini] == '(')
   { /* Caso a expressão comece com um parênteses */
@@ -190,9 +262,9 @@ int primeiroOperador(char *expressao, int ini, int fim)
     }
   }
   /* Até aqui, index é o primeiro operador encontrado */
-  if ((expressao[index] == '*' || expressao[index] == '/')) /* Respeitando  a precedência dos operadores */
+  if ((expressao[index] == '*' || expressao[index] == '/') && (index + 1) != fim) /* Respeitando  a precedência dos operadores */
   {
-    int aux = primeiroOperador(expressao, index + 1, fim);
+    int aux = operadorPrincipal(expressao, index + 1, fim);
     if (aux != -1)
       index = aux;
   }
@@ -200,7 +272,7 @@ int primeiroOperador(char *expressao, int ini, int fim)
   return index;
 }
 
-int calcula(ArvoreNo **raiz)
+int calculaArvore(ArvoreNo **raiz)
 {
   int nNos = numeroNos(*raiz);
 
@@ -217,5 +289,3 @@ int calcula(ArvoreNo **raiz)
 
   return result;
 }
-
-//9 * (6 + 8) - 9 / ( 5 + 4)

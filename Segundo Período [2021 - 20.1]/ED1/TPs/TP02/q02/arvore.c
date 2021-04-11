@@ -1,6 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include "arvore.h"
+
+/*https://laptrinhx.com/printing-pretty-ascii-trees-259794796/*/
+char depth[2056];
+int di;
 
 struct arvoreNo
 {
@@ -9,11 +14,13 @@ struct arvoreNo
   ArvoreNo *esq, *dir;
 };
 
+//arvoreInicializa
 ArvoreNo *inicializa()
 {
   return NULL;
 }
 
+//arvoreAdicionaNo
 ArvoreNo *adiciona(ArvoreNo *raiz, ArvoreNo *no)
 {
   if (raiz == NULL)
@@ -26,6 +33,7 @@ ArvoreNo *adiciona(ArvoreNo *raiz, ArvoreNo *no)
   return raiz;
 }
 
+//arvoreCriaNovoNo
 ArvoreNo *criaNovoNo(TIPOCHAVE ch, int prioridade)
 {
   ArvoreNo *nNo = (ArvoreNo *)malloc(sizeof(ArvoreNo));
@@ -36,6 +44,7 @@ ArvoreNo *criaNovoNo(TIPOCHAVE ch, int prioridade)
   return nNo;
 }
 
+//arvorePrintada
 void exibirArvore(ArvoreNo *raiz)
 {
   if (raiz != NULL)
@@ -48,6 +57,7 @@ void exibirArvore(ArvoreNo *raiz)
   }
 }
 
+//arvoreNumeroNos
 int numeroNos(ArvoreNo *raiz)
 {
   if (raiz == NULL)
@@ -55,6 +65,7 @@ int numeroNos(ArvoreNo *raiz)
   return (numeroNos(raiz->esq) + 1 + numeroNos(raiz->dir));
 }
 
+//arvoreCalculaExpressao
 int calculadora(char op, Pilha *pilha)
 {
   int valor1 = Pilha_Pop(pilha);
@@ -79,6 +90,7 @@ int calculadora(char op, Pilha *pilha)
   return 0;
 }
 
+//arvorePosOrdem
 void pos_ordem(ArvoreNo *raiz, Pilha *pilha)
 {
   if (raiz == NULL)
@@ -97,6 +109,7 @@ void pos_ordem(ArvoreNo *raiz, Pilha *pilha)
   }
 }
 
+//arvoreExibiRair
 TIPOCHAVE exibiRaiz(ArvoreNo *raiz)
 {
   if (raiz != NULL)
@@ -104,6 +117,7 @@ TIPOCHAVE exibiRaiz(ArvoreNo *raiz)
   return ' ';
 }
 
+//arvoreLibera
 void arv_libera(ArvoreNo **a)
 {
   if (!arv_vazia(*a))
@@ -114,8 +128,41 @@ void arv_libera(ArvoreNo **a)
     *a = NULL;
   }
 }
-//NoArv
+//arvoreEstaVazia
 int arv_vazia(ArvoreNo *a)
 {
   return a == NULL;
+}
+
+void Push(char c)
+{
+  depth[di++] = ' ';
+  depth[di++] = c;
+  depth[di++] = ' ';
+  depth[di++] = ' ';
+  depth[di] = 0;
+}
+
+void Pop()
+{
+  depth[di -= 4] = 0;
+}
+
+//arvorePrintadaGraficamente
+void exibirArvore2(ArvoreNo *raiz)
+{
+  printf("<%c> \n", raiz->chave);
+
+  if (raiz->esq)
+  {
+    printf("%s `--", depth);
+    Push('|');
+    exibirArvore2(raiz->esq);
+    Pop();
+
+    printf("%s `--", depth);
+    Push(' ');
+    exibirArvore2(raiz->dir);
+    Pop();
+  }
 }

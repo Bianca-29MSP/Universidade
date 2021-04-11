@@ -55,6 +55,7 @@ void PilhaArvore_Libera(PilhaArvore **pPilha)
 {
   while ((*pPilha)->tam > 0)
     PilhaArvore_Pop(*pPilha);
+  free((*pPilha)->itens);
   free(*pPilha);
   *pPilha = NULL;
 }

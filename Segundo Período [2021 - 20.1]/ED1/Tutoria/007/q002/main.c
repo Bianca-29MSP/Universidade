@@ -1,3 +1,8 @@
+/*
+*	ENYA L. G. DOS SANTOS
+*	19.2.4201
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

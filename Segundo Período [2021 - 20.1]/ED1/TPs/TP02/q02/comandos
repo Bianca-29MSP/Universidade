@@ -1,0 +1,17 @@
+gcc main.c pilha.c pilha_arvore.c arvore.c -g
+
+valgrind --leak-check=yes ./a.out
+
+gcc main.c pilha.c pilha_arvore.c arvore.c -o exec - Wall
+
+gcc pilha.c
+
+gcc arvore.c
+
+gcc pilha_arvore.c
+
+gcc main.c
+
+gcc -o exec main.o pilha.o pilha_arvore.o arvore.o
+
+
