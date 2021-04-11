@@ -1,9 +1,5 @@
 #include "pilha.h"
 
-#define true 1
-#define false 0
-
-// typedef int bool;
 typedef char TIPOCHAVE;
 
 typedef struct arvoreNo ArvoreNo;
@@ -12,22 +8,22 @@ typedef struct arvoreNo ArvoreNo;
 /* ARVORE INICIALIZA - FUNCAO RESPONSAVEL POR INICIALIZAR UMA ARVORE                */
 /* IN = NONE                                                             OUT = VOID */
 /*==================================================================================*/
-ArvoreNo *inicializa();
+ArvoreNo *arvoreInicializa();
 
-ArvoreNo *adiciona(ArvoreNo *raiz, ArvoreNo *no);
+ArvoreNo *arvoreAdicionaNo(ArvoreNo *, ArvoreNo *);
 
-ArvoreNo *criaNovoNo(TIPOCHAVE ch, int prioridade);
+ArvoreNo *arvoreCriaNovoNo(TIPOCHAVE, int);
 
-void exibirArvore(ArvoreNo *raiz);
+void arvorePrintSimples(ArvoreNo *);
 
-void pos_ordem(ArvoreNo *raiz, Pilha *pilha);
+void arvorePosOrdem(ArvoreNo *, Pilha *);
 
-int numeroNos(ArvoreNo *raiz);
+void arvoreLibera(ArvoreNo **);
 
-TIPOCHAVE exibiRaiz(ArvoreNo *raiz);
+int arvoreEhVazia(ArvoreNo *);
 
-void arv_libera(ArvoreNo **a);
+int arvoreNumeroNos(ArvoreNo *);
 
-int arv_vazia(ArvoreNo *a);
+void arvorePrintGrafico(ArvoreNo *);
 
-void exibirArvore2(ArvoreNo *raiz);
+void arvorePrintGraficoArquivo(ArvoreNo *, FILE *);

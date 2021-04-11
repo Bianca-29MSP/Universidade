@@ -3,54 +3,36 @@
 #include <string.h>
 
 #include "arvore_expressao.h"
-#include "arquivo.h"
 
 #define MAXTAM 100
 
 int main()
 {
-  int op;
   char expressao[MAXTAM];
 
-  printf("MENU\n1 - Digitar expressao\n2 - Ler expressão(ões) através de um arquivo .txt [expressoes.txt]\n");
+  int n, op;
+
+  printf("Número de expressões a serem lidas: ");
+  scanf("%d", &n);
+
+  printf("1 - Resultado(s) via terminal.\n2 - Resultado(s) via arquivo .txt\n3 - Resultado(s) em ambas opções.\n");
   scanf("%d", &op);
 
-  if (op == 1)
+  if (op == 2 || op == 3)
   {
-    int resultado;
-    int n;
-
-    printf("Número de expressões a serem lidas: ");
-    scanf("%d", &n);
-
-    for (int i = 0; i < n; i++)
+    FILE *arq = fopen("resultados.txt", "w");
+    if (arq == NULL)
     {
-      scanf("\n%100[^\n]s", expressao);
-
-      resultado = calculaArvExpressao(expressao);
-      printf("%s = %d\n", expressao, resultado);
-      if (n > 1 && i < (n - 1))
-        printf("--------------------------------------------------\n");
+      printf("Erro na abertura do arquivo.\n");
+      exit(1);
     }
+    fclose(arq);
   }
-  else if (op == 2)
+
+  for (int i = 0; i < n; i++)
   {
-    int n, resultado;
-    char **expressoes = leArquivo(&n);
-
-    criaArquivo(n);
-
-    for (int i = 0; i < n; i++)
-    {
-      resultado = calculaArvExpressao(expressoes[i]);
-      escreveResultado(expressoes[i], resultado);
-      printf("%s = %d\n", expressoes[i], resultado);
-      if (n > 1)
-        printf("--------------------------------------------------\n");
-      free(expressoes[i]);
-    }
-
-    free(expressoes);
+    scanf("\n%100[^\n]s", expressao);
+    calculaArvExpressao(expressao, op);
   }
 
   return 0;

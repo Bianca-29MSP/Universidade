@@ -14,27 +14,24 @@ struct arvoreNo
   ArvoreNo *esq, *dir;
 };
 
-//arvoreInicializa
-ArvoreNo *inicializa()
+ArvoreNo *arvoreInicializa()
 {
   return NULL;
 }
 
-//arvoreAdicionaNo
-ArvoreNo *adiciona(ArvoreNo *raiz, ArvoreNo *no)
+ArvoreNo *arvoreAdicionaNo(ArvoreNo *raiz, ArvoreNo *no)
 {
   if (raiz == NULL)
     return no;
   if (no->prioridade < raiz->prioridade)
-    raiz->esq = adiciona(raiz->esq, no);
+    raiz->esq = arvoreAdicionaNo(raiz->esq, no);
   else
-    raiz->dir = adiciona(raiz->dir, no);
+    raiz->dir = arvoreAdicionaNo(raiz->dir, no);
   /* Ignorando chave igual */
   return raiz;
 }
 
-//arvoreCriaNovoNo
-ArvoreNo *criaNovoNo(TIPOCHAVE ch, int prioridade)
+ArvoreNo *arvoreCriaNovoNo(TIPOCHAVE ch, int prioridade)
 {
   ArvoreNo *nNo = (ArvoreNo *)malloc(sizeof(ArvoreNo));
   nNo->esq = NULL;
@@ -44,28 +41,18 @@ ArvoreNo *criaNovoNo(TIPOCHAVE ch, int prioridade)
   return nNo;
 }
 
-//arvorePrintada
-void exibirArvore(ArvoreNo *raiz)
+void arvorePrintSimples(ArvoreNo *raiz)
 {
   if (raiz != NULL)
   {
     printf("%c", raiz->chave);
     printf("(");
-    exibirArvore(raiz->esq);
-    exibirArvore(raiz->dir);
+    arvorePrintSimples(raiz->esq);
+    arvorePrintSimples(raiz->dir);
     printf(")");
   }
 }
 
-//arvoreNumeroNos
-int numeroNos(ArvoreNo *raiz)
-{
-  if (raiz == NULL)
-    return 0;
-  return (numeroNos(raiz->esq) + 1 + numeroNos(raiz->dir));
-}
-
-//arvoreCalculaExpressao
 int calculadora(char op, Pilha *pilha)
 {
   int valor1 = Pilha_Pop(pilha);
@@ -90,13 +77,12 @@ int calculadora(char op, Pilha *pilha)
   return 0;
 }
 
-//arvorePosOrdem
-void pos_ordem(ArvoreNo *raiz, Pilha *pilha)
+void arvorePosOrdem(ArvoreNo *raiz, Pilha *pilha)
 {
   if (raiz == NULL)
     return;
-  pos_ordem(raiz->dir, pilha);
-  pos_ordem(raiz->esq, pilha);
+  arvorePosOrdem(raiz->dir, pilha);
+  arvorePosOrdem(raiz->esq, pilha);
 
   if (raiz->chave == '+' ||
       raiz->chave == '-' ||
@@ -109,29 +95,27 @@ void pos_ordem(ArvoreNo *raiz, Pilha *pilha)
   }
 }
 
-//arvoreExibiRair
-TIPOCHAVE exibiRaiz(ArvoreNo *raiz)
+void arvoreLibera(ArvoreNo **raiz)
 {
-  if (raiz != NULL)
-    return raiz->chave;
-  return ' ';
-}
-
-//arvoreLibera
-void arv_libera(ArvoreNo **a)
-{
-  if (!arv_vazia(*a))
+  if (!arvoreEhVazia(*raiz))
   {
-    arv_libera(&(*a)->esq); /* libera sae */
-    arv_libera(&(*a)->dir); /* libera sad */
-    free(*a);               /* libera raiz */
-    *a = NULL;
+    arvoreLibera(&(*raiz)->esq); /* libera sae */
+    arvoreLibera(&(*raiz)->dir); /* libera sad */
+    free(*raiz);                 /* libera raiz */
+    *raiz = NULL;
   }
 }
-//arvoreEstaVazia
-int arv_vazia(ArvoreNo *a)
+
+int arvoreEhVazia(ArvoreNo *raiz)
 {
-  return a == NULL;
+  return raiz == NULL;
+}
+
+int arvoreNumeroNos(ArvoreNo *raiz)
+{
+  if (raiz == NULL)
+    return 0;
+  return (arvoreNumeroNos(raiz->esq) + 1 + arvoreNumeroNos(raiz->dir));
 }
 
 void Push(char c)
@@ -148,8 +132,7 @@ void Pop()
   depth[di -= 4] = 0;
 }
 
-//arvorePrintadaGraficamente
-void exibirArvore2(ArvoreNo *raiz)
+void arvorePrintGrafico(ArvoreNo *raiz)
 {
   printf("<%c> \n", raiz->chave);
 
@@ -157,12 +140,31 @@ void exibirArvore2(ArvoreNo *raiz)
   {
     printf("%s `--", depth);
     Push('|');
-    exibirArvore2(raiz->esq);
+    arvorePrintGrafico(raiz->esq);
     Pop();
 
     printf("%s `--", depth);
     Push(' ');
-    exibirArvore2(raiz->dir);
+    arvorePrintGrafico(raiz->dir);
+    Pop();
+  }
+}
+
+void arvorePrintGraficoArquivo(ArvoreNo *raiz, FILE *arq)
+{
+
+  fprintf(arq, "<%c> \n", raiz->chave);
+
+  if (raiz->esq)
+  {
+    fprintf(arq, "%s `--", depth);
+    Push('|');
+    teste(raiz->esq, arq);
+    Pop();
+
+    fprintf(arq, "%s `--", depth);
+    Push(' ');
+    teste(raiz->dir, arq);
     Pop();
   }
 }

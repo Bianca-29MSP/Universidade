@@ -3,16 +3,51 @@
 #include <string.h>
 #include "arvore_expressao.h"
 
-int calculaArvExpressao(char *expressao)
+int calculaArvExpressao(char *expressao, int op)
 {
   ArvoreNo *raiz = geraArvoreExpressao(expressao);
 
-  exibirArvore2(raiz);
-  printf("\n");
+  int resultado = calculadoraArvore(&raiz);
 
-  int resultado = calculaArvore(&raiz);
+  if (op == 1)
+  {
+    printf("\n");
+    printf("%s = %d\n", expressao, resultado);
+    arvorePrintGrafico(raiz);
+    printf("---------------------------------------\n");
+  }
+  else if (op == 2)
+  {
+    FILE *arq = fopen("resultados.txt", "a");
+    if (arq == NULL)
+    {
+      printf("Erro na abertura do arquivo.\n");
+      exit(1);
+    }
+    fprintf(arq, "%s = %d\n", expressao, resultado);
+    arvorePrintGraficoArquivo(raiz, arq);
+    fclose(arq);
+  }
+  else if (op == 3)
+  {
+    printf("\n");
+    printf("%s = %d\n", expressao, resultado);
+    arvorePrintGrafico(raiz);
+    printf("---------------------------------------\n");
 
-  arv_libera(&raiz);
+    FILE *arq = fopen("resultados.txt", "a");
+    if (arq == NULL)
+    {
+      printf("Erro na abertura do arquivo.\n");
+      exit(1);
+    }
+    fprintf(arq, "%s = %d\n", expressao, resultado);
+    arvorePrintGraficoArquivo(raiz, arq);
+    fprintf(arq, "%s", "\n");
+    fclose(arq);
+  }
+
+  arvoreLibera(&raiz);
 
   return resultado;
 }
@@ -25,14 +60,14 @@ ArvoreNo *geraArvoreExpressao(char *expressao)
 
   n = strlen(expressao);
 
-  int pOperador = operadorPrincipal(expressao, 0, n);
-  ArvoreNo *raiz = criaNovoNo(expressao[pOperador], pOperador);
+  int pOperador = buscaOperadorPrincipal(expressao, 0, n);
+  ArvoreNo *raiz = arvoreCriaNovoNo(expressao[pOperador], pOperador);
 
   ArvoreNo *noEsq = geraSubarvoreExpressao(expressao, 0, pOperador - 1);
-  raiz = adiciona(raiz, noEsq);
+  raiz = arvoreAdicionaNo(raiz, noEsq);
 
   ArvoreNo *noDir = geraSubarvoreExpressao(expressao, pOperador + 1, n);
-  raiz = adiciona(raiz, noDir);
+  raiz = arvoreAdicionaNo(raiz, noDir);
 
   return raiz;
 }
@@ -60,7 +95,7 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim)
       {
         ArvoreNo *folha = PilhaArvore_Pop(pRaizes);
         ArvoreNo *no = PilhaArvore_Pop(pRaizes);
-        no = adiciona(no, folha);
+        no = arvoreAdicionaNo(no, folha);
         PilhaArvore_Push(pRaizes, no);
       }
       if (tinhaPreferencia == 1)
@@ -75,16 +110,16 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim)
         {
           ArvoreNo *folha = PilhaArvore_Pop(pRaizes);
           ArvoreNo *no = PilhaArvore_Pop(pRaizes);
-          no = adiciona(no, folha);
+          no = arvoreAdicionaNo(no, folha);
           PilhaArvore_Push(pRaizes, no);
         }
         preferencia = 0;
       }
 
-      ArvoreNo *no = criaNovoNo(exp[i], i); /*Cria subarvore */
+      ArvoreNo *no = arvoreCriaNovoNo(exp[i], i); /*Cria subarvore */
       if (!PilhaArvore_EhVazia(pRaizes))
       {
-        no = adiciona(no, PilhaArvore_Pop(pRaizes));
+        no = arvoreAdicionaNo(no, PilhaArvore_Pop(pRaizes));
       }
       PilhaArvore_Push(pRaizes, no);
 
@@ -93,11 +128,11 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim)
     }
     else if (ehOperando(exp[i]))
     {
-      ArvoreNo *folha = criaNovoNo(exp[i], i);
+      ArvoreNo *folha = arvoreCriaNovoNo(exp[i], i);
       if (preferencia == 1 && parenteseOpen == 0)
       {
         ArvoreNo *no = PilhaArvore_Pop(pRaizes);
-        no = adiciona(no, folha);
+        no = arvoreAdicionaNo(no, folha);
         PilhaArvore_Push(pRaizes, no);
       }
       else
@@ -112,7 +147,7 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim)
   {
     ArvoreNo *folha = PilhaArvore_Pop(pRaizes);
     ArvoreNo *no = PilhaArvore_Pop(pRaizes);
-    no = adiciona(no, folha);
+    no = arvoreAdicionaNo(no, folha);
     PilhaArvore_Push(pRaizes, no);
     i = PilhaArvore_Tamanho(pRaizes);
   }
@@ -167,7 +202,7 @@ int ehOperando(char expressao)
 }
 
 /* Função que encontra o primeiro operador, aquele q será a raiz da arvore */
-int operadorPrincipal(char *expressao, int ini, int fim)
+int buscaOperadorPrincipal(char *expressao, int ini, int fim)
 {
   int index = -1;
 
@@ -212,7 +247,7 @@ int operadorPrincipal(char *expressao, int ini, int fim)
   /* Até aqui, index é o primeiro operador encontrado */
   if ((expressao[index] == '*' || expressao[index] == '/') && (index + 1) != fim) /* Respeitando  a precedência dos operadores */
   {
-    int aux = operadorPrincipal(expressao, index + 1, fim);
+    int aux = buscaOperadorPrincipal(expressao, index + 1, fim);
     if (aux != -1)
       index = aux;
   }
@@ -220,13 +255,13 @@ int operadorPrincipal(char *expressao, int ini, int fim)
   return index;
 }
 
-int calculaArvore(ArvoreNo **raiz)
+int calculadoraArvore(ArvoreNo **raiz)
 {
-  int nNos = numeroNos(*raiz);
+  int nNos = arvoreNumeroNos(*raiz);
 
   Pilha *pilha;
   Pilha_Inicia(&pilha, nNos);
-  pos_ordem(*raiz, pilha);
+  arvorePosOrdem(*raiz, pilha);
 
   int result = -1;
 

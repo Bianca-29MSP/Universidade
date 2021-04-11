@@ -2,9 +2,7 @@ typedef struct pilha Pilha;
 
 typedef int Item;
 
-// Pilha *Pilha_Inicia(int);
-
-void Pilha_Inicia(Pilha **pPilha, int n);
+void Pilha_Inicia(Pilha **, int);
 
 int Pilha_EhVazia(Pilha *);
 

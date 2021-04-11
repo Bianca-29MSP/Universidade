@@ -2,20 +2,20 @@
 #include "pilha_arvore.h"
 #include "arvore.h"
 
-int calculaArvExpressao(char *expressao);
+int calculaArvExpressao(char *, int);
 
-ArvoreNo *geraArvoreExpressao(char *expressao);
+ArvoreNo *geraArvoreExpressao(char *);
 
-ArvoreNo *gereSubarvoreExpressao(char *inf, int ini, int fim);
+ArvoreNo *geraSubarvoreExpressao(char *, int, int);
 
-void trataString(char *expressao, int n);
+void trataString(char *, int);
 
-int contemEspaco(char *expressao, int n);
+int contemEspaco(char *, int);
 
-int operadorPrincipal(char *expressao, int ini, int fim);
+int buscaOperadorPrincipal(char *, int, int);
 
-int ehOperador(char c);
+int ehOperador(char);
 
-int ehOperando(char c);
+int ehOperando(char);
 
-int calculaArvore(ArvoreNo **raiz);
+int calculadoraArvore(ArvoreNo **);
