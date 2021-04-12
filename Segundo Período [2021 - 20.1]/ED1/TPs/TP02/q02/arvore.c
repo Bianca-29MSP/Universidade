@@ -9,8 +9,8 @@ int di;
 
 struct arvoreNo
 {
-  TIPOCHAVE chave;
-  int prioridade;
+  Chave chave;
+  Elemento elemento;
   ArvoreNo *esq, *dir;
 };
 
@@ -23,7 +23,7 @@ ArvoreNo *arvoreAdicionaNo(ArvoreNo *raiz, ArvoreNo *no)
 {
   if (raiz == NULL)
     return no;
-  if (no->prioridade < raiz->prioridade)
+  if (no->chave < raiz->chave)
     raiz->esq = arvoreAdicionaNo(raiz->esq, no);
   else
     raiz->dir = arvoreAdicionaNo(raiz->dir, no);
@@ -31,13 +31,13 @@ ArvoreNo *arvoreAdicionaNo(ArvoreNo *raiz, ArvoreNo *no)
   return raiz;
 }
 
-ArvoreNo *arvoreCriaNovoNo(TIPOCHAVE ch, int prioridade)
+ArvoreNo *arvoreCriaNovoNo(Elemento el, Chave ch)
 {
   ArvoreNo *nNo = (ArvoreNo *)malloc(sizeof(ArvoreNo));
   nNo->esq = NULL;
   nNo->dir = NULL;
-  nNo->prioridade = prioridade;
   nNo->chave = ch;
+  nNo->elemento = el;
   return nNo;
 }
 
@@ -45,7 +45,7 @@ void arvorePrintSimples(ArvoreNo *raiz)
 {
   if (raiz != NULL)
   {
-    printf("%c", raiz->chave);
+    printf("%c", raiz->elemento);
     printf("(");
     arvorePrintSimples(raiz->esq);
     arvorePrintSimples(raiz->dir);
@@ -84,14 +84,14 @@ void arvorePosOrdem(ArvoreNo *raiz, Pilha *pilha)
   arvorePosOrdem(raiz->dir, pilha);
   arvorePosOrdem(raiz->esq, pilha);
 
-  if (raiz->chave == '+' ||
-      raiz->chave == '-' ||
-      raiz->chave == '*' ||
-      raiz->chave == '/')
-    Pilha_Push(pilha, calculadora(raiz->chave, pilha));
+  if (raiz->elemento == '+' ||
+      raiz->elemento == '-' ||
+      raiz->elemento == '*' ||
+      raiz->elemento == '/')
+    Pilha_Push(pilha, calculadora(raiz->elemento, pilha));
   else
   {
-    Pilha_Push(pilha, ((int)raiz->chave - 48));
+    Pilha_Push(pilha, ((int)raiz->elemento - 48));
   }
 }
 
@@ -134,7 +134,7 @@ void Pop()
 
 void arvorePrintGrafico(ArvoreNo *raiz)
 {
-  printf("<%c> \n", raiz->chave);
+  printf("<%c> \n", raiz->elemento);
 
   if (raiz->esq)
   {
@@ -153,18 +153,18 @@ void arvorePrintGrafico(ArvoreNo *raiz)
 void arvorePrintGraficoArquivo(ArvoreNo *raiz, FILE *arq)
 {
 
-  fprintf(arq, "<%c> \n", raiz->chave);
+  fprintf(arq, "<%c> \n", raiz->elemento);
 
   if (raiz->esq)
   {
     fprintf(arq, "%s `--", depth);
     Push('|');
-    teste(raiz->esq, arq);
+    arvorePrintGraficoArquivo(raiz->esq, arq);
     Pop();
 
     fprintf(arq, "%s `--", depth);
     Push(' ');
-    teste(raiz->dir, arq);
+    arvorePrintGraficoArquivo(raiz->dir, arq);
     Pop();
   }
 }

@@ -9,15 +9,6 @@ struct pilha
   int tam;
 };
 
-// Pilha *Pilha_Inicia(int n)
-// {
-//   Pilha *aux = (Pilha *)malloc(sizeof(Pilha));
-//   aux->max = n;
-//   aux->tam = 0;
-//   aux->itens = (Item *)malloc(n * sizeof(Item));
-//   return aux;
-// }
-
 void Pilha_Inicia(Pilha **pPilha, int n)
 {
   *pPilha = (Pilha *)malloc(sizeof(Pilha));

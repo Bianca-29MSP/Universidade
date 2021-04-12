@@ -2,18 +2,18 @@
 
 typedef struct pilhaArvore PilhaArvore;
 
-typedef ArvoreNo *Chave;
+typedef ArvoreNo *Arvore;
 
 PilhaArvore *PilhaArvore_Inicia(int);
 
 int PilhaArvore_EhVazia(PilhaArvore *);
 
-int PilhaArvore_Push(PilhaArvore *, Chave);
+int PilhaArvore_Push(PilhaArvore *, Arvore);
 
-Chave PilhaArvore_Pop(PilhaArvore *);
+Arvore PilhaArvore_Pop(PilhaArvore *);
 
 int PilhaArvore_Tamanho(PilhaArvore *);
 
-Chave PilhaArvore_Top(PilhaArvore *);
+Arvore PilhaArvore_Top(PilhaArvore *);
 
 void PilhaArvore_Libera(PilhaArvore **);

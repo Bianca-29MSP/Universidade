@@ -1,6 +1,7 @@
 #include "pilha.h"
 
-typedef char TIPOCHAVE;
+typedef int Chave;
+typedef char Elemento;
 
 typedef struct arvoreNo ArvoreNo;
 
@@ -12,7 +13,7 @@ ArvoreNo *arvoreInicializa();
 
 ArvoreNo *arvoreAdicionaNo(ArvoreNo *, ArvoreNo *);
 
-ArvoreNo *arvoreCriaNovoNo(TIPOCHAVE, int);
+ArvoreNo *arvoreCriaNovoNo(Elemento, Chave);
 
 void arvorePrintSimples(ArvoreNo *);
 
