@@ -113,15 +113,37 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim)
           no = arvoreAdicionaNo(no, folha);
           PilhaArvore_Push(pRaizes, no);
         }
+        ArvoreNo *no = arvoreCriaNovoNo(exp[i], i); /*Cria subarvore */
+        if (!PilhaArvore_EhVazia(pRaizes))
+        {
+          no = arvoreAdicionaNo(no, PilhaArvore_Pop(pRaizes));
+        }
+        PilhaArvore_Push(pRaizes, no);
         preferencia = 0;
       }
-
-      ArvoreNo *no = arvoreCriaNovoNo(exp[i], i); /*Cria subarvore */
-      if (!PilhaArvore_EhVazia(pRaizes))
+      else if (tinhaPreferencia != 1 && preferencia != 1 && PilhaArvore_Tamanho(pRaizes) >= 2 && (exp[i] == '+' || exp[i] == '-'))
       {
-        no = arvoreAdicionaNo(no, PilhaArvore_Pop(pRaizes));
+        ArvoreNo *folha = PilhaArvore_Pop(pRaizes);
+        ArvoreNo *no = PilhaArvore_Pop(pRaizes);
+        no = arvoreAdicionaNo(no, folha);
+        PilhaArvore_Push(pRaizes, no);
+
+        no = arvoreCriaNovoNo(exp[i], i); /*Cria subarvore */
+        if (!PilhaArvore_EhVazia(pRaizes))
+        {
+          no = arvoreAdicionaNo(no, PilhaArvore_Pop(pRaizes));
+        }
+        PilhaArvore_Push(pRaizes, no);
       }
-      PilhaArvore_Push(pRaizes, no);
+      else
+      {
+        ArvoreNo *no = arvoreCriaNovoNo(exp[i], i); /*Cria subarvore */
+        if (!PilhaArvore_EhVazia(pRaizes))
+        {
+          no = arvoreAdicionaNo(no, PilhaArvore_Pop(pRaizes));
+        }
+        PilhaArvore_Push(pRaizes, no);
+      }
 
       if (exp[i] == '*' || exp[i] == '/')
         preferencia = 1;
@@ -145,11 +167,14 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim)
   int i = PilhaArvore_Tamanho(pRaizes);
   while (i > 1)
   {
+    printf("io\n");
     ArvoreNo *folha = PilhaArvore_Pop(pRaizes);
     ArvoreNo *no = PilhaArvore_Pop(pRaizes);
     no = arvoreAdicionaNo(no, folha);
     PilhaArvore_Push(pRaizes, no);
     i = PilhaArvore_Tamanho(pRaizes);
+    arvorePrintGrafico(folha);
+    arvorePrintGrafico(no);
   }
 
   ArvoreNo *aux = PilhaArvore_Pop(pRaizes);
