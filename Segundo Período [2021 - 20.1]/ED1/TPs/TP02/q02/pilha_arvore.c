@@ -9,7 +9,7 @@ struct pilhaArvore
   int tam;
 };
 
-PilhaArvore *PilhaArvore_Inicia(int n)
+PilhaArvore *pilhaArvoreInicia(int n)
 {
   PilhaArvore *aux = (PilhaArvore *)malloc(sizeof(PilhaArvore));
   aux->max = n;
@@ -18,14 +18,14 @@ PilhaArvore *PilhaArvore_Inicia(int n)
   return aux;
 }
 
-int PilhaArvore_EhVazia(PilhaArvore *pPilha)
+int pilhaArvoreEhVazia(PilhaArvore *pPilha)
 {
   if (pPilha->tam == 0)
     return 1;
   return 0;
 }
 
-int PilhaArvore_Push(PilhaArvore *pPilha, Arvore x)
+int pilhaArvorePush(PilhaArvore *pPilha, Arvore x)
 {
   if (pPilha->tam < pPilha->max)
   {
@@ -36,25 +36,25 @@ int PilhaArvore_Push(PilhaArvore *pPilha, Arvore x)
   return 0;
 }
 
-Arvore PilhaArvore_Pop(PilhaArvore *pPilha)
+Arvore pilhaArvorePop(PilhaArvore *pPilha)
 {
   return pPilha->arvores[--pPilha->tam];
 }
 
-int PilhaArvore_Tamanho(PilhaArvore *pPilha)
+int pilhaArvoreTamanho(PilhaArvore *pPilha)
 {
   return pPilha->tam;
 }
 
-Arvore PilhaArvore_Top(PilhaArvore *pPilha)
+Arvore pilhaArvoreTop(PilhaArvore *pPilha)
 {
   return pPilha->arvores[pPilha->tam - 1];
 }
 
-void PilhaArvore_Libera(PilhaArvore **pPilha)
+void pilhaArvoreLibera(PilhaArvore **pPilha)
 {
   while ((*pPilha)->tam > 0)
-    PilhaArvore_Pop(*pPilha);
+    pilhaArvorePop(*pPilha);
   free((*pPilha)->arvores);
   free(*pPilha);
   *pPilha = NULL;

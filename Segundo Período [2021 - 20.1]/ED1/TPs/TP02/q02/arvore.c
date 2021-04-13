@@ -53,10 +53,10 @@ void arvorePrintSimples(ArvoreNo *raiz)
   }
 }
 
-int calculadora(char op, Pilha *pilha)
+float calculadoraPosOrdem(char op, Pilha *pilha)
 {
-  int valor1 = Pilha_Pop(pilha);
-  int valor2 = Pilha_Pop(pilha);
+  float valor1 = pilhaPop(pilha);
+  float valor2 = pilhaPop(pilha);
 
   switch (op)
   {
@@ -88,10 +88,10 @@ void arvorePosOrdem(ArvoreNo *raiz, Pilha *pilha)
       raiz->elemento == '-' ||
       raiz->elemento == '*' ||
       raiz->elemento == '/')
-    Pilha_Push(pilha, calculadora(raiz->elemento, pilha));
+    pilhaPush(pilha, calculadoraPosOrdem(raiz->elemento, pilha));
   else
   {
-    Pilha_Push(pilha, ((int)raiz->elemento - 48));
+    pilhaPush(pilha, ((float)raiz->elemento - 48));
   }
 }
 

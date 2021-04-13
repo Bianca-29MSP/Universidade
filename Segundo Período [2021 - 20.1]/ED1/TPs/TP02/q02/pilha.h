@@ -1,19 +1,19 @@
 typedef struct pilha Pilha;
 
-typedef int Item;
+typedef float Item;
 
-void Pilha_Inicia(Pilha **, int);
+void pilhaInicia(Pilha **, int);
 
-int Pilha_EhVazia(Pilha *);
+int pilhaEhVazia(Pilha *);
 
-int Pilha_Push(Pilha *, Item);
+int pilhaPush(Pilha *, Item);
 
-Item Pilha_Pop(Pilha *);
+Item pilhaPop(Pilha *);
 
-int Pilha_Tamanho(Pilha *);
+int pilhaTamanho(Pilha *);
 
-void Pilha_Imprime(Pilha *);
+void pilhaImprime(Pilha *);
 
-Item Pilha_top(Pilha *);
+Item pilhatop(Pilha *);
 
-void Pilha_libera(Pilha **);
+void pilhalibera(Pilha **);

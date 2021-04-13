@@ -1,5 +1,3 @@
-
-
 #include "heapsort.h"
 
 void heapRefaz(TItem *v, int esq, int dir, int *comp, int *mov)
@@ -13,8 +11,8 @@ void heapRefaz(TItem *v, int esq, int dir, int *comp, int *mov)
   {
     if (j < dir && v[j] < v[j + 1])
     {
-      j += 1;
       *comp += 1;
+      j += 1;
     }
     if (aux >= v[j])
     {

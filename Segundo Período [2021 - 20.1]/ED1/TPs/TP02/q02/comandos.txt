@@ -1,7 +1,11 @@
+/* Para o valgrind */
 gcc main.c pilha.c pilha_arvore.c arvore.c arvore_expressao.c -g
 
 valgrind --leak-check=full ./a.out -v
 
+valgrind --track-origins=yes ./a.out -v
+
+/* Para execução no terminal */
 gcc main.c pilha.c pilha_arvore.c arvore.c arvore_expressao.c -o exec -Wall
 
 gcc pilha.c -c
@@ -15,5 +19,3 @@ gcc arvore_expressao.c -c
 gcc main.c -c
 
 gcc -o exec main.o pilha.o pilha_arvore.o arvore.o arvore_expressao.o
-
-
