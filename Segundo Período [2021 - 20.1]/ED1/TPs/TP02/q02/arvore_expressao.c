@@ -74,9 +74,9 @@ ArvoreNo *geraArvoreExpressao(char *expressao)
 
 ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim)
 {
-  PilhaArvore *pRaizes = pilhaArvoreInicia((fim - ini + 1));
+  PilhaArvore *pSubarvores = pilhaArvoreInicia((fim - ini + 1));
 
-  int parenteseOpen = 0;
+  int parentesesOpen = 0;
   int preferencia = 0;
   int tinhaPreferencia = 0;
 
@@ -84,7 +84,7 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim)
   {
     if (exp[i] == '(')
     {
-      parenteseOpen += 1;
+      parentesesOpen += 1;
       if (preferencia == 1)
         tinhaPreferencia = 1;
       preferencia = 0;
@@ -93,50 +93,50 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim)
     {
       if (preferencia == 0)
       {
-        ArvoreNo *folha = pilhaArvorePop(pRaizes);
-        ArvoreNo *no = pilhaArvorePop(pRaizes);
+        ArvoreNo *folha = pilhaArvorePop(pSubarvores);
+        ArvoreNo *no = pilhaArvorePop(pSubarvores);
         no = arvoreAdicionaNo(no, folha);
-        pilhaArvorePush(pRaizes, no);
+        pilhaArvorePush(pSubarvores, no);
       }
       if (tinhaPreferencia == 1)
         preferencia = 1;
-      parenteseOpen -= 1;
+      parentesesOpen -= 1;
     }
     else if (ehOperador(exp[i]))
     {
-      if (tinhaPreferencia != 1 && preferencia != 1 && pilhaArvoreTamanho(pRaizes) >= 2 && (exp[i] == '+' || exp[i] == '-'))
+      if (tinhaPreferencia != 1 && preferencia != 1 && pilhaArvoreTamanho(pSubarvores) >= 2 && (exp[i] == '+' || exp[i] == '-'))
       {
-        ArvoreNo *folha = pilhaArvorePop(pRaizes);
-        ArvoreNo *no = pilhaArvorePop(pRaizes);
+        ArvoreNo *folha = pilhaArvorePop(pSubarvores);
+        ArvoreNo *no = pilhaArvorePop(pSubarvores);
         no = arvoreAdicionaNo(no, folha);
-        pilhaArvorePush(pRaizes, no);
+        pilhaArvorePush(pSubarvores, no);
 
         no = arvoreCriaNovoNo(exp[i], i); /*Cria subarvore */
-        if (!pilhaArvoreEhVazia(pRaizes))
+        if (!pilhaArvoreEhVazia(pSubarvores))
         {
-          no = arvoreAdicionaNo(no, pilhaArvorePop(pRaizes));
+          no = arvoreAdicionaNo(no, pilhaArvorePop(pSubarvores));
         }
-        pilhaArvorePush(pRaizes, no);
+        pilhaArvorePush(pSubarvores, no);
       }
       else
       {
         if (preferencia == 1)
         {
-          if (pilhaArvoreTamanho(pRaizes) > 1)
+          if (pilhaArvoreTamanho(pSubarvores) > 1)
           {
-            ArvoreNo *folha = pilhaArvorePop(pRaizes);
-            ArvoreNo *no = pilhaArvorePop(pRaizes);
+            ArvoreNo *folha = pilhaArvorePop(pSubarvores);
+            ArvoreNo *no = pilhaArvorePop(pSubarvores);
             no = arvoreAdicionaNo(no, folha);
-            pilhaArvorePush(pRaizes, no);
+            pilhaArvorePush(pSubarvores, no);
           }
         }
 
         ArvoreNo *no = arvoreCriaNovoNo(exp[i], i); /*Cria subarvore */
-        if (!pilhaArvoreEhVazia(pRaizes))
+        if (!pilhaArvoreEhVazia(pSubarvores))
         {
-          no = arvoreAdicionaNo(no, pilhaArvorePop(pRaizes));
+          no = arvoreAdicionaNo(no, pilhaArvorePop(pSubarvores));
         }
-        pilhaArvorePush(pRaizes, no);
+        pilhaArvorePush(pSubarvores, no);
       }
 
       if (exp[i] == '*' || exp[i] == '/')
@@ -145,32 +145,32 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim)
     else if (ehOperando(exp[i]))
     {
       ArvoreNo *folha = arvoreCriaNovoNo(exp[i], i);
-      if (preferencia == 1 && parenteseOpen == 0)
+      if (preferencia == 1 && parentesesOpen == 0)
       {
-        ArvoreNo *no = pilhaArvorePop(pRaizes);
+        ArvoreNo *no = pilhaArvorePop(pSubarvores);
         no = arvoreAdicionaNo(no, folha);
-        pilhaArvorePush(pRaizes, no);
+        pilhaArvorePush(pSubarvores, no);
       }
       else
       {
-        pilhaArvorePush(pRaizes, folha);
+        pilhaArvorePush(pSubarvores, folha);
       }
     }
   }
 
-  int i = pilhaArvoreTamanho(pRaizes);
+  int i = pilhaArvoreTamanho(pSubarvores);
   while (i > 1)
   {
-    ArvoreNo *folha = pilhaArvorePop(pRaizes);
-    ArvoreNo *no = pilhaArvorePop(pRaizes);
+    ArvoreNo *folha = pilhaArvorePop(pSubarvores);
+    ArvoreNo *no = pilhaArvorePop(pSubarvores);
     no = arvoreAdicionaNo(no, folha);
-    pilhaArvorePush(pRaizes, no);
-    i = pilhaArvoreTamanho(pRaizes);
+    pilhaArvorePush(pSubarvores, no);
+    i = pilhaArvoreTamanho(pSubarvores);
   }
 
-  ArvoreNo *aux = pilhaArvorePop(pRaizes);
+  ArvoreNo *aux = pilhaArvorePop(pSubarvores);
 
-  pilhaArvoreLibera(&pRaizes);
+  pilhaArvoreLibera(&pSubarvores);
 
   return aux;
 }
@@ -189,7 +189,7 @@ int buscaOperadorPrincipal(char *expressao, int ini, int fim)
 
   if (expressao[ini] == '(')
   { /* Caso a expressão comece com um parênteses */
-    int parenteseOpen = 1;
+    int parentesesOpen = 1;
     int n = 1;
     while (index == -1 && (ini + n) < fim)
     {
@@ -197,20 +197,20 @@ int buscaOperadorPrincipal(char *expressao, int ini, int fim)
       {
         if (expressao[i] == '(')
         {
-          parenteseOpen += 1;
+          parentesesOpen += 1;
         }
         else if (expressao[i] == ')')
         {
-          parenteseOpen -= 1;
+          parentesesOpen -= 1;
         }
-        else if (ehOperador(expressao[i]) && !parenteseOpen)
+        else if (ehOperador(expressao[i]) && !parentesesOpen)
         {
           index = i;
           break;
         }
       }
       n += 1;
-      parenteseOpen = 1;
+      parentesesOpen = 1;
     }
   }
   else

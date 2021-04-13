@@ -3,7 +3,6 @@
 #include <math.h>
 #include "arvore.h"
 
-/*https://laptrinhx.com/printing-pretty-ascii-trees-259794796/*/
 char depth[2056];
 int di;
 

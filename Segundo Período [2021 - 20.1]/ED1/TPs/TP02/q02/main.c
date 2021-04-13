@@ -33,7 +33,7 @@ int main()
 
   if (opSaida == 2 || opSaida == 3)
   {
-    FILE *arq = fopen("resultados.txt", "w");
+    FILE *arq = fopen("./arquivos/resultados.txt", "w");
     if (arq == NULL)
     {
       printf("Erro na abertura do arquivo.\n");
