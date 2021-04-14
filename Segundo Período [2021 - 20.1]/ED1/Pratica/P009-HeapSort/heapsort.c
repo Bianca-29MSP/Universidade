@@ -9,20 +9,18 @@ void heapRefaz(TItem *v, int esq, int dir, int *comp, int *mov)
 
   while (j <= dir)
   {
+    *comp += 1;
     if (j < dir && v[j] < v[j + 1])
-    {
-      *comp += 1;
       j += 1;
-    }
+
+    *comp += 1;
     if (aux >= v[j])
-    {
-      *comp += 1;
       break;
-    }
+
+    *mov += 1;
     v[i] = v[j];
     i = j;
     j = i * 2 + 1;
-    *mov += 1;
   }
 
   v[i] = aux;
@@ -44,6 +42,7 @@ void heapSort(TItem *v, int n, int *comp, int *mov)
   heapConstroi(v, n, comp, mov);
   while (n > 1)
   {
+    *mov += 1;
     aux = v[n - 1];
     v[n - 1] = v[0];
     v[0] = aux;

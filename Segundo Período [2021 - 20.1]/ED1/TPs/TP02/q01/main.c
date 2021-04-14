@@ -23,16 +23,10 @@ int main()
     aux[i] = arr[i];
   }
 
-  quicksort(arr, 0, n - 1, &compQuick, &movQuick);
-
-  insertionSort(aux, n, &compInsert, &movInsert);
+  quicksort(arr, 0, n - 1, &compQuick, &movQuick, &movInsert, &compInsert);
 
   for (int i = 0; i < n; i++)
     printf("%d ", arr[i]);
-  printf("\n");
-
-  for (int i = 0; i < n; i++)
-    printf("%d ", aux[i]);
   printf("\n");
 
   printf("QuickSort: %d %d %d\n", n, movQuick, compQuick);

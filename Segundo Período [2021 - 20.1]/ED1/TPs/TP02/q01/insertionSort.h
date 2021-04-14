@@ -1,3 +1,3 @@
 typedef int ITEMINSERT;
 
-void insertionSort(ITEMINSERT *arr, int n, int *mov, int *comp);
+void insertionSort(ITEMINSERT *arr, int l, int r, int *mov, int *comp);

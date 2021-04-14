@@ -1,0 +1,7 @@
+Pergunta: Explique a relação entre o QuickSort e o MergeSort, suas semelhanças e diferenças.
+
+Resposta: 
+- Tanto o quicksort quanto o mergesort usam a ideia de divisão e conquista.
+- O quicksort é in situ, já o mergesort não é in situ.
+- Com o quicksort a divisão de uma lista de elementos não é necessariamente dividida em metade, já no mergesort o array é sempre dividido na metade.
+- Complexidade no pior caso do mergesort é O(n log n), já o quicksort é O(n²)

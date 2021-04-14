@@ -3,15 +3,17 @@
 
 #include "insertionSort.h"
 
-void insertionSort(ITEMINSERT *arr, int n, int *mov, int *comp)
+void insertionSort(ITEMINSERT *arr, int l, int r, int *mov, int *comp)
 {
   ITEMINSERT aux;
   int j;
-  for (int i = 1; i < n; i++)
+  int n = (r - l) + 1;
+  for (int i = l; i < n; i++)
   {
     aux = arr[i];
     j = i - 1;
 
+    *comp += 1;
     while (j >= 0 && aux < arr[j])
     {
       arr[j + 1] = arr[j];

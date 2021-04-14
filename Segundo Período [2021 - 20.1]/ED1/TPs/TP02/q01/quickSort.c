@@ -1,4 +1,3 @@
-/* https://www.blogcyberini.com/2018/08/quicksort-mediana-de-tres.html#quicksortm3_pivo*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "quickSort.h"
@@ -46,23 +45,20 @@ void pivoMedianaDeTres(ITEMQUICK *v, int l, int r)
   swap(v, medianaIndice, r);
 }
 
-void quicksort(ITEMQUICK *v, int l, int r, int *mov, int *comp)
+void quicksort(ITEMQUICK *v, int l, int r, int *movQ, int *compQ, int *movI, int *compI)
 {
   if (l < r)
   {
-    // if ((r - l) > 20)
-    // {
-    //   ITEMQUICK q = partition(v, l, r, mov, comp);
-    //   quicksort(v, l, q - 1, mov, comp);
-    //   quicksort(v, q + 1, r, mov, comp);
-    // }
-    // else
-    // {
-    //   insertionSort(v, r);
-    // }
-    ITEMQUICK q = partition(v, l, r, mov, comp);
-    quicksort(v, l, q - 1, mov, comp);
-    quicksort(v, q + 1, r, mov, comp);
+    if ((r - l) > 20)
+    {
+      ITEMQUICK q = partition(v, l, r, movQ, compQ);
+      quicksort(v, l, q - 1, movQ, compQ, movI, compI);
+      quicksort(v, q + 1, r, movQ, compQ, movI, compI);
+    }
+    else
+    {
+      insertionSort(v, l, r, movI, compI);
+    }
   }
 }
 

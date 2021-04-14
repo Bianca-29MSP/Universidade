@@ -1,0 +1,5 @@
+gcc main.c -c -Wall
+
+gcc heapsort.c -c -Wall
+
+gcc main.o heapsort.o -o exec -Wall

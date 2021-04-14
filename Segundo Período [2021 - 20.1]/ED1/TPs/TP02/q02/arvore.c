@@ -6,10 +6,17 @@
 char depth[2056];
 int di;
 
+// typedef struct tItem TItem;
+
+typedef struct
+{
+  TChave chave;
+  TElemento elemento;
+} TItem;
+
 struct arvoreNo
 {
-  Chave chave;
-  Elemento elemento;
+  TItem item;
   ArvoreNo *esq, *dir;
 };
 
@@ -22,7 +29,7 @@ ArvoreNo *arvoreAdicionaNo(ArvoreNo *raiz, ArvoreNo *no)
 {
   if (raiz == NULL)
     return no;
-  if (no->chave < raiz->chave)
+  if (no->item.chave < raiz->item.chave)
     raiz->esq = arvoreAdicionaNo(raiz->esq, no);
   else
     raiz->dir = arvoreAdicionaNo(raiz->dir, no);
@@ -30,13 +37,13 @@ ArvoreNo *arvoreAdicionaNo(ArvoreNo *raiz, ArvoreNo *no)
   return raiz;
 }
 
-ArvoreNo *arvoreCriaNovoNo(Elemento el, Chave ch)
+ArvoreNo *arvoreCriaNovoNo(TElemento el, TChave ch)
 {
   ArvoreNo *nNo = (ArvoreNo *)malloc(sizeof(ArvoreNo));
   nNo->esq = NULL;
   nNo->dir = NULL;
-  nNo->chave = ch;
-  nNo->elemento = el;
+  nNo->item.chave = ch;
+  nNo->item.elemento = el;
   return nNo;
 }
 
@@ -44,7 +51,7 @@ void arvorePrintSimples(ArvoreNo *raiz)
 {
   if (raiz != NULL)
   {
-    printf("%c", raiz->elemento);
+    printf("%c", raiz->item.elemento);
     printf("(");
     arvorePrintSimples(raiz->esq);
     arvorePrintSimples(raiz->dir);
@@ -83,14 +90,14 @@ void arvorePosOrdem(ArvoreNo *raiz, Pilha *pilha)
   arvorePosOrdem(raiz->dir, pilha);
   arvorePosOrdem(raiz->esq, pilha);
 
-  if (raiz->elemento == '+' ||
-      raiz->elemento == '-' ||
-      raiz->elemento == '*' ||
-      raiz->elemento == '/')
-    pilhaPush(pilha, calculadoraPosOrdem(raiz->elemento, pilha));
+  if (raiz->item.elemento == '+' ||
+      raiz->item.elemento == '-' ||
+      raiz->item.elemento == '*' ||
+      raiz->item.elemento == '/')
+    pilhaPush(pilha, calculadoraPosOrdem(raiz->item.elemento, pilha));
   else
   {
-    pilhaPush(pilha, ((float)raiz->elemento - 48));
+    pilhaPush(pilha, ((float)raiz->item.elemento - 48));
   }
 }
 
@@ -133,7 +140,7 @@ void Pop()
 
 void arvorePrintGrafico(ArvoreNo *raiz)
 {
-  printf("<%c> \n", raiz->elemento);
+  printf("<%c> \n", raiz->item.elemento);
 
   if (raiz->esq)
   {
@@ -152,7 +159,7 @@ void arvorePrintGrafico(ArvoreNo *raiz)
 void arvorePrintGraficoArquivo(ArvoreNo *raiz, FILE *arq)
 {
 
-  fprintf(arq, "<%c> \n", raiz->elemento);
+  fprintf(arq, "<%c> \n", raiz->item.elemento);
 
   if (raiz->esq)
   {
