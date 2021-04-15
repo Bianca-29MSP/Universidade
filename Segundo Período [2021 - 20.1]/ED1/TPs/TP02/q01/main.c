@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include <time.h>
 
 #include "quickSort.h"
@@ -8,32 +9,75 @@
 int main()
 {
   srand(time(NULL));
-  int n;
-  scanf("%d", &n);
+  int m, n, op;
+  int contagem[4];
 
-  int compQuick = 0, movQuick = 0;
-  int compInsert = 0, movInsert = 0;
-
-  int *arr = malloc(sizeof(int) * n);
-  int *aux = malloc(sizeof(int) * n);
-
-  for (int i = 0; i < n; i++)
+  printf("1 - Entrada pelo terminal.\n2 - Entrada por arquivo.\n");
+  scanf("%d", &op);
+  if (op == 1)
   {
-    arr[i] = rand() % 100;
-    aux[i] = arr[i];
+    printf("[QUANTIDADE DE ARRAY] [TAMANHO DESSES ARRAYs]: ");
+    scanf("%d %d", &m, &n);
+
+    for (int i = 0; i < m; i++)
+    {
+      int *arr = malloc(sizeof(int) * n);
+
+      for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+      quicksortAndInsetionsort(arr, n, 20, contagem);
+
+      printf("\n");
+      for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+      printf("\n");
+
+      printf("QuickSort: %d %d %d\n", n, contagem[0], contagem[1]);
+      printf("InsertionSort: %d %d %d\n", n, contagem[2], contagem[3]);
+
+      free(arr);
+    }
   }
+  else if (op == 2)
+  {
+    char nomeArq[50];
+    printf("Nome do arquivo sem extensão: ");
+    scanf("%s", nomeArq);
 
-  quicksort(arr, 0, n - 1, &compQuick, &movQuick, &movInsert, &compInsert);
+    strcat(nomeArq, ".txt");
+    FILE *arq = fopen(nomeArq, "r");
 
-  for (int i = 0; i < n; i++)
-    printf("%d ", arr[i]);
-  printf("\n");
+    if (arq == NULL)
+    {
+      printf("Erro na abertura do arquivo.\n");
+      exit(1);
+    }
 
-  printf("QuickSort: %d %d %d\n", n, movQuick, compQuick);
-  printf("InsertionSort: %d %d %d\n", n, movInsert, compInsert);
+    fscanf(arq, "%d %d", &m, &n);
+    printf("%d %d\n", m, n);
 
-  free(arr);
-  free(aux);
+    for (int i = 0; i < m; i++)
+    {
+      int *arr = malloc(sizeof(int) * n);
+
+      for (int i = 0; i < n; i++)
+        fscanf(arq, "%d", &arr[i]);
+
+      quicksortAndInsetionsort(arr, n, 20, contagem);
+
+      printf("\n");
+      for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+      printf("\n");
+
+      printf("QuickSort: %d %d %d\n", n, contagem[0], contagem[1]);
+      printf("InsertionSort: %d %d %d\n", n, contagem[2], contagem[3]);
+
+      free(arr);
+    }
+    fclose(arq);
+  }
 
   return 0;
 }

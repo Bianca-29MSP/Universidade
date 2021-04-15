@@ -56,6 +56,8 @@ int main()
     }
   }
 
+  printf("\n");
+
   if (opEntrada == 2)
     free(expressoes);
   return 0;

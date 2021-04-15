@@ -6,7 +6,7 @@ float calculaArvExpressao(char *, int);
 
 ArvoreNo *geraArvoreExpressao(char *);
 
-ArvoreNo *geraSubarvoreExpressao(char *, int, int);
+ArvoreNo *geraSubarvoreExpressao(char *, int, int, int *);
 
 int buscaOperadorPrincipal(char *, int, int);
 

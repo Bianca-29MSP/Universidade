@@ -2,43 +2,59 @@
 #include <stdio.h>
 #include "pilha_arvore.h"
 
-struct pilhaArvore
+typedef struct celula Celula;
+
+struct celula
 {
-  Arvore *arvores;
-  int max;
-  int tam;
+  Arvore arvore;
+  Celula *prox;
 };
 
-PilhaArvore *pilhaArvoreInicia(int n)
+struct pilhaArvore
+{
+  int tam;
+  Celula *top;
+};
+
+PilhaArvore *pilhaArvoreInicia()
 {
   PilhaArvore *aux = (PilhaArvore *)malloc(sizeof(PilhaArvore));
-  aux->max = n;
+  aux->top = NULL;
   aux->tam = 0;
-  aux->arvores = (Arvore *)malloc(n * sizeof(Arvore));
   return aux;
 }
 
 int pilhaArvoreEhVazia(PilhaArvore *pPilha)
 {
-  if (pPilha->tam == 0)
+  if (pPilha->top == NULL)
     return 1;
   return 0;
 }
 
-int pilhaArvorePush(PilhaArvore *pPilha, Arvore x)
+int pilhaArvorePush(PilhaArvore *pPilha, Arvore arv)
 {
-  if (pPilha->tam < pPilha->max)
-  {
-    pPilha->arvores[pPilha->tam] = x;
-    pPilha->tam += 1;
-    return 1;
-  }
-  return 0;
+  Celula *celula = (Celula *)malloc(sizeof(Celula));
+  celula->prox = pPilha->top;
+  celula->arvore = arv;
+  pPilha->top = celula;
+  pPilha->tam += 1;
+  return 1;
 }
 
 Arvore pilhaArvorePop(PilhaArvore *pPilha)
 {
-  return pPilha->arvores[--pPilha->tam];
+  Celula *cTopo = pPilha->top;
+  if (cTopo != NULL)
+  {
+    Arvore aux = cTopo->arvore;
+    pPilha->top = cTopo->prox;
+    pPilha->tam -= 1;
+    cTopo->prox = NULL;
+    free(cTopo);
+    cTopo = NULL;
+    return aux;
+  }
+  return NULL;
 }
 
 int pilhaArvoreTamanho(PilhaArvore *pPilha)
@@ -46,16 +62,17 @@ int pilhaArvoreTamanho(PilhaArvore *pPilha)
   return pPilha->tam;
 }
 
-Arvore pilhaArvoreTop(PilhaArvore *pPilha)
+void pilhaArvoreUnstack(PilhaArvore **pPilha)
 {
-  return pPilha->arvores[pPilha->tam - 1];
-}
-
-void pilhaArvoreLibera(PilhaArvore **pPilha)
-{
-  while ((*pPilha)->tam > 0)
+  Celula *ptr = (*pPilha)->top;
+  while (ptr != NULL)
+  {
     pilhaArvorePop(*pPilha);
-  free((*pPilha)->arvores);
+    ptr = NULL;
+    ptr = (*pPilha)->top;
+  }
+  free(ptr);
   free(*pPilha);
   *pPilha = NULL;
+  ptr = NULL;
 }

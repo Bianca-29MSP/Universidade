@@ -3,7 +3,7 @@
 
 #include "insertionSort.h"
 
-void insertionSort(ITEMINSERT *arr, int l, int r, int *mov, int *comp)
+void insertionSort(ITEMINSERT *arr, int l, int r, unsigned int *mov, unsigned int *comp)
 {
   ITEMINSERT aux;
   int j;

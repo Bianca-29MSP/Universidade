@@ -1,7 +1,9 @@
 typedef int ITEMQUICK;
 
-void quicksort(ITEMQUICK *v, int l, int r, int *movQ, int *compQ, int *movI, int *compI);
+void quicksortAndInsetionsort(ITEMQUICK *v, int n, int min, int *count);
 
-int partition(ITEMQUICK *v, int l, int r, int *mov, int *comp);
+void quicksort(ITEMQUICK *v, int l, int r, int min);
 
-int pivo(ITEMQUICK *v, int l, int r, int *mov, int *comp);
+int partition(ITEMQUICK *v, int l, int r);
+
+int pivo(ITEMQUICK *v, int l, int r);
