@@ -3,11 +3,12 @@
 #include "quickSort.h"
 #include "insertionSort.h"
 
-unsigned int mov = 0;
-unsigned int comp = 0;
+int mov;
+int comp;
+int movInsert;
+int compInsert;
 
-unsigned int movInsert = 0;
-unsigned int compInsert = 0;
+#define MIN 50
 
 void swap(ITEMQUICK *v, int i, int j)
 {
@@ -22,44 +23,27 @@ void pivoMedianaDeTres(ITEMQUICK *v, int l, int r)
   ITEMQUICK ini = v[l];
   ITEMQUICK meio = v[metade];
   ITEMQUICK fim = v[r];
-  int medianaIndice;
-  if (ini < meio)
-  {
-    if (meio < fim)
-      medianaIndice = metade;
-    else
-    {
-      if (ini < fim)
-        medianaIndice = r;
-      else
-        medianaIndice = l;
-    }
-  }
-  else
-  {
-    if (fim < meio)
-      medianaIndice = metade;
-    else
-    {
-      if (fim < ini)
-        medianaIndice = r;
-      else
-        medianaIndice = l;
-    }
-  }
+  int medianaIndice = -1;
+
+  if ((ini > meio && ini < fim) || (ini > fim && ini < meio))
+    medianaIndice = l;
+  else if ((meio > ini && meio < fim) || (meio > fim && meio < ini))
+    medianaIndice = metade;
+  else if ((fim > ini && fim < meio) || (fim > meio && fim < ini))
+    medianaIndice = r;
 
   swap(v, medianaIndice, r);
 }
 
-void quicksort(ITEMQUICK *v, int l, int r, int min)
+void quicksort(ITEMQUICK *v, int l, int r)
 {
   if (l < r)
   {
-    if ((r - l) > min)
+    if ((r - l) > MIN)
     {
       ITEMQUICK q = partition(v, l, r);
-      quicksort(v, l, q - 1, min);
-      quicksort(v, q + 1, r, min);
+      quicksort(v, l, q - 1);
+      quicksort(v, q + 1, r);
     }
     else
     {
@@ -68,13 +52,15 @@ void quicksort(ITEMQUICK *v, int l, int r, int min)
   }
 }
 
-void quicksortAndInsetionsort(ITEMQUICK *v, int n, int min, int *count)
+void quicksortAndInsetionsort(ITEMQUICK *v, int n, int *count)
 {
   mov = 0;
   comp = 0;
   movInsert = 0;
   compInsert = 0;
-  quicksort(v, 0, n - 1, min);
+
+  quicksort(v, 0, n - 1);
+
   count[0] = mov;
   count[1] = comp;
   count[2] = movInsert;

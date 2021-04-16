@@ -4,7 +4,7 @@
 
 #include "arvore_expressao.h"
 
-#define MAXTAM 100
+#define MAXTAM 120
 
 char **leArquivo(int *nExp);
 
@@ -80,8 +80,21 @@ char **leArquivo(int *nExp)
   n = atoi(aux);
 
   char **arr = malloc(sizeof(char **) * n);
+  if (arr == NULL)
+  {
+    printf("Ocorreu algo de errado na alocação de memória.\n");
+    exit(1);
+  }
+
   for (int i = 0; i < n; i++)
+  {
     arr[i] = malloc(sizeof(char) * 100);
+    if (arr[i] == NULL)
+    {
+      printf("Ocorreu algo de errado na alocação de memória.\n");
+      exit(1);
+    }
+  }
 
   int i = 0;
 

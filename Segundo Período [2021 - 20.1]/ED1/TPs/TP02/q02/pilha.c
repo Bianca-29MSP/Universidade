@@ -12,6 +12,11 @@ struct pilha
 void pilhaInicia(Pilha **pPilha, int n)
 {
   *pPilha = (Pilha *)malloc(sizeof(Pilha));
+  if (*pPilha == NULL)
+  {
+    printf("Ocorreu algo de errado na alocação de memória.\n");
+    exit(1);
+  }
   (*pPilha)->max = n;
   (*pPilha)->tam = 0;
   (*pPilha)->itens = (Item *)malloc(n * sizeof(Item));

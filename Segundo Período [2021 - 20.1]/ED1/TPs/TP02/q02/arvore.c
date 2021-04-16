@@ -40,6 +40,11 @@ ArvoreNo *arvoreAdicionaNo(ArvoreNo *raiz, ArvoreNo *no)
 ArvoreNo *arvoreCriaNovoNo(TElemento el, TChave ch)
 {
   ArvoreNo *nNo = (ArvoreNo *)malloc(sizeof(ArvoreNo));
+  if (nNo == NULL)
+  {
+    printf("Ocorreu algo de errado na alocação de memória.\n");
+    exit(1);
+  }
   nNo->esq = NULL;
   nNo->dir = NULL;
   nNo->item.chave = ch;

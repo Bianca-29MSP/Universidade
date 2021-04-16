@@ -11,6 +11,7 @@ int main()
   srand(time(NULL));
   int m, n, op;
   int contagem[4];
+  int *arr;
 
   printf("1 - Entrada pelo terminal.\n2 - Entrada por arquivo.\n");
   scanf("%d", &op);
@@ -21,20 +22,22 @@ int main()
 
     for (int i = 0; i < m; i++)
     {
-      int *arr = malloc(sizeof(int) * n);
+      arr = malloc(sizeof(int) * n);
 
       for (int i = 0; i < n; i++)
         scanf("%d", &arr[i]);
 
-      quicksortAndInsetionsort(arr, n, 20, contagem);
+      quicksortAndInsetionsort(arr, n, contagem);
 
       printf("\n");
       for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
       printf("\n");
 
-      printf("QuickSort: %d %d %d\n", n, contagem[0], contagem[1]);
-      printf("InsertionSort: %d %d %d\n", n, contagem[2], contagem[3]);
+      printf("\tMovimentações | Comparações\n");
+      printf("QuickSort: %d %d\n", contagem[0], contagem[1]);
+      printf("InsertionSort: %d %d\n", contagem[2], contagem[3]);
+      printf("Total: %d %d\n", contagem[0] + contagem[2], contagem[1] + contagem[3]);
 
       free(arr);
     }
@@ -59,23 +62,26 @@ int main()
 
     for (int i = 0; i < m; i++)
     {
-      int *arr = malloc(sizeof(int) * n);
+      arr = malloc(sizeof(int) * n);
 
       for (int i = 0; i < n; i++)
         fscanf(arq, "%d", &arr[i]);
 
-      quicksortAndInsetionsort(arr, n, 20, contagem);
+      quicksortAndInsetionsort(arr, n, contagem);
 
       printf("\n");
-      for (int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-      printf("\n");
+      // for (int i = 0; i < n; i++)
+      //   printf("%d ", arr[i]);
+      // printf("\n");
 
-      printf("QuickSort: %d %d %d\n", n, contagem[0], contagem[1]);
-      printf("InsertionSort: %d %d %d\n", n, contagem[2], contagem[3]);
+      printf("\tMovimentações | Comparações\n");
+      printf("QuickSort: %d %d\n", contagem[0], contagem[1]);
+      printf("InsertionSort: %d %d\n", contagem[2], contagem[3]);
+      printf("Total: %d %d\n", contagem[0] + contagem[2], contagem[1] + contagem[3]);
 
       free(arr);
     }
+
     fclose(arq);
   }
 

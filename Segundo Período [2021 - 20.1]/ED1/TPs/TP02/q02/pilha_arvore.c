@@ -19,6 +19,11 @@ struct pilhaArvore
 PilhaArvore *pilhaArvoreInicia()
 {
   PilhaArvore *aux = (PilhaArvore *)malloc(sizeof(PilhaArvore));
+  if (aux == NULL)
+  {
+    printf("Ocorreu algo de errado na alocação de memória.\n");
+    exit(1);
+  }
   aux->top = NULL;
   aux->tam = 0;
   return aux;
@@ -34,6 +39,11 @@ int pilhaArvoreEhVazia(PilhaArvore *pPilha)
 int pilhaArvorePush(PilhaArvore *pPilha, Arvore arv)
 {
   Celula *celula = (Celula *)malloc(sizeof(Celula));
+  if (celula == NULL)
+  {
+    printf("Ocorreu algo de errado na alocação de memória.\n");
+    exit(1);
+  }
   celula->prox = pPilha->top;
   celula->arvore = arv;
   pPilha->top = celula;
