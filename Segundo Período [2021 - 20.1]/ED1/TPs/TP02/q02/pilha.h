@@ -2,7 +2,9 @@ typedef struct pilha Pilha;
 
 typedef float Item;
 
-void pilhaInicia(Pilha **, int);
+// void pilhaInicia(Pilha **, int);
+
+Pilha *pilhaInicia();
 
 int pilhaEhVazia(Pilha *);
 
@@ -16,4 +18,8 @@ void pilhaImprime(Pilha *);
 
 Item pilhatop(Pilha *);
 
-void pilhalibera(Pilha **);
+void pilhaUnstack(Pilha **);
+
+float calculadoraPosOrdem(Pilha *, char);
+
+void constroiPilhaPosFixada(Pilha *, char);

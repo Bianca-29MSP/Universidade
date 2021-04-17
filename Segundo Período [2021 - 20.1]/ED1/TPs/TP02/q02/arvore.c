@@ -64,30 +64,6 @@ void arvorePrintSimples(ArvoreNo *raiz)
   }
 }
 
-float calculadoraPosOrdem(char op, Pilha *pilha)
-{
-  float valor1 = pilhaPop(pilha);
-  float valor2 = pilhaPop(pilha);
-
-  switch (op)
-  {
-  case '+':
-    return valor1 + valor2;
-    break;
-  case '-':
-    return valor1 - valor2;
-    break;
-  case '*':
-    return valor1 * valor2;
-    break;
-  case '/':
-    return valor1 / valor2;
-    break;
-  }
-
-  return 0;
-}
-
 void arvorePosOrdem(ArvoreNo *raiz, Pilha *pilha)
 {
   if (raiz == NULL)
@@ -95,15 +71,7 @@ void arvorePosOrdem(ArvoreNo *raiz, Pilha *pilha)
   arvorePosOrdem(raiz->dir, pilha);
   arvorePosOrdem(raiz->esq, pilha);
 
-  if (raiz->item.elemento == '+' ||
-      raiz->item.elemento == '-' ||
-      raiz->item.elemento == '*' ||
-      raiz->item.elemento == '/')
-    pilhaPush(pilha, calculadoraPosOrdem(raiz->item.elemento, pilha));
-  else
-  {
-    pilhaPush(pilha, ((float)raiz->item.elemento - 48));
-  }
+  constroiPilhaPosFixada(pilha, raiz->item.elemento);
 }
 
 void arvoreLibera(ArvoreNo **raiz)

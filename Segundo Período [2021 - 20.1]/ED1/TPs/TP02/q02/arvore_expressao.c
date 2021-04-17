@@ -68,11 +68,11 @@ ArvoreNo *geraArvoreExpressao(char *expressao)
 
   int atual = 0;
 
-  ArvoreNo *noEsq = geraSubarvoreExpressao(expressao, 0, pOperador - 1, &atual);
-  raiz = arvoreAdicionaNo(raiz, noEsq);
+  ArvoreNo *subarvoreEsq = geraSubarvoreExpressao(expressao, 0, pOperador - 1, &atual);
+  raiz = arvoreAdicionaNo(raiz, subarvoreEsq);
 
-  ArvoreNo *noDir = geraSubarvoreExpressao(expressao, pOperador + 1, n, &atual);
-  raiz = arvoreAdicionaNo(raiz, noDir);
+  ArvoreNo *subarvoreDir = geraSubarvoreExpressao(expressao, pOperador + 1, n, &atual);
+  raiz = arvoreAdicionaNo(raiz, subarvoreDir);
 
   return raiz;
 }
@@ -87,8 +87,8 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim, int *atual)
     *atual = i; /* caso o fechamento do parênteses esteja na outra extremidade da expressão */
     if (exp[i] == '(')
     {
-      ArvoreNo *no = geraSubarvoreExpressao(exp, i + 1, fim, atual);
-      pilhaArvorePush(pSubarvores, no);
+      ArvoreNo *noPai = geraSubarvoreExpressao(exp, i + 1, fim, atual);
+      pilhaArvorePush(pSubarvores, noPai);
       i = *atual;
     }
     else if (exp[i] == ')')
@@ -99,41 +99,41 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim, int *atual)
     {
       if (pilhaArvoreTamanho(pSubarvores) >= 2 && (exp[i] == '+' || exp[i] == '-'))
       {
-        ArvoreNo *folha = pilhaArvorePop(pSubarvores);
-        ArvoreNo *no = pilhaArvorePop(pSubarvores);
-        no = arvoreAdicionaNo(no, folha);
-        pilhaArvorePush(pSubarvores, no);
+        ArvoreNo *noFilho = pilhaArvorePop(pSubarvores);
+        ArvoreNo *noPai = pilhaArvorePop(pSubarvores);
+        noPai = arvoreAdicionaNo(noPai, noFilho);
+        pilhaArvorePush(pSubarvores, noPai);
       }
       else if (exp[i] == '*' || exp[i] == '/')
         preferenciaOperador += 1;
 
-      ArvoreNo *no = arvoreCriaNovoNo(exp[i], i);
-      ArvoreNo *folha = pilhaArvorePop(pSubarvores);
-      no = arvoreAdicionaNo(no, folha);
-      pilhaArvorePush(pSubarvores, no);
+      ArvoreNo *noPai = arvoreCriaNovoNo(exp[i], i);
+      ArvoreNo *noFilho = pilhaArvorePop(pSubarvores);
+      noPai = arvoreAdicionaNo(noPai, noFilho);
+      pilhaArvorePush(pSubarvores, noPai);
     }
     else if (ehOperando(exp[i]))
     {
-      ArvoreNo *folha = arvoreCriaNovoNo(exp[i], i);
+      ArvoreNo *noFilho = arvoreCriaNovoNo(exp[i], i);
       if (preferenciaOperador >= 1)
       {
-        ArvoreNo *no = pilhaArvorePop(pSubarvores);
-        no = arvoreAdicionaNo(no, folha);
-        pilhaArvorePush(pSubarvores, no);
+        ArvoreNo *noPai = pilhaArvorePop(pSubarvores);
+        noPai = arvoreAdicionaNo(noPai, noFilho);
+        pilhaArvorePush(pSubarvores, noPai);
         preferenciaOperador -= 1;
       }
       else
-        pilhaArvorePush(pSubarvores, folha);
+        pilhaArvorePush(pSubarvores, noFilho);
     }
   }
 
   int i = pilhaArvoreTamanho(pSubarvores);
   while (i >= 2)
   {
-    ArvoreNo *folha = pilhaArvorePop(pSubarvores);
-    ArvoreNo *no = pilhaArvorePop(pSubarvores);
-    no = arvoreAdicionaNo(no, folha);
-    pilhaArvorePush(pSubarvores, no);
+    ArvoreNo *noFilho = pilhaArvorePop(pSubarvores);
+    ArvoreNo *noPai = pilhaArvorePop(pSubarvores);
+    noPai = arvoreAdicionaNo(noPai, noFilho);
+    pilhaArvorePush(pSubarvores, noPai);
     i = pilhaArvoreTamanho(pSubarvores);
   }
 
@@ -188,8 +188,7 @@ float calculadoraArvore(ArvoreNo **raiz)
 {
   int nNos = arvoreNumeroNos(*raiz);
 
-  Pilha *pilha;
-  pilhaInicia(&pilha, nNos);
+  Pilha *pilha = pilhaInicia(nNos);
   arvorePosOrdem(*raiz, pilha);
 
   float result = -1;
@@ -197,7 +196,7 @@ float calculadoraArvore(ArvoreNo **raiz)
   if (pilhaTamanho(pilha) == 1)
     result = pilhaPop(pilha);
 
-  pilhalibera(&pilha);
+  pilhaUnstack(&pilha);
 
   return result;
 }
