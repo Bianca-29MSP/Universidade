@@ -79,33 +79,34 @@ void pivoMedianaDeTres(Item *v, int l, int r)
   swap(v, medianaIndice, r);
 }
 
-void hybridsort(Item *v, int l, int r)
+void hybridsort(Item *v, int l, int r, int op)
 {
   if (l < r)
   { /*Se o tamanho do vetor for maior que K o quicksort é usado, 
     caso contrario, o insertionsort é usado */
     if ((r - l) > K)
     {
-      Item q = partition(v, l, r);
-      hybridsort(v, l, q - 1);
-      hybridsort(v, q + 1, r);
+      Item q = partition(v, l, r, op);
+      hybridsort(v, l, q - 1, op);
+      hybridsort(v, q + 1, r, op);
     }
     else
-      insertionsort(v, l, r);
+      insertionsort(v, l, r + 1);
   }
 }
 
-void hybridsortInicia(Item *v, int n, Contador *c)
+void hybridsortInicia(Item *v, int n, Contador *c, int op)
 {
   count = c;
   zeraContador();
-  hybridsort(v, 0, n);
+  hybridsort(v, 0, n, op);
 }
 
-int partition(Item *v, int l, int r)
+int partition(Item *v, int l, int r, int op)
 {
-  pivoMedianaDeTres(v, l, r); /* Escolha do pivô por meio da mediana de três*/
-  Item x = v[r];              //x é o pivô
+  if (op == 2)
+    pivoMedianaDeTres(v, l, r); /* Escolha do pivô por meio da mediana de três*/
+  Item x = v[r];                //x é o pivô
   int i = l - 1;
 
   for (int j = l; j < r; j++)
@@ -129,8 +130,7 @@ void insertionsort(Item *arr, int l, int r)
 {
   Item aux;
   int j;
-  int n = (r - l) + 1;
-  for (int i = l; i < n; i++)
+  for (int i = l + 1; i < r; i++)
   {
     aux = arr[i];
     j = i - 1;
