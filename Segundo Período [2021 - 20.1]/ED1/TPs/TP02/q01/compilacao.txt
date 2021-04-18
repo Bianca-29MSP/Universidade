@@ -1,11 +1,13 @@
-gcc main.c -c
+gcc main.c -c -Wall
 
-gcc hybridsort.c
+gcc hybridsort.c -Wall
 
-gcc main.o hybridsort.o -o exec -Wall
+gcc exec main.o hybridsort.o -o -Wall
 
-gcc main.c hybridsort.c -g
+Valgrind:
 
-valgrind --leak-check=full ./a.out -v
+  gcc main.c hybridsort.c -g
 
-valgrind --track-origins=yes ./a.out -v
+  valgrind --leak-check=full ./a.out -v
+
+  valgrind --track-origins=yes ./a.out -v

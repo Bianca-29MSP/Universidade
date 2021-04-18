@@ -1,11 +1,24 @@
+/*
+* main.c
+* Trabalho pratico 2 de EDI (BCC202) - Árvore de expressão   
+* Enya Luísa Gomes dos Santos - 19.2.4201                          17/04/2021            
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
 #include "arvore_expressao.h"
 
+/*Tamanho máximo da string*/
 #define MAXTAM 120
 
+/*
+*FUNÇÃO: leArquivo
+*OBJETIVO: Ler arquivo de testo expressoes.txt e armazenar cada expressão
+          em uma posição do vetor de string.
+*IN: Referencia o número de expressões a serem lidas.                     
+*OUT: vetor de string
+*/
 char **leArquivo(int *nExp);
 
 int main()

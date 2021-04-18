@@ -1,17 +1,20 @@
+/*
+* hybridsort.c
+* Trabalho pratico 2 de EDI (BCC202) - Quicksort combinado com insertionsort   
+* Enya Luísa Gomes dos Santos - 19.2.4201                          17/04/2021            
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "hybridsort.h"
-//#include "insertionsort.h"
 
-int mov;
-int comp;
-int movInsert;
-int compInsert;
-
+/* Variavel global do tipo ponteiro para contador */
 Contador *count;
 
-#define MIN 20
+/* Valor de k */
+#define K 20
 
+/* Zerar o contador para ser iniciado novamente */
 void zeraContador()
 {
   count->compInsertion = 0;
@@ -20,6 +23,7 @@ void zeraContador()
   count->compQuick = 0;
 }
 
+/* Realizar a troca entre duas posições do vetor */
 void swap(Item *v, int i, int j)
 {
   Item temp = v[i];
@@ -78,8 +82,9 @@ void pivoMedianaDeTres(Item *v, int l, int r)
 void hybridsort(Item *v, int l, int r)
 {
   if (l < r)
-  {
-    if ((r - l) > MIN)
+  { /*Se o tamanho do vetor for maior que K o quicksort é usado, 
+    caso contrario, o insertionsort é usado */
+    if ((r - l) > K)
     {
       Item q = partition(v, l, r);
       hybridsort(v, l, q - 1);
@@ -99,8 +104,8 @@ void hybridsortInicia(Item *v, int n, Contador *c)
 
 int partition(Item *v, int l, int r)
 {
-  pivoMedianaDeTres(v, l, r);
-  Item x = v[r]; //x é o pivô
+  pivoMedianaDeTres(v, l, r); /* Escolha do pivô por meio da mediana de três*/
+  Item x = v[r];              //x é o pivô
   int i = l - 1;
 
   for (int j = l; j < r; j++)

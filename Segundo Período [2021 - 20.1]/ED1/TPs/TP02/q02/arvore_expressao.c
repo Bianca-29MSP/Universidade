@@ -1,3 +1,8 @@
+/*
+* arvore_expressao.c
+* Trabalho pratico 2 de EDI (BCC202) - Árvore de expressão   
+* Enya Luísa Gomes dos Santos - 19.2.4201                          17/04/2021            
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -61,7 +66,7 @@ ArvoreNo *geraArvoreExpressao(char *expressao)
   int pOperador = buscaOperadorPrincipal(expressao, 0, n);
   if (pOperador == -1)
   {
-    printf("Erro ao encontrar o operado principal na expressão '%s'.\n", expressao);
+    printf("Erro ao encontrar o operador principal na expressão '%s'.\n", expressao);
     exit(1);
   }
   ArvoreNo *raiz = arvoreCriaNovoNo(expressao[pOperador], pOperador);
@@ -144,7 +149,7 @@ ArvoreNo *geraSubarvoreExpressao(char *exp, int ini, int fim, int *atual)
   return aux;
 }
 
-/* Função que encontra o primeiro operador, aquele q será a raiz da arvore */
+/* Função que encontra o operador da ultima operação, aquele q será a raiz da arvore */
 int buscaOperadorPrincipal(char *expressao, int ini, int fim)
 {
   int index = -1;
@@ -203,13 +208,12 @@ float calculadoraArvore(ArvoreNo **raiz)
 
 void trataString(char *expressao, int n)
 {
-  /* verifica se há espaços */
   if (contemEspaco(expressao, n))
-  {
+  { /* verifica se há espaços */
     char *aux = calloc(n, sizeof(char));
 
     for (int j = 0, i = 0; i < n; i++)
-    {
+    { /* remove os espaços */
       if (expressao[i] != ' ')
       {
         aux[j] = expressao[i];
@@ -223,6 +227,15 @@ void trataString(char *expressao, int n)
   }
 }
 
+int contemEspaco(char *expressao, int n)
+{
+  for (int i = 0; i < n; i++)
+    if (expressao[i] == ' ')
+      return 1;
+
+  return 0;
+}
+
 int ehOperador(char c)
 {
   return ((c == '+') || (c == '-') ||
@@ -232,13 +245,4 @@ int ehOperador(char c)
 int ehOperando(char expressao)
 {
   return (expressao >= '0' && expressao <= '9');
-}
-
-int contemEspaco(char *expressao, int n)
-{
-  for (int i = 0; i < n; i++)
-    if (expressao[i] == ' ')
-      return 1;
-
-  return 0;
 }

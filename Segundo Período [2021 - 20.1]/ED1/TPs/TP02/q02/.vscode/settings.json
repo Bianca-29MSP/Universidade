@@ -2,6 +2,7 @@
   "files.associations": {
     "*.md": "bat",
     "pilha_arvore.h": "c",
-    "cmath": "c"
+    "cmath": "c",
+    "stdio.h": "c"
   }
 }

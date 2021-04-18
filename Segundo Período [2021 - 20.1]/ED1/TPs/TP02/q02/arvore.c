@@ -1,12 +1,16 @@
+/*
+* arvore.c
+* Trabalho pratico 2 de EDI (BCC202) - Árvore de expressão   
+* Enya Luísa Gomes dos Santos - 19.2.4201                          17/04/2021            
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include "arvore.h"
 
+/*Variaveis globais que auxiliam no print "grafico" da árvore */
 char depth[2056];
 int di;
-
-// typedef struct tItem TItem;
 
 typedef struct
 {
@@ -64,16 +68,6 @@ void arvorePrintSimples(ArvoreNo *raiz)
   }
 }
 
-void arvorePosOrdem(ArvoreNo *raiz, Pilha *pilha)
-{
-  if (raiz == NULL)
-    return;
-  arvorePosOrdem(raiz->dir, pilha);
-  arvorePosOrdem(raiz->esq, pilha);
-
-  constroiPilhaPosFixada(pilha, raiz->item.elemento);
-}
-
 void arvoreLibera(ArvoreNo **raiz)
 {
   if (!arvoreEhVazia(*raiz))
@@ -97,6 +91,13 @@ int arvoreNumeroNos(ArvoreNo *raiz)
   return (arvoreNumeroNos(raiz->esq) + 1 + arvoreNumeroNos(raiz->dir));
 }
 
+/*
+*FUNÇÃO: Push
+*OBJETIVO: Armazenar na variavel global depth os espaços e caracteres necessarios
+          para imprimir a árvore de forma gráfica.
+*IN: Um caracter                        
+*OUT: void
+*/
 void Push(char c)
 {
   depth[di++] = ' ';
@@ -111,6 +112,10 @@ void Pop()
   depth[di -= 4] = 0;
 }
 
+/*
+* A implementação dessa função foi realizada através da adptação do algoritmo disponivel 
+* na publicação presente neste link: https://laptrinhx.com/printing-pretty-ascii-trees-259794796/
+*/
 void arvorePrintGrafico(ArvoreNo *raiz)
 {
   printf("<%c> \n", raiz->item.elemento);
@@ -146,4 +151,14 @@ void arvorePrintGraficoArquivo(ArvoreNo *raiz, FILE *arq)
     arvorePrintGraficoArquivo(raiz->dir, arq);
     Pop();
   }
+}
+
+void arvorePosOrdem(ArvoreNo *raiz, Pilha *pilha)
+{
+  if (raiz == NULL)
+    return;
+  arvorePosOrdem(raiz->dir, pilha);
+  arvorePosOrdem(raiz->esq, pilha);
+
+  constroiPilhaPosFixada(pilha, raiz->item.elemento);
 }

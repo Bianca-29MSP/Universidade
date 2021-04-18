@@ -1,77 +1,11 @@
+/*
+* pilha.c
+* Trabalho pratico 2 de EDI (BCC202) - Árvore de expressão   
+* Enya Luísa Gomes dos Santos - 19.2.4201                          17/04/2021            
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include "pilha.h"
-
-/*struct pilha
-{
-  Item *itens;
-  int max;
-  int tam;
-};
-
-Pilha *pilhaInicia(int n)
-{
-  Pilha *aux = (Pilha *)malloc(sizeof(Pilha));
-  if (aux == NULL)
-  {
-    printf("Ocorreu algo de errado na alocação de memória.\n");
-    exit(1);
-  }
-  aux->max = n;
-  aux->tam = 0;
-  aux->itens = (Item *)malloc(n * sizeof(Item));
-  return aux;
-}
-
-int pilhaEhVazia(Pilha *pPilha)
-{
-  if (pPilha->tam == 0)
-    return 1;
-  return 0;
-}
-
-int pilhaPush(Pilha *pPilha, Item x)
-{
-  if (pPilha->tam < pPilha->max)
-  {
-    pPilha->itens[pPilha->tam] = x;
-    pPilha->tam += 1;
-    return 1;
-  }
-  return 0;
-}
-
-Item pilhaPop(Pilha *pPilha)
-{
-  return pPilha->itens[--pPilha->tam];
-}
-
-int pilhaTamanho(Pilha *pPilha)
-{
-  return pPilha->tam;
-}
-
-void pilhaImprime(Pilha *pPilha)
-{
-  for (int i = 0; i < pilhaTamanho(pPilha); i++)
-    printf("%f ", pPilha->itens[i]);
-  printf("\n");
-}
-
-Item pilhatop(Pilha *pPilha)
-{
-  return pPilha->itens[pPilha->tam - 1];
-}
-
-void pilhalibera(Pilha **pPilha)
-{
-  while ((*pPilha)->tam > 0)
-    pilhaPop(*pPilha);
-  free((*pPilha)->itens);
-  free(*pPilha);
-  *pPilha = NULL;
-}
-*/
 
 typedef struct celula Celula;
 
@@ -83,8 +17,8 @@ struct celula
 
 struct pilha
 {
-  int tam;
   Celula *top;
+  int tam;
 };
 
 Pilha *pilhaInicia()

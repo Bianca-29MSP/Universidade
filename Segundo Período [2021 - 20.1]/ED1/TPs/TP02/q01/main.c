@@ -1,3 +1,9 @@
+/*
+* main.c
+* Trabalho pratico 2 de EDI (BCC202) - Quicksort combinado com insertionsort   
+* Enya Luísa Gomes dos Santos - 19.2.4201                          17/04/2021            
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
