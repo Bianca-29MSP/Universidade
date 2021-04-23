@@ -1,20 +1,12 @@
 gcc pilha.c -c -Wall
-
 gcc arvore.c -c -Wall
-
 gcc pilha_arvore.c -c -Wall
-
 gcc arvore_expressao.c -c -Wall
-
 gcc main.c -c -Wall
-
 gcc -o exec main.o pilha.o pilha_arvore.o arvore.o arvore_expressao.o -Wall
 
 Valgrind:
-
   gcc main.c pilha.c pilha_arvore.c arvore.c arvore_expressao.c -g
-
   valgrind --leak-check=full ./a.out -v
-
   valgrind --track-origins=yes ./a.out -v
 
