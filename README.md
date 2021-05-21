@@ -7,15 +7,19 @@ Repositório destinado para armazenar trabalhos relacionados ao curso de Ciênci
 </p>
 
 ## Cadeiras atuais
-- Semestre: 2º
+- Semestre: 3º
 
-- Estrutura de dados I
+- Estrutura de dados II
 
-- Matemática Discreta I
+- Matemática Discreta II
 
-- Interação Humano Computador
+- Programação orientada a objeto
 
--  Calculo II
+- Programação funcional
+
+- Arquitetura de computadores
+
+- Introdução a algebra linear
 
 ## Licença 
 
