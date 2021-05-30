@@ -1,9 +1,11 @@
-
+Playlist: https://www.youtube.com/playlist?list=PLsri1g4fxrjskpZMS10kYJG0xWrYHZ911
 === Básico ===
+  Haskell é proximo a maématica.
+    => Lambda 
   Extensões: 
     .hs tudo é codigo menos o que está marcado como comentario (-- or {- -} )
     .lhs tudo é comentario menos o que está marcado como codigo \begin{code} \end{code}
-  = (é)
+  = (é), logo = não é atribuição como em C por exemplo, em Haskell não hia atribuições
   Fortemente tipada
   nomeFuncao :: Entrada -> Saída
   Tipos: Int, Integer, Float, Double, Boolean, Char, String
