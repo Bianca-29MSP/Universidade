@@ -1,20 +1,19 @@
 \begin{code}
 module Length
-  ( func,
-    func2,
-    length
+  ( doisElementosCasamento,
+    doisElementosLength
   ) where
 
-  func :: [a] -> Int
-  func [] = 0
-  func (x:[]) = 1
-  func (a:as:[]) = 2
-  func (a:as) = -1
+  doisElementosCasamento :: [a] -> Int
+  doisElementosCasamento [] = 0
+  doisElementosCasamento (x:[]) = 1
+  doisElementosCasamento (a:as:[]) = 2
+  doisElementosCasamento (a:as) = -1
   
-  func2 :: [a] -> Int
-  func2 a
+  doisElementosLength :: [a] -> Int
+  doisElementosLength a
     | len <= 2 = len
     | otherwise = -1
-    where 
+    where
       len = length a
 \end{code}
