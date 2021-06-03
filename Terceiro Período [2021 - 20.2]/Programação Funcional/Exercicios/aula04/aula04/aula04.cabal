@@ -4,11 +4,11 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           aula03
+name:           aula04
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/aula03#readme>
-homepage:       https://github.com/githubuser/aula03#readme
-bug-reports:    https://github.com/githubuser/aula03/issues
+description:    Please see the README on GitHub at <https://github.com/githubuser/aula04#readme>
+homepage:       https://github.com/githubuser/aula04#readme
+bug-reports:    https://github.com/githubuser/aula04/issues
 author:         Author name here
 maintainer:     example@example.com
 copyright:      2021 Author name here
@@ -21,41 +21,46 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/aula03
+  location: https://github.com/githubuser/aula04
 
 library
   exposed-modules:
       Lib
   other-modules:
-      Paths_aula03
+      Paths_aula04
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
   default-language: Haskell2010
 
-executable aula03-exe
-  main-is: Aula03.lhs
+executable aula04-exe
+  main-is: Aula04.lhs
   other-modules:
-      Tipos
-      Paths_aula03
+      AndOr
+      CountPos
+      DropList
+      IndexOf
+      MinList
+      TakeList
+      Paths_aula04
   hs-source-dirs:
       app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N -main-is Aula03
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -main-is Aula04
   build-depends:
-      aula03
+      aula04
     , base >=4.7 && <5
   default-language: Haskell2010
 
-test-suite aula03-test
+test-suite aula04-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_aula03
+      Paths_aula04
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      aula03
+      aula04
     , base >=4.7 && <5
   default-language: Haskell2010
