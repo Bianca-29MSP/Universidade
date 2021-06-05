@@ -42,6 +42,7 @@ executable aula04-exe
       DropList
       IndexOf
       MinList
+      RemoveAll
       TakeList
       Paths_aula04
   hs-source-dirs:
