@@ -1,0 +1,8 @@
+:r or :reload	Reload source files. Use after updating and saving your .hs files in your editor.
+:l <file> or :load <file>	Load Haskell source file and its dependents.
+:t <expr> or :type <expr>	Print the type of the expression <expr>.
+:i <name> or :info <name>	Display information about the given name(s). Works with function names, type names, etc.
+:browse	List all functions in scope, with type signatures.
+let <pattern> = <expr>	Introduce temporary value or function definition. (These disappear after reloading any files.)
+:? or :help	Print complete list of GHCi commands.
+:q or :quit	Quit.

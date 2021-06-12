@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.md": "bat",
+    "*.tcc": "cpp",
+    "type_traits": "cpp"
+  }
+}
