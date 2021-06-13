@@ -1,0 +1,18 @@
+Evitar redundância
+
+Sintaxe:
+
+  acesso = public | private | protected
+
+  class class-derivada : acesso classe-base
+  {
+    corpo da novo class
+  }
+
+=> Funções amigas (friend) nn são herdadas
+
+superclasse/classe mãe/ classe pai
+subclasses/classe filha
+
+=> Dentro da relação de herança os atributos declarados 
+  como protected são tratados como publicos
