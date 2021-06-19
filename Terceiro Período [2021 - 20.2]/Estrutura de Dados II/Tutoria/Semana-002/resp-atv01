@@ -1,0 +1,4 @@
+PERGUNTA: Explique a seguinte sentença: “Árvores B são construídas de baixo para cima, enquanto árvores binárias são construídas de cima para baixo”.
+
+RESPOSTA: Para manter seu balanceamento, em uma árvore B, os elemento quando inseridos são colocados em uma folha, caso não haja espaço para esse elemento na folha, essa folha sofre um split, e o item do meio vai para a página pai, e esse processo pode ocorrer novamente até que todos os itens estajam dispostos na árvore B de forma balanceada, desse modo, a árvore começa a "crescer para cima"
+

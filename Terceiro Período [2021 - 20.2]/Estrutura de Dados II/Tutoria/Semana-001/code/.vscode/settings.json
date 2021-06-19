@@ -1,6 +1,0 @@
-{
-  "files.associations": {
-    "*.md": "bat",
-    "stdio.h": "c"
-  }
-}
