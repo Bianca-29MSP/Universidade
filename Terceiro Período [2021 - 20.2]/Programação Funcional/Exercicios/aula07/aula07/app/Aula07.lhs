@@ -985,6 +985,11 @@ Exercício
 (x : xs) ++ ys = x : (xs ++ ys)
 ~~~~~~
 
+\begin{code}
+concatList :: [a] -> [a] -> [a]
+concatList xs ys  = foldr (:) ys xs
+\end{code}
+
 Exercício
 =========
 
@@ -998,6 +1003,11 @@ takeWhile p (x : xs)
     | otherwise = []
 ~~~~~~
 
+\begin{code}
+takeWhileFold :: (a -> Bool) -> [a] -> [a]
+takeWhileFold p = foldr (\x acc -> if p x then x : acc else []) []
+\end{code}
+
 Implemente `takeWhile` usando foldr.
 
 Exercício
@@ -1009,6 +1019,15 @@ satisfazem um predicado. Seu tipo é:
 ~~~~~~{.haskell}
 all :: (a -> Bool) -> [a] -> Bool
 ~~~~~~
+
+\begin{code}
+allr :: (a -> Bool) -> [a] -> Bool
+allr _ [] = True
+allr f (x:xs) = f x && allr f xs
+
+allf :: (a -> Bool) -> [a] -> Bool
+allf f = foldr (\x acc -> if f x then True && acc else False) True
+\end{code}
 
 - Implemente a função `all`: 1) usando recursão e 2) usando `foldr`.
 
@@ -1045,3 +1064,10 @@ concatMap f = foldr step []
 ~~~~~
 
 Apresente a implementação de `concatMap` utilizando `foldr`.
+
+x acc -> if f x then True && acc else False
+
+\begin{code}
+concatFoldr :: (a -> [b]) -> [a] -> [b]
+concatFoldr f = foldr ((++) . f) []
+\end{code}
