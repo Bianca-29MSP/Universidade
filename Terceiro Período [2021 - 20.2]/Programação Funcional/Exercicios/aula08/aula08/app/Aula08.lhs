@@ -196,6 +196,11 @@ Exercício
 
 - Reimplemente a função `bin2Int` utilizando `foldr`.
 
+\begin{code}
+bin2IntFoldr :: [Bit] -> Int
+bin2IntFoldr = foldr (\ x y -> x + 2 * y ) 0
+\end{code}
+
 - Um inconveniente da solução de serialização é a utilização
 do tipo `Bit` como um sinônimo. Idealmente, deveríamos utilizar
 um novo tipo, como se segue.
@@ -206,3 +211,20 @@ data Bit = O | I deriving Show
 
 Modifique a implementação da serialização para utilizar essa
 versão do tipo `Bit`.
+
+\begin{code}
+data Bit' = O | I deriving Show
+
+bin2Int' :: [Bit'] ->  Int
+bin2Int' bs = sum [w * b | (w, b) <- zipWith f weights bs]
+  where
+    weights = iterate (*2) 1
+    f p O = (p, 0)
+    f p I = (p, 1)
+
+int2Bin' :: Int -> [Bit']
+int2Bin' 0 = []
+int2Bin' n = modBit n : int2Bin' (n `div` 2)
+  where
+    modBit n' = if odd (n' `mod` 2) then I else O
+\end{code}

@@ -179,7 +179,7 @@ void Insere(TipoRegistro Reg, TipoApontador *Ap)
   TipoPagina *ApRetorno, *ApTemp;
   Ins(Reg, *Ap, &Cresceu, &RegRetorno, &ApRetorno);
   if (Cresceu)
-  {
+  { //Cresceu a raiz
     ApTemp = (TipoPagina *)malloc(sizeof(TipoPagina));
     ApTemp->n = 1;
     ApTemp->r[0] = RegRetorno;

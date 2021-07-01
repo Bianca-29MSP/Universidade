@@ -15,6 +15,7 @@ class Funcionario
 public:
   Funcionario(string = "", double = 0.0);
   ~Funcionario();
+
   string getNome() const;
   void setNome(string);
   float getSalario() const;
