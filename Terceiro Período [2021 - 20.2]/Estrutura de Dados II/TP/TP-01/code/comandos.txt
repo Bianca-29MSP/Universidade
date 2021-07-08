@@ -1,0 +1,13 @@
+gcc analise.c -c -Wall
+gcc arvBinExterna.c  -c -Wall
+gcc dados.c  -c -Wall
+gcc geradorArq.c  -c -Wall
+gcc sequencialIndexado.c  -c -Wall
+gcc arvoreB.c -c -Wall
+gcc main.c  -c -Wall
+
+gcc analise.o arvBinExterna.o dados.o geradorArq.o sequencialIndexado.o arvoreB.o main.o -o exec -Wall
+
+ou 
+
+gcc analise.c arvBinExterna.c dados.c geradorArq.c sequencialIndexado.c arvoreB.c main.c -o exec -Wall
