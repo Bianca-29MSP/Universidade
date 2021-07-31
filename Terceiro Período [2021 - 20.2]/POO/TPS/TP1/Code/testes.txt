@@ -1,0 +1,30 @@
+[x] Login Administrador
+[x] Login Vendedor
+[x] Login Veterinario
+
+== Administrador
+[x] Gerenciar Funcionarios
+  [x] Cadastrar Veterinario
+  [x] Cadastrar Vendedor
+  [x] Visualizar Vendedor
+  [x] Visualizar Veterinario
+[x] Visualizar Clientes
+[x] Pagar (Informar quando não há conta)
+[x] Comprar
+[x] Relatorio
+  [x] Compras
+  [x] Vendas
+
+== Vendedor
+[x] Cadastra cliente
+[x] Gerar ordem
+[x] Vender produto
+
+== Veterinario
+[x] Visualizar ordem de serviço
+[x] Gerar relatorio
+[x] Visualizar clientes
+
+==Melhorias
+[x] Mensagens 
+[x] Se nou houver cliente nn poder gerar ordem de servico com cliente
