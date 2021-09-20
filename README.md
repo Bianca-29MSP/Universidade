@@ -7,19 +7,19 @@ Repositório destinado para armazenar trabalhos relacionados ao curso de Ciênci
 </p>
 
 ## Cadeiras atuais
-- Semestre: 3º
+- Semestre: 4º
 
-- Estrutura de dados II
+- Engenharia de Software I
 
-- Matemática Discreta II
+- Redes de Computadores
 
-- Programação orientada a objeto
+- Teoria dos Grafos
 
-- Programação funcional
+- Calculo Numerico
 
-- Arquitetura de computadores
+- Sistemas Operacionais
 
-- Introdução a algebra linear
+- Estatistica e Probabilidade
 
 ## Licença 
 
