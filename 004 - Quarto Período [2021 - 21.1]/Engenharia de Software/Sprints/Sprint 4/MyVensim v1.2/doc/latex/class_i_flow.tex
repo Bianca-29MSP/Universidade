@@ -1,0 +1,279 @@
+\hypertarget{class_i_flow}{}\doxysection{Referência da Classe IFlow}
+\label{class_i_flow}\index{IFlow@{IFlow}}
+
+
+Class \mbox{\hyperlink{class_flow}{Flow}}.  
+
+
+
+
+{\ttfamily \#include $<$IFlow.\+hpp$>$}
+
+
+
+Diagrama de hierarquia para IFlow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_flow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para IFlow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_i_flow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_flow_a197fa36d3e123308aa27f5e1ad71475b}{$\sim$\+IFlow}} ()
+\item 
+virtual string \mbox{\hyperlink{class_i_flow_a5aff06e16a9d74a07063230f22ce64f3}{get\+Name}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_flow_a8370be6f457beb410b0090189257656a}{set\+Name}} (string \mbox{\hyperlink{class_i_flow_ad8821f76813a184eee647935b0e5060b}{name}})=0
+\item 
+virtual double \mbox{\hyperlink{class_i_flow_a763598174803af6b93a6a937904f5b9f}{get\+Current\+Value}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_flow_a4dc6f14bae2f20259f03cb5823646148}{set\+Current\+Value}} (double value)=0
+\item 
+virtual \mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_i_flow_ab37c8576dd4be5180005e1f305fbbb21}{get\+Source}} (void) const =0
+\item 
+virtual \mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_i_flow_a0df350726614fd231a60573d4c83f5e9}{get\+Target}} (void) const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_flow_a9678f45e1f4bffa2354fa14d1b20b7c7}{set\+Source}} (\mbox{\hyperlink{class_system}{System}} $\ast$\mbox{\hyperlink{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}{source}})=0
+\item 
+virtual void \mbox{\hyperlink{class_i_flow_aaf7d092e9a985d7f466559346de0b81e}{set\+Target}} (\mbox{\hyperlink{class_system}{System}} $\ast$\mbox{\hyperlink{class_i_flow_a5084bab32965265340c02f7203437cff}{target}})=0
+\item 
+virtual void \mbox{\hyperlink{class_i_flow_a0e7acfbf6e6c00ff9aaaa975b24b1f05}{connect}} (\mbox{\hyperlink{class_system}{System}} $\ast$\mbox{\hyperlink{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}{source}}=NULL, \mbox{\hyperlink{class_system}{System}} $\ast$\mbox{\hyperlink{class_i_flow_a5084bab32965265340c02f7203437cff}{target}}=NULL)=0
+\item 
+virtual double \mbox{\hyperlink{class_i_flow_afaa9e049d71afe25d6c50bef4a712f2e}{execute}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_i_flow_ad8821f76813a184eee647935b0e5060b}{name}}
+\item 
+double \mbox{\hyperlink{class_i_flow_a6c61252965eec28a0a5bca8675f2db4f}{current\+Value}}
+\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}{source}}
+\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_i_flow_a5084bab32965265340c02f7203437cff}{target}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Class \mbox{\hyperlink{class_flow}{Flow}}. 
+
+Está classe representa a inteface do fluxo da simulação. 
+
+Definição na linha \mbox{\hyperlink{_i_flow_8hpp_source_l00014}{14}} do arquivo \mbox{\hyperlink{_i_flow_8hpp_source}{IFlow.\+hpp}}.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_i_flow_a197fa36d3e123308aa27f5e1ad71475b}\label{class_i_flow_a197fa36d3e123308aa27f5e1ad71475b}} 
+\index{IFlow@{IFlow}!````~IFlow@{$\sim$IFlow}}
+\index{````~IFlow@{$\sim$IFlow}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{$\sim$IFlow()}{~IFlow()}}
+{\footnotesize\ttfamily virtual IFlow\+::$\sim$\+IFlow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Esse é o destrutor padrão da classe \mbox{\hyperlink{class_flow}{Flow}} 
+
+Definição na linha \mbox{\hyperlink{_i_flow_8hpp_source_l00024}{24}} do arquivo \mbox{\hyperlink{_i_flow_8hpp_source}{IFlow.\+hpp}}.
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_i_flow_a0e7acfbf6e6c00ff9aaaa975b24b1f05}\label{class_i_flow_a0e7acfbf6e6c00ff9aaaa975b24b1f05}} 
+\index{IFlow@{IFlow}!connect@{connect}}
+\index{connect@{connect}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily virtual void IFlow\+::connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{source = {\ttfamily NULL},  }\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{target = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Connecta dois fluxo ao sistema (entrada e saída). 
+\begin{DoxyParams}{Parâmetros}
+{\em source} & -\/ ponteiro para um sistema de entrada. \\
+\hline
+{\em target} & -\/ ponteiro para um sistema de saída. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_flow_a272bdaaea65ea55df803d724b2c8a9e2}{Flow}}.
+
+\mbox{\Hypertarget{class_i_flow_afaa9e049d71afe25d6c50bef4a712f2e}\label{class_i_flow_afaa9e049d71afe25d6c50bef4a712f2e}} 
+\index{IFlow@{IFlow}!execute@{execute}}
+\index{execute@{execute}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual double IFlow\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Método virtual puro que será herdado por subclasses criadas pelo usuário, essa conterá a equação que será executada pelo fluxo. 
+
+Implementado por \mbox{\hyperlink{class_flow_exponential_a693f0c34b88c31222204e1c66c8e0d1f}{Flow\+Exponential}}, \mbox{\hyperlink{class_flow_logistic_a0e1cd18e73d89b19d6b8ed2fa6eeb604}{Flow\+Logistic}}, \mbox{\hyperlink{class_flow_complex_f_a54c07deb558e744438bdeb1cac60762b}{Flow\+ComplexF}}, \mbox{\hyperlink{class_flow_complex_g_aaff519316455d18f5d50f8d547771bd1}{Flow\+ComplexG}}, \mbox{\hyperlink{class_flow_complex_t_aab1c8284ae0da838bbb24b4338fd1e52}{Flow\+ComplexT}}, \mbox{\hyperlink{class_flow_complex_r_aea6e516320bf2a68369ca05eaec8d7ab}{Flow\+ComplexR}}, \mbox{\hyperlink{class_flow_complex_u_ac5c247de6ef3a1436fb0c81a03400057}{Flow\+ComplexU}}, \mbox{\hyperlink{class_flow_complex_v_a1b529f3b325cc64e0cab1c94342a78b4}{Flow\+ComplexV}}, \mbox{\hyperlink{class_flow_test_a3af7d67a827dc404318a34666fa72067}{Flow\+Test}}, \mbox{\hyperlink{class_flow_test_a3af7d67a827dc404318a34666fa72067}{Flow\+Test}} e \mbox{\hyperlink{class_flow_a619be0b590c78202127bc6ac7fb04029}{Flow}}.
+
+\mbox{\Hypertarget{class_i_flow_a763598174803af6b93a6a937904f5b9f}\label{class_i_flow_a763598174803af6b93a6a937904f5b9f}} 
+\index{IFlow@{IFlow}!getCurrentValue@{getCurrentValue}}
+\index{getCurrentValue@{getCurrentValue}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{getCurrentValue()}{getCurrentValue()}}
+{\footnotesize\ttfamily virtual double IFlow\+::get\+Current\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retorna o valor atual do fluxo. \begin{DoxyReturn}{Retorna}
+double -\/ valor atual do fluxo. 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_flow_ae69612bbbac517f7f7d91c9bd13cb70d}{Flow}}.
+
+\mbox{\Hypertarget{class_i_flow_a5aff06e16a9d74a07063230f22ce64f3}\label{class_i_flow_a5aff06e16a9d74a07063230f22ce64f3}} 
+\index{IFlow@{IFlow}!getName@{getName}}
+\index{getName@{getName}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual string IFlow\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retorna o nome do fluxo. \begin{DoxyReturn}{Retorna}
+string -\/ nome do fluxo. 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_flow_ae722fae0ffe2270a5c84152a80a7d842}{Flow}}.
+
+\mbox{\Hypertarget{class_i_flow_ab37c8576dd4be5180005e1f305fbbb21}\label{class_i_flow_ab37c8576dd4be5180005e1f305fbbb21}} 
+\index{IFlow@{IFlow}!getSource@{getSource}}
+\index{getSource@{getSource}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{getSource()}{getSource()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_system}{System}} $\ast$ IFlow\+::get\+Source (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retorna o ponteiro do sistema de entrada do fluxo. \begin{DoxyReturn}{Retorna}
+\mbox{\hyperlink{class_system}{System}} $\ast$ -\/ ponteiro para um sistema de entrada. 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_flow_a1b56c963dc181978655af50b8ce32488}{Flow}}.
+
+\mbox{\Hypertarget{class_i_flow_a0df350726614fd231a60573d4c83f5e9}\label{class_i_flow_a0df350726614fd231a60573d4c83f5e9}} 
+\index{IFlow@{IFlow}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_system}{System}} $\ast$ IFlow\+::get\+Target (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retorna o ponteiro do sistema de saída do fluxo. \begin{DoxyReturn}{Retorna}
+\mbox{\hyperlink{class_system}{System}} $\ast$ -\/ ponteiro para um sistema de saída. 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_flow_af8085a35060629d6774e80704219cbd8}{Flow}}.
+
+\mbox{\Hypertarget{class_i_flow_a4dc6f14bae2f20259f03cb5823646148}\label{class_i_flow_a4dc6f14bae2f20259f03cb5823646148}} 
+\index{IFlow@{IFlow}!setCurrentValue@{setCurrentValue}}
+\index{setCurrentValue@{setCurrentValue}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{setCurrentValue()}{setCurrentValue()}}
+{\footnotesize\ttfamily virtual void IFlow\+::set\+Current\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Seta o valor atual do fluxo 
+\begin{DoxyParams}{Parâmetros}
+{\em value} & -\/ novo valor atual do fluxo. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_flow_a36cee8a36876467a28b656ef15981431}{Flow}}.
+
+\mbox{\Hypertarget{class_i_flow_a8370be6f457beb410b0090189257656a}\label{class_i_flow_a8370be6f457beb410b0090189257656a}} 
+\index{IFlow@{IFlow}!setName@{setName}}
+\index{setName@{setName}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily virtual void IFlow\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Seta o nome do fluxo 
+\begin{DoxyParams}{Parâmetros}
+{\em name} & -\/ nome do fluxo. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_flow_ac829599a96f9ae03979d762771a4fea0}{Flow}}.
+
+\mbox{\Hypertarget{class_i_flow_a9678f45e1f4bffa2354fa14d1b20b7c7}\label{class_i_flow_a9678f45e1f4bffa2354fa14d1b20b7c7}} 
+\index{IFlow@{IFlow}!setSource@{setSource}}
+\index{setSource@{setSource}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{setSource()}{setSource()}}
+{\footnotesize\ttfamily virtual void IFlow\+::set\+Source (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Seta o ponteiro para o sistema de entrada do fluxo. 
+\begin{DoxyParams}{Parâmetros}
+{\em source} & -\/ ponteiro para um sistema de entrada. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_flow_a250fc53158862fc0db77b323a33e48a3}{Flow}}.
+
+\mbox{\Hypertarget{class_i_flow_aaf7d092e9a985d7f466559346de0b81e}\label{class_i_flow_aaf7d092e9a985d7f466559346de0b81e}} 
+\index{IFlow@{IFlow}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}}
+{\footnotesize\ttfamily virtual void IFlow\+::set\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Seta o ponteiro para o sistema de saída do fluxo. 
+\begin{DoxyParams}{Parâmetros}
+{\em target} & -\/ ponteiro para um sistema de saída. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_flow_ab69903880174e5bcdc0d815b5de7b3e0}{Flow}}.
+
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_i_flow_a6c61252965eec28a0a5bca8675f2db4f}\label{class_i_flow_a6c61252965eec28a0a5bca8675f2db4f}} 
+\index{IFlow@{IFlow}!currentValue@{currentValue}}
+\index{currentValue@{currentValue}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{currentValue}{currentValue}}
+{\footnotesize\ttfamily double IFlow\+::current\+Value\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui o valor atual do fluxo em determinado tempo 
+
+Definição na linha \mbox{\hyperlink{_i_flow_8hpp_source_l00017}{17}} do arquivo \mbox{\hyperlink{_i_flow_8hpp_source}{IFlow.\+hpp}}.
+
+\mbox{\Hypertarget{class_i_flow_ad8821f76813a184eee647935b0e5060b}\label{class_i_flow_ad8821f76813a184eee647935b0e5060b}} 
+\index{IFlow@{IFlow}!name@{name}}
+\index{name@{name}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string IFlow\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui o nome do fluxo 
+
+Definição na linha \mbox{\hyperlink{_i_flow_8hpp_source_l00016}{16}} do arquivo \mbox{\hyperlink{_i_flow_8hpp_source}{IFlow.\+hpp}}.
+
+\mbox{\Hypertarget{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}\label{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}} 
+\index{IFlow@{IFlow}!source@{source}}
+\index{source@{source}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{source}{source}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}}$\ast$ IFlow\+::source\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui um ponteiro para o sistema de entrada do fluxo 
+
+Definição na linha \mbox{\hyperlink{_i_flow_8hpp_source_l00018}{18}} do arquivo \mbox{\hyperlink{_i_flow_8hpp_source}{IFlow.\+hpp}}.
+
+\mbox{\Hypertarget{class_i_flow_a5084bab32965265340c02f7203437cff}\label{class_i_flow_a5084bab32965265340c02f7203437cff}} 
+\index{IFlow@{IFlow}!target@{target}}
+\index{target@{target}!IFlow@{IFlow}}
+\doxysubsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}}$\ast$ IFlow\+::target\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui um ponteiro para o sistema de saída do fluxo 
+
+Definição na linha \mbox{\hyperlink{_i_flow_8hpp_source_l00019}{19}} do arquivo \mbox{\hyperlink{_i_flow_8hpp_source}{IFlow.\+hpp}}.
+
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Enyal/\+One\+Drive/\+Documentos/\+UFOP/\+Engenharia de Software/\+Sprints/\+Sprint 4/\+My\+Vensim v1.\+2/src/\mbox{\hyperlink{_i_flow_8hpp}{IFlow.\+hpp}}\end{DoxyCompactItemize}

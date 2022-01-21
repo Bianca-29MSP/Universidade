@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Vensim: Código-Fonte de C:/Users/Enyal/OneDrive/Documentos/UFOP/Engenharia de Software/Sprints/Sprint 4/MyVensim v1.2/test/unit/utils/mem_usage.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Vensim
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_52e310edea3138edb117dec8812c8765.html">MyVensim v1.2</a></li><li class="navelem"><a class="el" href="dir_8f73e9abf6ce595b7c2c71124355e74a.html">test</a></li><li class="navelem"><a class="el" href="dir_eb2ebcdad3024cdbc9dd16d3d4044b05.html">unit</a></li><li class="navelem"><a class="el" href="dir_590ba3d0e24b13a4341a18660bbb9bd6.html">utils</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">mem_usage.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="mem__usage_8cpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="mem__usage_8hpp.html">mem_usage.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;ios&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="mem__usage_8cpp.html#a76605b32027a2999bb0d15c024211828">    9</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mem__usage_8cpp.html#a76605b32027a2999bb0d15c024211828">mem_usage</a>(<span class="keywordtype">double</span>&amp; vm_usage, <span class="keywordtype">double</span>&amp; resident_set) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>   vm_usage = 0.0;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>   resident_set = 0.0;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>   ifstream stat_stream(<span class="stringliteral">&quot;/proc/self/stat&quot;</span>,ios_base::in); <span class="comment">//get info from proc directory</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>   <span class="comment">//create some variables to get info</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>   <span class="keywordtype">string</span> pid, comm, state, ppid, pgrp, session, tty_nr;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>   <span class="keywordtype">string</span> tpgid, flags, minflt, cminflt, majflt, cmajflt;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>   <span class="keywordtype">string</span> utime, stime, cutime, cstime, priority, nice;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>   <span class="keywordtype">string</span> O, itrealvalue, starttime;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>   <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> vsize;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>   <span class="keywordtype">long</span> rss;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>   stat_stream &gt;&gt; pid &gt;&gt; comm &gt;&gt; state &gt;&gt; ppid &gt;&gt; pgrp &gt;&gt; session &gt;&gt; tty_nr</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>   &gt;&gt; tpgid &gt;&gt; flags &gt;&gt; minflt &gt;&gt; cminflt &gt;&gt; majflt &gt;&gt; cmajflt</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>   &gt;&gt; utime &gt;&gt; stime &gt;&gt; cutime &gt;&gt; cstime &gt;&gt; priority &gt;&gt; nice</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>   &gt;&gt; O &gt;&gt; itrealvalue &gt;&gt; starttime &gt;&gt; vsize &gt;&gt; rss; <span class="comment">// don&#39;t care  about the rest</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>   stat_stream.close();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>   vm_usage = vsize / 1024.0;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="ttc" id="amem__usage_8cpp_html_a76605b32027a2999bb0d15c024211828"><div class="ttname"><a href="mem__usage_8cpp.html#a76605b32027a2999bb0d15c024211828">mem_usage</a></div><div class="ttdeci">void mem_usage(double &amp;vm_usage, double &amp;resident_set)</div><div class="ttdef"><b>Definition:</b> <a href="mem__usage_8cpp_source.html#l00009">mem_usage.cpp:9</a></div></div>
+<div class="ttc" id="amem__usage_8hpp_html"><div class="ttname"><a href="mem__usage_8hpp.html">mem_usage.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

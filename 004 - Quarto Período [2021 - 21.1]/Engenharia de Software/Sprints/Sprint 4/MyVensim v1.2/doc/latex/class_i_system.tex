@@ -1,0 +1,176 @@
+\hypertarget{class_i_system}{}\doxysection{Referência da Classe ISystem}
+\label{class_i_system}\index{ISystem@{ISystem}}
+
+
+Class \mbox{\hyperlink{class_system}{System}}.  
+
+
+
+
+{\ttfamily \#include $<$ISystem.\+hpp$>$}
+
+
+
+Diagrama de hierarquia para ISystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_i_system__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para ISystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_i_system__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_system_a0ba048ff63adcea2cf3139c43491e253}{$\sim$\+ISystem}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_system_a0b013c5c0122435959ebd766bb38089b}{set\+Value}} (double \mbox{\hyperlink{class_i_system_ad118d6864eb2fa472bfaf7d999a91c79}{value}})=0
+\item 
+virtual double \mbox{\hyperlink{class_i_system_a055be19f8365dd9f4f82d322edea9f00}{get\+Value}} () const =0
+\item 
+virtual string \mbox{\hyperlink{class_i_system_a514fe871746464cd7c814880c618dfac}{get\+Name}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_system_a581b9983f671a336ed75676acd5a25ff}{set\+Name}} (string \mbox{\hyperlink{class_i_system_a400ffde2f1cb33fae055284c099dd8cc}{name}})=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_i_system_a400ffde2f1cb33fae055284c099dd8cc}{name}}
+\item 
+double \mbox{\hyperlink{class_i_system_ad118d6864eb2fa472bfaf7d999a91c79}{value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Class \mbox{\hyperlink{class_system}{System}}. 
+
+Está classe representa a interface d sistema/estoque da simulação. 
+
+Definição na linha \mbox{\hyperlink{_i_system_8hpp_source_l00012}{12}} do arquivo \mbox{\hyperlink{_i_system_8hpp_source}{ISystem.\+hpp}}.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_i_system_a0ba048ff63adcea2cf3139c43491e253}\label{class_i_system_a0ba048ff63adcea2cf3139c43491e253}} 
+\index{ISystem@{ISystem}!````~ISystem@{$\sim$ISystem}}
+\index{````~ISystem@{$\sim$ISystem}!ISystem@{ISystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$ISystem()}{~ISystem()}}
+{\footnotesize\ttfamily virtual ISystem\+::$\sim$\+ISystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Esse é o destrutor padrão da classe \mbox{\hyperlink{class_system}{System}}. 
+
+Definição na linha \mbox{\hyperlink{_i_system_8hpp_source_l00020}{20}} do arquivo \mbox{\hyperlink{_i_system_8hpp_source}{ISystem.\+hpp}}.
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_i_system_a514fe871746464cd7c814880c618dfac}\label{class_i_system_a514fe871746464cd7c814880c618dfac}} 
+\index{ISystem@{ISystem}!getName@{getName}}
+\index{getName@{getName}!ISystem@{ISystem}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual string ISystem\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retorna o nome do sistema. \begin{DoxyReturn}{Retorna}
+string -\/ nome do sistema. 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_system_a47ece132a04247cd74aea11537830bd4}{System}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_system_a514fe871746464cd7c814880c618dfac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_system_a055be19f8365dd9f4f82d322edea9f00}\label{class_i_system_a055be19f8365dd9f4f82d322edea9f00}} 
+\index{ISystem@{ISystem}!getValue@{getValue}}
+\index{getValue@{getValue}!ISystem@{ISystem}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily virtual double ISystem\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retornao valor armazenado pelo sistema \begin{DoxyReturn}{Retorna}
+double -\/ valor armazenado pelo sistema. 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_system_aa7d17369d1034e7d8643a63f69d1901d}{System}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_system_a055be19f8365dd9f4f82d322edea9f00_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_system_a581b9983f671a336ed75676acd5a25ff}\label{class_i_system_a581b9983f671a336ed75676acd5a25ff}} 
+\index{ISystem@{ISystem}!setName@{setName}}
+\index{setName@{setName}!ISystem@{ISystem}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily virtual void ISystem\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Seta o nome do sistema 
+\begin{DoxyParams}{Parâmetros}
+{\em name} & -\/ nome do sistema. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_system_a8ca115c44d52a5bee53cfb7c6990d49e}{System}}.
+
+\mbox{\Hypertarget{class_i_system_a0b013c5c0122435959ebd766bb38089b}\label{class_i_system_a0b013c5c0122435959ebd766bb38089b}} 
+\index{ISystem@{ISystem}!setValue@{setValue}}
+\index{setValue@{setValue}!ISystem@{ISystem}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily virtual void ISystem\+::set\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Seta o valor armazenado pelo sistema 
+\begin{DoxyParams}{Parâmetros}
+{\em value} & -\/ valor a ser armazenado pelo sistema. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_system_a5343de0a45485edd88bc87f338fe9a19}{System}}.
+
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_i_system_a400ffde2f1cb33fae055284c099dd8cc}\label{class_i_system_a400ffde2f1cb33fae055284c099dd8cc}} 
+\index{ISystem@{ISystem}!name@{name}}
+\index{name@{name}!ISystem@{ISystem}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string ISystem\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui o nome do sistema 
+
+Definição na linha \mbox{\hyperlink{_i_system_8hpp_source_l00014}{14}} do arquivo \mbox{\hyperlink{_i_system_8hpp_source}{ISystem.\+hpp}}.
+
+\mbox{\Hypertarget{class_i_system_ad118d6864eb2fa472bfaf7d999a91c79}\label{class_i_system_ad118d6864eb2fa472bfaf7d999a91c79}} 
+\index{ISystem@{ISystem}!value@{value}}
+\index{value@{value}!ISystem@{ISystem}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily double ISystem\+::value\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui o valor armazenado no sistema 
+
+Definição na linha \mbox{\hyperlink{_i_system_8hpp_source_l00015}{15}} do arquivo \mbox{\hyperlink{_i_system_8hpp_source}{ISystem.\+hpp}}.
+
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Enyal/\+One\+Drive/\+Documentos/\+UFOP/\+Engenharia de Software/\+Sprints/\+Sprint 4/\+My\+Vensim v1.\+2/src/\mbox{\hyperlink{_i_system_8hpp}{ISystem.\+hpp}}\end{DoxyCompactItemize}

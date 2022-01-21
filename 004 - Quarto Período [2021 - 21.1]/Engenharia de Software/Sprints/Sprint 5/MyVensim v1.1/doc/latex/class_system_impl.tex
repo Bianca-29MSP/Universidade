@@ -1,0 +1,294 @@
+\hypertarget{class_system_impl}{}\doxysection{Referência da Classe System\+Impl}
+\label{class_system_impl}\index{SystemImpl@{SystemImpl}}
+
+
+Class \mbox{\hyperlink{class_system}{System}}.  
+
+
+
+
+{\ttfamily \#include $<$System\+Impl.\+hpp$>$}
+
+
+
+Diagrama de hierarquia para System\+Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_system_impl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para System\+Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_system_impl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_system_impl_a6e8460199ac54949b08ecb315fce168b}{System\+Impl}} ()
+\item 
+\mbox{\hyperlink{class_system_impl_a0dc1b9a288f9872baed27532d7c75672}{System\+Impl}} (const \mbox{\hyperlink{class_system_impl}{System\+Impl}} $\ast$system)
+\item 
+\mbox{\hyperlink{class_system_impl_afaa24e156e6180dbb4deb54c71d712e8}{System\+Impl}} (string \mbox{\hyperlink{class_system_impl_acd123bacad8aa2b830d9ca9c8098fa84}{name}})
+\item 
+\mbox{\hyperlink{class_system_impl_a4cc8c075b21f178e6974e93100791eef}{System\+Impl}} (string \mbox{\hyperlink{class_system_impl_acd123bacad8aa2b830d9ca9c8098fa84}{name}}, double \mbox{\hyperlink{class_system_impl_ad068c75f35f48f312d0899d161ea7481}{value}})
+\item 
+virtual \mbox{\hyperlink{class_system_impl_a0cd451779458a7bd7c224a48ed163a9e}{$\sim$\+System\+Impl}} ()
+\item 
+void \mbox{\hyperlink{class_system_impl_aebe4a9ca472120a97bb46c7138df8e65}{set\+Value}} (double \mbox{\hyperlink{class_system_impl_ad068c75f35f48f312d0899d161ea7481}{value}})
+\item 
+double \mbox{\hyperlink{class_system_impl_aa21b5abc7021e73715c06449fea9e08f}{get\+Value}} () const
+\item 
+string \mbox{\hyperlink{class_system_impl_a4407f82b905d49335f76c4a18fbfef8d}{get\+Name}} () const
+\item 
+void \mbox{\hyperlink{class_system_impl_ae7758fe8bf8fab11cc8ac1b378fbdf45}{set\+Name}} (string \mbox{\hyperlink{class_system_impl_acd123bacad8aa2b830d9ca9c8098fa84}{name}})
+\item 
+\mbox{\hyperlink{class_system_impl}{System\+Impl}} $\ast$ \mbox{\hyperlink{class_system_impl_a1eea2b8934c0c3c6ca61f9f5953eb750}{operator=}} (const \mbox{\hyperlink{class_system_impl}{System\+Impl}} $\ast$system)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_system_impl_acd123bacad8aa2b830d9ca9c8098fa84}{name}}
+\item 
+double \mbox{\hyperlink{class_system_impl_ad068c75f35f48f312d0899d161ea7481}{value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Class \mbox{\hyperlink{class_system}{System}}. 
+
+Está classe(concreta) representa o sistema/estoque da simulação. 
+
+Definição na linha \mbox{\hyperlink{_system_impl_8hpp_source_l00012}{12}} do arquivo \mbox{\hyperlink{_system_impl_8hpp_source}{System\+Impl.\+hpp}}.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_system_impl_a6e8460199ac54949b08ecb315fce168b}\label{class_system_impl_a6e8460199ac54949b08ecb315fce168b}} 
+\index{SystemImpl@{SystemImpl}!SystemImpl@{SystemImpl}}
+\index{SystemImpl@{SystemImpl}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{SystemImpl()}{SystemImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily System\+Impl\+::\+System\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Esse é o construtor padrão da classe \mbox{\hyperlink{class_system}{System}}. 
+
+Definição na linha \mbox{\hyperlink{_system_impl_8cpp_source_l00003}{3}} do arquivo \mbox{\hyperlink{_system_impl_8cpp_source}{System\+Impl.\+cpp}}.
+
+Este é o diagrama das funções utilizadas por essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_impl_a6e8460199ac54949b08ecb315fce168b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_system_impl_a0dc1b9a288f9872baed27532d7c75672}\label{class_system_impl_a0dc1b9a288f9872baed27532d7c75672}} 
+\index{SystemImpl@{SystemImpl}!SystemImpl@{SystemImpl}}
+\index{SystemImpl@{SystemImpl}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{SystemImpl()}{SystemImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily System\+Impl\+::\+System\+Impl (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_system_impl}{System\+Impl}} $\ast$}]{system }\end{DoxyParamCaption})}
+
+Esse é o construtor copia da classe \mbox{\hyperlink{class_system}{System}}. 
+\begin{DoxyParams}{Parâmetros}
+{\em system} & sistema para ser copiado \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{_system_impl_8cpp_source_l00007}{7}} do arquivo \mbox{\hyperlink{_system_impl_8cpp_source}{System\+Impl.\+cpp}}.
+
+\mbox{\Hypertarget{class_system_impl_afaa24e156e6180dbb4deb54c71d712e8}\label{class_system_impl_afaa24e156e6180dbb4deb54c71d712e8}} 
+\index{SystemImpl@{SystemImpl}!SystemImpl@{SystemImpl}}
+\index{SystemImpl@{SystemImpl}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{SystemImpl()}{SystemImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily System\+Impl\+::\+System\+Impl (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+Esse é um construtor que possui um atributo inicial para o sistema. 
+\begin{DoxyParams}{Parâmetros}
+{\em name} & nome do sistema. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{_system_impl_8cpp_source_l00016}{16}} do arquivo \mbox{\hyperlink{_system_impl_8cpp_source}{System\+Impl.\+cpp}}.
+
+Este é o diagrama das funções utilizadas por essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_impl_afaa24e156e6180dbb4deb54c71d712e8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_system_impl_a4cc8c075b21f178e6974e93100791eef}\label{class_system_impl_a4cc8c075b21f178e6974e93100791eef}} 
+\index{SystemImpl@{SystemImpl}!SystemImpl@{SystemImpl}}
+\index{SystemImpl@{SystemImpl}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{SystemImpl()}{SystemImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily System\+Impl\+::\+System\+Impl (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+Esse é um construtor que possui dois atributos iniciais para o sistema. 
+\begin{DoxyParams}{Parâmetros}
+{\em name} & nome do sistema. \\
+\hline
+{\em value} & valor inicial do sistema. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{_system_impl_8cpp_source_l00021}{21}} do arquivo \mbox{\hyperlink{_system_impl_8cpp_source}{System\+Impl.\+cpp}}.
+
+Este é o diagrama das funções utilizadas por essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_impl_a4cc8c075b21f178e6974e93100791eef_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_system_impl_a0cd451779458a7bd7c224a48ed163a9e}\label{class_system_impl_a0cd451779458a7bd7c224a48ed163a9e}} 
+\index{SystemImpl@{SystemImpl}!````~SystemImpl@{$\sim$SystemImpl}}
+\index{````~SystemImpl@{$\sim$SystemImpl}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{$\sim$SystemImpl()}{~SystemImpl()}}
+{\footnotesize\ttfamily System\+Impl\+::$\sim$\+System\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esse é o destrutor padrão da classe \mbox{\hyperlink{class_system}{System}}. 
+
+Definição na linha \mbox{\hyperlink{_system_impl_8cpp_source_l00026}{26}} do arquivo \mbox{\hyperlink{_system_impl_8cpp_source}{System\+Impl.\+cpp}}.
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_system_impl_a4407f82b905d49335f76c4a18fbfef8d}\label{class_system_impl_a4407f82b905d49335f76c4a18fbfef8d}} 
+\index{SystemImpl@{SystemImpl}!getName@{getName}}
+\index{getName@{getName}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string System\+Impl\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Retorna o nome do sistema. \begin{DoxyReturn}{Retorna}
+string -\/ nome do sistema. 
+\end{DoxyReturn}
+
+
+Implementa \mbox{\hyperlink{class_system_ab4f23c21832d6bbef462a5a20b296912}{System}}.
+
+
+
+Definição na linha \mbox{\hyperlink{_system_impl_8cpp_source_l00038}{38}} do arquivo \mbox{\hyperlink{_system_impl_8cpp_source}{System\+Impl.\+cpp}}.
+
+\mbox{\Hypertarget{class_system_impl_aa21b5abc7021e73715c06449fea9e08f}\label{class_system_impl_aa21b5abc7021e73715c06449fea9e08f}} 
+\index{SystemImpl@{SystemImpl}!getValue@{getValue}}
+\index{getValue@{getValue}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily double System\+Impl\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Retornao valor armazenado pelo sistema \begin{DoxyReturn}{Retorna}
+double -\/ valor armazenado pelo sistema. 
+\end{DoxyReturn}
+
+
+Implementa \mbox{\hyperlink{class_system_a41b673faa6c199eb8e4f204639fab4f2}{System}}.
+
+
+
+Definição na linha \mbox{\hyperlink{_system_impl_8cpp_source_l00033}{33}} do arquivo \mbox{\hyperlink{_system_impl_8cpp_source}{System\+Impl.\+cpp}}.
+
+\mbox{\Hypertarget{class_system_impl_a1eea2b8934c0c3c6ca61f9f5953eb750}\label{class_system_impl_a1eea2b8934c0c3c6ca61f9f5953eb750}} 
+\index{SystemImpl@{SystemImpl}!operator=@{operator=}}
+\index{operator=@{operator=}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_impl}{System\+Impl}} $\ast$ System\+Impl\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_system_impl}{System\+Impl}} $\ast$}]{system }\end{DoxyParamCaption})}
+
+Operador de atribuição (=) sobrecarregado para a classe \mbox{\hyperlink{class_system}{System}}. 
+
+Definição na linha \mbox{\hyperlink{_system_impl_8cpp_source_l00048}{48}} do arquivo \mbox{\hyperlink{_system_impl_8cpp_source}{System\+Impl.\+cpp}}.
+
+\mbox{\Hypertarget{class_system_impl_ae7758fe8bf8fab11cc8ac1b378fbdf45}\label{class_system_impl_ae7758fe8bf8fab11cc8ac1b378fbdf45}} 
+\index{SystemImpl@{SystemImpl}!setName@{setName}}
+\index{setName@{setName}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void System\+Impl\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Seta o nome do sistema 
+\begin{DoxyParams}{Parâmetros}
+{\em name} & -\/ nome do sistema. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \mbox{\hyperlink{class_system_afe381855cfc606c7d109f590396928e7}{System}}.
+
+
+
+Definição na linha \mbox{\hyperlink{_system_impl_8cpp_source_l00043}{43}} do arquivo \mbox{\hyperlink{_system_impl_8cpp_source}{System\+Impl.\+cpp}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_impl_ae7758fe8bf8fab11cc8ac1b378fbdf45_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_system_impl_aebe4a9ca472120a97bb46c7138df8e65}\label{class_system_impl_aebe4a9ca472120a97bb46c7138df8e65}} 
+\index{SystemImpl@{SystemImpl}!setValue@{setValue}}
+\index{setValue@{setValue}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void System\+Impl\+::set\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Seta o valor armazenado pelo sistema 
+\begin{DoxyParams}{Parâmetros}
+{\em value} & -\/ valor a ser armazenado pelo sistema. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \mbox{\hyperlink{class_system_a7421d2e6970a0c4169a2febe254f2060}{System}}.
+
+
+
+Definição na linha \mbox{\hyperlink{_system_impl_8cpp_source_l00028}{28}} do arquivo \mbox{\hyperlink{_system_impl_8cpp_source}{System\+Impl.\+cpp}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_impl_aebe4a9ca472120a97bb46c7138df8e65_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_system_impl_acd123bacad8aa2b830d9ca9c8098fa84}\label{class_system_impl_acd123bacad8aa2b830d9ca9c8098fa84}} 
+\index{SystemImpl@{SystemImpl}!name@{name}}
+\index{name@{name}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string System\+Impl\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui o nome do sistema 
+
+Definição na linha \mbox{\hyperlink{_system_impl_8hpp_source_l00014}{14}} do arquivo \mbox{\hyperlink{_system_impl_8hpp_source}{System\+Impl.\+hpp}}.
+
+\mbox{\Hypertarget{class_system_impl_ad068c75f35f48f312d0899d161ea7481}\label{class_system_impl_ad068c75f35f48f312d0899d161ea7481}} 
+\index{SystemImpl@{SystemImpl}!value@{value}}
+\index{value@{value}!SystemImpl@{SystemImpl}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily double System\+Impl\+::value\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui o valor armazenado no sistema 
+
+Definição na linha \mbox{\hyperlink{_system_impl_8hpp_source_l00015}{15}} do arquivo \mbox{\hyperlink{_system_impl_8hpp_source}{System\+Impl.\+hpp}}.
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{_system_impl_8hpp}{System\+Impl.\+hpp}}\item 
+src/lib/\mbox{\hyperlink{_system_impl_8cpp}{System\+Impl.\+cpp}}\end{DoxyCompactItemize}

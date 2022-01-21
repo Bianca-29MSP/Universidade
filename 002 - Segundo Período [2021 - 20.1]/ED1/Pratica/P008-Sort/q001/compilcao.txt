@@ -1,0 +1,7 @@
+gcc -c main.c
+
+gcc -c aluno.c
+
+gcc -c insertionSort.c
+
+gcc -o exec aluno.o insertionSort.o main.o

@@ -1,0 +1,332 @@
+\hypertarget{class_i_model}{}\doxysection{Referência da Classe IModel}
+\label{class_i_model}\index{IModel@{IModel}}
+
+
+Class \mbox{\hyperlink{class_model}{Model}}.  
+
+
+
+
+{\ttfamily \#include $<$IModel.\+hpp$>$}
+
+
+
+Diagrama de hierarquia para IModel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_i_model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para IModel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_i_model__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Tipos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+typedef list$<$ \mbox{\hyperlink{class_i_flow}{IFlow}} $\ast$ $>$\+::iterator \mbox{\hyperlink{class_i_model_a9c09bb7e06d502bc443e62aa18fb47d2}{iterator\+Flow}}
+\item 
+typedef list$<$ \mbox{\hyperlink{class_i_system}{ISystem}} $\ast$ $>$\+::iterator \mbox{\hyperlink{class_i_model_a18dc3cb0f1029c42753928bf20c592f4}{iterator\+System}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_model_aa2186cfae3cae48a544121fed2658ff5}{$\sim$\+IModel}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_model_acf54893d7d3673401198996e7121d36e}{add}} (\mbox{\hyperlink{class_i_flow}{IFlow}} $\ast$flow=NULL)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_model_ac314290d71c19b4bcbbf9fbdb48848d5}{add}} (\mbox{\hyperlink{class_i_system}{ISystem}} $\ast$system=NULL)=0
+\item 
+virtual \mbox{\hyperlink{class_i_model_a9c09bb7e06d502bc443e62aa18fb47d2}{iterator\+Flow}} \mbox{\hyperlink{class_i_model_a152b6e4bc8eaef8a8b0729fa47b36118}{begin\+Flows}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_model_a9c09bb7e06d502bc443e62aa18fb47d2}{iterator\+Flow}} \mbox{\hyperlink{class_i_model_a42fc01deb32ed4c6bb0aa1497c000be6}{end\+Flows}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_model_a18dc3cb0f1029c42753928bf20c592f4}{iterator\+System}} \mbox{\hyperlink{class_i_model_a8563fd13cb5ac4c69262268a9675f168}{begin\+Systems}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_model_a18dc3cb0f1029c42753928bf20c592f4}{iterator\+System}} \mbox{\hyperlink{class_i_model_afb8b316338200741c93ec360e30fd2b7}{end\+Systems}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_model_ae3ac3071ec5c5011c09b676015228615}{set\+Time}} (double time)=0
+\item 
+virtual double \mbox{\hyperlink{class_i_model_a5132992c23ea107b5218da0484d96bc5}{get\+Time}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_model_a92c970961f9841c1da1f6878166c9807}{increment\+Time}} (double increment=1)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_model_a725779622e2261a9126724a68a483463}{run}} (double start=0, double end=0, double increment=0)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Class \mbox{\hyperlink{class_model}{Model}}. 
+
+Está classe representa a interface do modelo geral da simulação, é nela que contém as estruturas necessárias para a simulação e sua execução. 
+
+Definição na linha \mbox{\hyperlink{_i_model_8hpp_source_l00015}{15}} do arquivo \mbox{\hyperlink{_i_model_8hpp_source}{IModel.\+hpp}}.
+
+
+
+\doxysubsection{Definições de tipos}
+\mbox{\Hypertarget{class_i_model_a9c09bb7e06d502bc443e62aa18fb47d2}\label{class_i_model_a9c09bb7e06d502bc443e62aa18fb47d2}} 
+\index{IModel@{IModel}!iteratorFlow@{iteratorFlow}}
+\index{iteratorFlow@{iteratorFlow}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{iteratorFlow}{iteratorFlow}}
+{\footnotesize\ttfamily typedef list$<$\mbox{\hyperlink{class_i_flow}{IFlow}}$\ast$$>$\+::iterator \mbox{\hyperlink{class_i_model_a9c09bb7e06d502bc443e62aa18fb47d2}{IModel\+::iterator\+Flow}}}
+
+Iterador da lista de fluxo do modelo 
+
+Definição na linha \mbox{\hyperlink{_i_model_8hpp_source_l00019}{19}} do arquivo \mbox{\hyperlink{_i_model_8hpp_source}{IModel.\+hpp}}.
+
+\mbox{\Hypertarget{class_i_model_a18dc3cb0f1029c42753928bf20c592f4}\label{class_i_model_a18dc3cb0f1029c42753928bf20c592f4}} 
+\index{IModel@{IModel}!iteratorSystem@{iteratorSystem}}
+\index{iteratorSystem@{iteratorSystem}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{iteratorSystem}{iteratorSystem}}
+{\footnotesize\ttfamily typedef list$<$\mbox{\hyperlink{class_i_system}{ISystem}}$\ast$$>$\+::iterator \mbox{\hyperlink{class_i_model_a18dc3cb0f1029c42753928bf20c592f4}{IModel\+::iterator\+System}}}
+
+Iterador da lista de sistemas do modelo 
+
+Definição na linha \mbox{\hyperlink{_i_model_8hpp_source_l00020}{20}} do arquivo \mbox{\hyperlink{_i_model_8hpp_source}{IModel.\+hpp}}.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_i_model_aa2186cfae3cae48a544121fed2658ff5}\label{class_i_model_aa2186cfae3cae48a544121fed2658ff5}} 
+\index{IModel@{IModel}!````~IModel@{$\sim$IModel}}
+\index{````~IModel@{$\sim$IModel}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$IModel()}{~IModel()}}
+{\footnotesize\ttfamily virtual IModel\+::$\sim$\+IModel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Esse é o destrutor padrão da classe \mbox{\hyperlink{class_model}{Model}} 
+
+Definição na linha \mbox{\hyperlink{_i_model_8hpp_source_l00025}{25}} do arquivo \mbox{\hyperlink{_i_model_8hpp_source}{IModel.\+hpp}}.
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_i_model_acf54893d7d3673401198996e7121d36e}\label{class_i_model_acf54893d7d3673401198996e7121d36e}} 
+\index{IModel@{IModel}!add@{add}}
+\index{add@{add}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void IModel\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_flow}{IFlow}} $\ast$}]{flow = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Adiciona um fluxo ao \mbox{\hyperlink{class_model}{Model}} 
+\begin{DoxyParams}{Parâmetros}
+{\em flow} & ponteiro para o fluxo a ser adicionado ao modelo. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_model_a6aacdd6fe0c69c272ec75fb7323c8c84}{Model}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_model_acf54893d7d3673401198996e7121d36e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_model_ac314290d71c19b4bcbbf9fbdb48848d5}\label{class_i_model_ac314290d71c19b4bcbbf9fbdb48848d5}} 
+\index{IModel@{IModel}!add@{add}}
+\index{add@{add}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void IModel\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_system}{ISystem}} $\ast$}]{system = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Adiciona um sistema ao \mbox{\hyperlink{class_model}{Model}} 
+\begin{DoxyParams}{Parâmetros}
+{\em system} & ponteiro para o sistema a ser adicionado ao modelo. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_model_ad7e7dfd8beb7b6bc929c2ac7358620b0}{Model}}.
+
+\mbox{\Hypertarget{class_i_model_a152b6e4bc8eaef8a8b0729fa47b36118}\label{class_i_model_a152b6e4bc8eaef8a8b0729fa47b36118}} 
+\index{IModel@{IModel}!beginFlows@{beginFlows}}
+\index{beginFlows@{beginFlows}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{beginFlows()}{beginFlows()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_model_a9c09bb7e06d502bc443e62aa18fb47d2}{iterator\+Flow}} IModel\+::begin\+Flows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retorna um iterador apontando para o primeiro elemento no container de fluxos. \begin{DoxyReturn}{Retorna}
+list$<$\+Flow $\ast$$>$\+::iterator -\/ iterator apontando para o inicio do container de fluxos. 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_model_abbd4fc399f97495000ebb5613d4ce78e}{Model}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_model_a152b6e4bc8eaef8a8b0729fa47b36118_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_model_a8563fd13cb5ac4c69262268a9675f168}\label{class_i_model_a8563fd13cb5ac4c69262268a9675f168}} 
+\index{IModel@{IModel}!beginSystems@{beginSystems}}
+\index{beginSystems@{beginSystems}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{beginSystems()}{beginSystems()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_model_a18dc3cb0f1029c42753928bf20c592f4}{iterator\+System}} IModel\+::begin\+Systems (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retorna um iterador apontando para o primeiro elemento no container de sistemas. \begin{DoxyReturn}{Retorna}
+list$<$\+Flow $\ast$$>$\+::iterator -\/ iterator apontando para o inicio do container de sistemas. 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_model_ad087531a1eba92bb10afccc8f3d5fa69}{Model}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_model_a8563fd13cb5ac4c69262268a9675f168_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_model_a42fc01deb32ed4c6bb0aa1497c000be6}\label{class_i_model_a42fc01deb32ed4c6bb0aa1497c000be6}} 
+\index{IModel@{IModel}!endFlows@{endFlows}}
+\index{endFlows@{endFlows}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{endFlows()}{endFlows()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_model_a9c09bb7e06d502bc443e62aa18fb47d2}{iterator\+Flow}} IModel\+::end\+Flows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retorna um iterador apontando para o ultimo elemento no container de fluxos. \begin{DoxyReturn}{Retorna}
+list$<$\+Flow $\ast$$>$\+::iterator -\/ iterator apontando para o fim do container de fluxos. 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_model_ac65d840df7acfdb3354214f7e548ec11}{Model}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_model_a42fc01deb32ed4c6bb0aa1497c000be6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_model_afb8b316338200741c93ec360e30fd2b7}\label{class_i_model_afb8b316338200741c93ec360e30fd2b7}} 
+\index{IModel@{IModel}!endSystems@{endSystems}}
+\index{endSystems@{endSystems}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{endSystems()}{endSystems()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_model_a18dc3cb0f1029c42753928bf20c592f4}{iterator\+System}} IModel\+::end\+Systems (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retorna um iterador apontando para o ultimo elemento no container de sistemas. \begin{DoxyReturn}{Retorna}
+list$<$\+Flow $\ast$$>$\+::iterator -\/ iterator apontando para o fim do container de sistemas. 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_model_ae4c7ee070e0e77aea3835f0bcda1aaba}{Model}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_model_afb8b316338200741c93ec360e30fd2b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_model_a5132992c23ea107b5218da0484d96bc5}\label{class_i_model_a5132992c23ea107b5218da0484d96bc5}} 
+\index{IModel@{IModel}!getTime@{getTime}}
+\index{getTime@{getTime}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily virtual double IModel\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Retorna o valor do tempo atual da simulação no modelo. \begin{DoxyReturn}{Retorna}
+double -\/ valor do tempo atual do modelo. 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_model_a06d9f606f122597dc5426811f765987a}{Model}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_model_a5132992c23ea107b5218da0484d96bc5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_model_a92c970961f9841c1da1f6878166c9807}\label{class_i_model_a92c970961f9841c1da1f6878166c9807}} 
+\index{IModel@{IModel}!incrementTime@{incrementTime}}
+\index{incrementTime@{incrementTime}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{incrementTime()}{incrementTime()}}
+{\footnotesize\ttfamily virtual void IModel\+::increment\+Time (\begin{DoxyParamCaption}\item[{double}]{increment = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Seta o valor do tempo atual da simulação no modelo. 
+\begin{DoxyParams}{Parâmetros}
+{\em increment} & valor a ser incrementado no tempo atual do modelo. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_model_a9abe93f82cbb8eb0869e5a67ece5cb2d}{Model}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_model_a92c970961f9841c1da1f6878166c9807_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_model_a725779622e2261a9126724a68a483463}\label{class_i_model_a725779622e2261a9126724a68a483463}} 
+\index{IModel@{IModel}!run@{run}}
+\index{run@{run}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily virtual void IModel\+::run (\begin{DoxyParamCaption}\item[{double}]{start = {\ttfamily 0},  }\item[{double}]{end = {\ttfamily 0},  }\item[{double}]{increment = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Método que executa os sistemas dentro do modelo. 
+\begin{DoxyParams}{Parâmetros}
+{\em start} & tempo inicial. \\
+\hline
+{\em end} & tempo final. \\
+\hline
+{\em increment} & unidade em que o tempo será incrementado. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_model_af469ab427eb22a5685ba3ebd5d4bfc68}{Model}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_model_a725779622e2261a9126724a68a483463_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_model_ae3ac3071ec5c5011c09b676015228615}\label{class_i_model_ae3ac3071ec5c5011c09b676015228615}} 
+\index{IModel@{IModel}!setTime@{setTime}}
+\index{setTime@{setTime}!IModel@{IModel}}
+\doxysubsubsection{\texorpdfstring{setTime()}{setTime()}}
+{\footnotesize\ttfamily virtual void IModel\+::set\+Time (\begin{DoxyParamCaption}\item[{double}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Seta o valor do tempo inicial do range do modelo. 
+\begin{DoxyParams}{Parâmetros}
+{\em initial\+Time} & -\/ valor do tempo inicial. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_model_a9fa1fe4a85ebc007e645de4a16a9a6ae}{Model}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_model_ae3ac3071ec5c5011c09b676015228615_icgraph}
+\end{center}
+\end{figure}
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_i_model_8hpp}{IModel.\+hpp}}\end{DoxyCompactItemize}

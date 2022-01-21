@@ -1,7 +1,0 @@
-gcc -c main.c
-
-gcc -c aluno.c
-
-gcc -c mergesort.c
-
-gcc -o exec aluno.o insertionSort.o mergesort.o

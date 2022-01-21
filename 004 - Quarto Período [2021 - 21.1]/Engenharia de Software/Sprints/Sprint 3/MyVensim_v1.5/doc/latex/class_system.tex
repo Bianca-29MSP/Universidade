@@ -1,0 +1,195 @@
+\hypertarget{class_system}{}\doxysection{Referência da Classe System}
+\label{class_system}\index{System@{System}}
+
+
+Class \mbox{\hyperlink{class_system}{System}}.  
+
+
+
+
+{\ttfamily \#include $<$System.\+hpp$>$}
+
+
+
+Diagrama de colaboração para System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{class_system__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_system_ae317936c9bcf1374d61745572e0f2f8a}{System}} ()
+\item 
+\mbox{\hyperlink{class_system_a9a073b2dfd031370c7ef9082aa8fee75}{System}} (const \mbox{\hyperlink{class_system}{System}} $\ast$system)
+\item 
+\mbox{\hyperlink{class_system_abba58818fedf3ef9af5e28e5023e2daa}{System}} (string name)
+\item 
+\mbox{\hyperlink{class_system_a4f45df63c90a82f1c915114ac1d6e8a1}{System}} (string name, double value)
+\item 
+virtual \mbox{\hyperlink{class_system_a3be70bb338e3f062f821173fd15680d0}{$\sim$\+System}} ()
+\item 
+void \mbox{\hyperlink{class_system_a5343de0a45485edd88bc87f338fe9a19}{set\+Value}} (double value)
+\item 
+double \mbox{\hyperlink{class_system_aa7d17369d1034e7d8643a63f69d1901d}{get\+Value}} () const
+\item 
+string \mbox{\hyperlink{class_system_a47ece132a04247cd74aea11537830bd4}{get\+Name}} () const
+\item 
+void \mbox{\hyperlink{class_system_a8ca115c44d52a5bee53cfb7c6990d49e}{set\+Name}} (string name)
+\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_system_a98e65206e205e86ff2830ec5edc6d45c}{operator=}} (const \mbox{\hyperlink{class_system}{System}} $\ast$system)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Class \mbox{\hyperlink{class_system}{System}}. 
+
+Está classe representa o sistema/estoque da simulação. 
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_system_ae317936c9bcf1374d61745572e0f2f8a}\label{class_system_ae317936c9bcf1374d61745572e0f2f8a}} 
+\index{System@{System}!System@{System}}
+\index{System@{System}!System@{System}}
+\doxysubsubsection{\texorpdfstring{System()}{System()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily System\+::\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Esse é o construtor padrão da classe \mbox{\hyperlink{class_system}{System}}. \mbox{\Hypertarget{class_system_a9a073b2dfd031370c7ef9082aa8fee75}\label{class_system_a9a073b2dfd031370c7ef9082aa8fee75}} 
+\index{System@{System}!System@{System}}
+\index{System@{System}!System@{System}}
+\doxysubsubsection{\texorpdfstring{System()}{System()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily System\+::\+System (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_system}{System}} $\ast$}]{system }\end{DoxyParamCaption})}
+
+Esse é o construtor copia da classe \mbox{\hyperlink{class_system}{System}}. 
+\begin{DoxyParams}{Parâmetros}
+{\em system} & sistema para ser copiado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_system_abba58818fedf3ef9af5e28e5023e2daa}\label{class_system_abba58818fedf3ef9af5e28e5023e2daa}} 
+\index{System@{System}!System@{System}}
+\index{System@{System}!System@{System}}
+\doxysubsubsection{\texorpdfstring{System()}{System()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily System\+::\+System (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+Esse é um construtor que possui um atributo inicial para o sistema. 
+\begin{DoxyParams}{Parâmetros}
+{\em name} & nome do sistema. \\
+\hline
+\end{DoxyParams}
+Este é o diagrama das funções utilizadas por essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_system_abba58818fedf3ef9af5e28e5023e2daa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_system_a4f45df63c90a82f1c915114ac1d6e8a1}\label{class_system_a4f45df63c90a82f1c915114ac1d6e8a1}} 
+\index{System@{System}!System@{System}}
+\index{System@{System}!System@{System}}
+\doxysubsubsection{\texorpdfstring{System()}{System()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily System\+::\+System (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+Esse é um construtor que possui dois atributos iniciais para o sistema. 
+\begin{DoxyParams}{Parâmetros}
+{\em name} & nome do sistema. \\
+\hline
+{\em value} & valor inicial do sistema. \\
+\hline
+\end{DoxyParams}
+Este é o diagrama das funções utilizadas por essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_system_a4f45df63c90a82f1c915114ac1d6e8a1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_system_a3be70bb338e3f062f821173fd15680d0}\label{class_system_a3be70bb338e3f062f821173fd15680d0}} 
+\index{System@{System}!````~System@{$\sim$System}}
+\index{````~System@{$\sim$System}!System@{System}}
+\doxysubsubsection{\texorpdfstring{$\sim$System()}{~System()}}
+{\footnotesize\ttfamily System\+::$\sim$\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esse é o destrutor padrão da classe \mbox{\hyperlink{class_system}{System}}. 
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_system_a47ece132a04247cd74aea11537830bd4}\label{class_system_a47ece132a04247cd74aea11537830bd4}} 
+\index{System@{System}!getName@{getName}}
+\index{getName@{getName}!System@{System}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string System\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retorna o nome do sistema. \begin{DoxyReturn}{Retorna}
+string -\/ nome do sistema. 
+\end{DoxyReturn}
+Esse é o diagrama das funções que utilizam essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a47ece132a04247cd74aea11537830bd4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_system_aa7d17369d1034e7d8643a63f69d1901d}\label{class_system_aa7d17369d1034e7d8643a63f69d1901d}} 
+\index{System@{System}!getValue@{getValue}}
+\index{getValue@{getValue}!System@{System}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily double System\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retornao valor armazenado pelo sistema \begin{DoxyReturn}{Retorna}
+double -\/ valor armazenado pelo sistema. 
+\end{DoxyReturn}
+Esse é o diagrama das funções que utilizam essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_aa7d17369d1034e7d8643a63f69d1901d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_system_a98e65206e205e86ff2830ec5edc6d45c}\label{class_system_a98e65206e205e86ff2830ec5edc6d45c}} 
+\index{System@{System}!operator=@{operator=}}
+\index{operator=@{operator=}!System@{System}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}} $\ast$ System\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_system}{System}} $\ast$}]{system }\end{DoxyParamCaption})}
+
+Operador de atribuição (=) sobrecarregado para a classe \mbox{\hyperlink{class_system}{System}}. \mbox{\Hypertarget{class_system_a8ca115c44d52a5bee53cfb7c6990d49e}\label{class_system_a8ca115c44d52a5bee53cfb7c6990d49e}} 
+\index{System@{System}!setName@{setName}}
+\index{setName@{setName}!System@{System}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void System\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+Seta o nome do sistema 
+\begin{DoxyParams}{Parâmetros}
+{\em name} & -\/ nome do sistema. \\
+\hline
+\end{DoxyParams}
+Esse é o diagrama das funções que utilizam essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_system_a8ca115c44d52a5bee53cfb7c6990d49e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_system_a5343de0a45485edd88bc87f338fe9a19}\label{class_system_a5343de0a45485edd88bc87f338fe9a19}} 
+\index{System@{System}!setValue@{setValue}}
+\index{setValue@{setValue}!System@{System}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void System\+::set\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+Seta o valor armazenado pelo sistema 
+\begin{DoxyParams}{Parâmetros}
+{\em value} & -\/ valor a ser armazenado pelo sistema. \\
+\hline
+\end{DoxyParams}
+Esse é o diagrama das funções que utilizam essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a5343de0a45485edd88bc87f338fe9a19_icgraph}
+\end{center}
+\end{figure}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Enyal/\+One\+Drive/\+Documentos/\+UFOP/\+Engenharia de Software/\+Sprints/\+Sprint 3/\+My\+Vensim\+\_\+v1.\+5/src/\mbox{\hyperlink{_system_8hpp}{System.\+hpp}}\item 
+C\+:/\+Users/\+Enyal/\+One\+Drive/\+Documentos/\+UFOP/\+Engenharia de Software/\+Sprints/\+Sprint 3/\+My\+Vensim\+\_\+v1.\+5/src/\mbox{\hyperlink{_system_8cpp}{System.\+cpp}}\end{DoxyCompactItemize}

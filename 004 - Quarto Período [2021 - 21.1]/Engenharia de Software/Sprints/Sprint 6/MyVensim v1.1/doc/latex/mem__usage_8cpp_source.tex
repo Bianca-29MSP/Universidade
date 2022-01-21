@@ -1,0 +1,35 @@
+\hypertarget{mem__usage_8cpp_source}{}\doxysection{mem\+\_\+usage.\+cpp}
+\label{mem__usage_8cpp_source}\index{test/unit/utils/mem\_usage.cpp@{test/unit/utils/mem\_usage.cpp}}
+\mbox{\hyperlink{mem__usage_8cpp}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mem__usage_8hpp}{mem\_usage.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <ios>}}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00007}00007 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00009}\mbox{\hyperlink{mem__usage_8cpp_a76605b32027a2999bb0d15c024211828}{00009}} \textcolor{keywordtype}{void} \mbox{\hyperlink{mem__usage_8cpp_a76605b32027a2999bb0d15c024211828}{mem\_usage}}(\textcolor{keywordtype}{double}\& vm\_usage, \textcolor{keywordtype}{double}\& resident\_set) \{}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00010}00010    vm\_usage = 0.0;}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00011}00011    resident\_set = 0.0;}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00012}00012    ifstream stat\_stream(\textcolor{stringliteral}{"{}/proc/self/stat"{}},ios\_base::in); \textcolor{comment}{//get info from proc directory}}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00014}00014    \textcolor{comment}{//create some variables to get info}}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00015}00015    \textcolor{keywordtype}{string} pid, comm, state, ppid, pgrp, session, tty\_nr;}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00016}00016    \textcolor{keywordtype}{string} tpgid, flags, minflt, cminflt, majflt, cmajflt;}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00017}00017    \textcolor{keywordtype}{string} utime, stime, cutime, cstime, priority, nice;}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00018}00018    \textcolor{keywordtype}{string} O, itrealvalue, starttime;}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00019}00019    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} vsize;}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00020}00020    \textcolor{keywordtype}{long} rss;}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00022}00022    stat\_stream >> pid >> comm >> state >> ppid >> pgrp >> session >> tty\_nr}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00023}00023    >> tpgid >> flags >> minflt >> cminflt >> majflt >> cmajflt}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00024}00024    >> utime >> stime >> cutime >> cstime >> priority >> nice}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00025}00025    >> O >> itrealvalue >> starttime >> vsize >> rss; \textcolor{comment}{// don't care  about the rest}}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00027}00027    stat\_stream.close();}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00028}00028    vm\_usage = vsize / 1024.0;}
+\DoxyCodeLine{\Hypertarget{mem__usage_8cpp_source_l00029}00029 \}}
+
+\end{DoxyCode}

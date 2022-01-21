@@ -1,0 +1,54 @@
+\hypertarget{_model_8hpp_source}{}\doxysection{Model.\+hpp}
+\label{_model_8hpp_source}\index{C:/Users/Enyal/OneDrive/Documentos/UFOP/Engenharia de Software/Sprints/Sprint 3/MyVensim\_v1.5/src/Model.hpp@{C:/Users/Enyal/OneDrive/Documentos/UFOP/Engenharia de Software/Sprints/Sprint 3/MyVensim\_v1.5/src/Model.hpp}}
+\mbox{\hyperlink{_model_8hpp}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MODEL\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MODEL\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_flow}{Flow}};}
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_system}{System}};}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_model}{Model}} \{}
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     \textcolor{keywordtype}{double} time; }
+\DoxyCodeLine{18     list<Flow *> flows; }
+\DoxyCodeLine{19     list<System *> systems; }
+\DoxyCodeLine{25     \mbox{\hyperlink{class_model}{Model}}* operator=(\textcolor{keyword}{const} \mbox{\hyperlink{class_model}{Model}}* model);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{32     \mbox{\hyperlink{class_model_ae3b375de5f6df4faf74a95d64748e048}{Model}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_model}{Model}}* model);}
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \textcolor{keyword}{typedef} list<Flow *>::iterator \mbox{\hyperlink{class_model_a49d3ea0da604bbda57e89cab6c576469}{iteratorFlow}};  }
+\DoxyCodeLine{35     \textcolor{keyword}{typedef} list<System *>::iterator \mbox{\hyperlink{class_model_ab37cf35f046997a57540e9664fc9a227}{iteratorSystem}};  }
+\DoxyCodeLine{40     \mbox{\hyperlink{class_model_ae3b375de5f6df4faf74a95d64748e048}{Model}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_model_ad6ebd2062a0b823db841a0b88baac4c0}{\string~Model}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_ada3f813126b608c3523f5752b7c81aaa}{add}}(\mbox{\hyperlink{class_flow}{Flow}} * flow = NULL);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_ada3f813126b608c3523f5752b7c81aaa}{add}}(\mbox{\hyperlink{class_system}{System}} * system = NULL);}
+\DoxyCodeLine{58     }
+\DoxyCodeLine{63     \mbox{\hyperlink{class_model_a49d3ea0da604bbda57e89cab6c576469}{iteratorFlow}} \mbox{\hyperlink{class_model_abbd4fc399f97495000ebb5613d4ce78e}{beginFlows}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{69     \mbox{\hyperlink{class_model_a49d3ea0da604bbda57e89cab6c576469}{iteratorFlow}} \mbox{\hyperlink{class_model_ac65d840df7acfdb3354214f7e548ec11}{endFlows}}();}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{75     \mbox{\hyperlink{class_model_ab37cf35f046997a57540e9664fc9a227}{iteratorSystem}} \mbox{\hyperlink{class_model_ad087531a1eba92bb10afccc8f3d5fa69}{beginSystems}}();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{81     \mbox{\hyperlink{class_model_ab37cf35f046997a57540e9664fc9a227}{iteratorSystem}} \mbox{\hyperlink{class_model_ae4c7ee070e0e77aea3835f0bcda1aaba}{endSystems}}();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{87     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_a9fa1fe4a85ebc007e645de4a16a9a6ae}{setTime}}(\textcolor{keywordtype}{double} time);}
+\DoxyCodeLine{88     }
+\DoxyCodeLine{93     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_model_a06d9f606f122597dc5426811f765987a}{getTime}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_a9abe93f82cbb8eb0869e5a67ece5cb2d}{incrementTime}}(\textcolor{keywordtype}{double} increment = 1);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_af469ab427eb22a5685ba3ebd5d4bfc68}{run}}(\textcolor{keywordtype}{double} start = 0, \textcolor{keywordtype}{double} end = 0, \textcolor{keywordtype}{double} increment = 0);}
+\DoxyCodeLine{108 \};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

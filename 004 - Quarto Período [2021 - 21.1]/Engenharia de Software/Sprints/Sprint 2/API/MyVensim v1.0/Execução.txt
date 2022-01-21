@@ -1,0 +1,10 @@
+#Criação dos arquivos binarios
+g++ -c src/Model.cpp -o bin/Model.dll -Wall
+g++ -c src/Flow.cpp -o bin/Flow.dll -Wall
+g++ -c src/System.cpp -o bin/System.dll -Wall
+
+#Execução e criação do binário para testes funcionais
+g++ test/functional/main.cpp test/functional/functional_tests.cpp bin/Model.dll bin/System.dll bin/Flow.dll -o bin/functional_tests
+
+#Execução do teste
+./bin/functional_tests

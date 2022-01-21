@@ -1,0 +1,153 @@
+\hypertarget{unit___model_8cpp_source}{}\doxysection{unit\+\_\+\+Model.\+cpp}
+\label{unit___model_8cpp_source}\index{test/unit/unit\_Model.cpp@{test/unit/unit\_Model.cpp}}
+\mbox{\hyperlink{unit___model_8cpp}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{unit___model_8hpp}{unit\_Model.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mem__usage_8hpp}{./utils/mem\_usage.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_flow_test_unit_8hpp}{./utils/FlowTestUnit.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}../../src/include/Model.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}../../src/include/System.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00010}\mbox{\hyperlink{unit___model_8cpp_af0c874c71422ff355ec8579c9a859738}{00010}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___model_8cpp_af0c874c71422ff355ec8579c9a859738}{unit\_Model\_constructor}}( \textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00012}00012     cout << \textcolor{stringliteral}{"{}[Model] -\/ Construtor padrao sem parametro: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00013}00013     \mbox{\hyperlink{class_model}{Model}} *m1 = \mbox{\hyperlink{class_model_a3e267e8c78eebe47ecd274e2dbfff56f}{Model::createModel}}(\textcolor{stringliteral}{"{}Model M1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00014}00014     assert(m1-\/>\mbox{\hyperlink{class_model_a41569269c162962571a791c0fe737bca}{getTime}}() == 0);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00015}00015     assert(m1-\/>\mbox{\hyperlink{class_model_aa5365ab557ae47efffdf14ba7a46dac8}{getName}}() == \textcolor{stringliteral}{"{}Model M1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00016}00016     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00018}00018     \textcolor{keyword}{delete} m1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00019}00019 \}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00021}\mbox{\hyperlink{unit___model_8cpp_ab348ace4d56947bf92a931650a17b240}{00021}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___model_8cpp_ab348ace4d56947bf92a931650a17b240}{unit\_Model\_destructor}}( \textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00023}00023     cout << \textcolor{stringliteral}{"{}[Model] -\/ Destrutor padrao: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00024}00024     \textcolor{keywordtype}{double} memoryBefore, memoryAfter, rss;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00026}00026     \mbox{\hyperlink{mem__usage_8cpp_a76605b32027a2999bb0d15c024211828}{mem\_usage}}(memoryBefore, rss);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00028}00028     \mbox{\hyperlink{class_model}{Model}}* m1 = \mbox{\hyperlink{class_model_a3e267e8c78eebe47ecd274e2dbfff56f}{Model::createModel}}(\textcolor{stringliteral}{"{}Model M1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00029}00029     \textcolor{keyword}{delete} m1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00031}00031     \mbox{\hyperlink{mem__usage_8cpp_a76605b32027a2999bb0d15c024211828}{mem\_usage}}(memoryAfter, rss);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00033}00033     assert(memoryBefore == memoryAfter);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00034}00034     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00035}00035 \}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00037}\mbox{\hyperlink{unit___model_8cpp_ae6bc5731af0fce70c9ffc712d3ac6a91}{00037}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___model_8cpp_ae6bc5731af0fce70c9ffc712d3ac6a91}{unit\_Model\_setTime}}( \textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00038}00038 \{}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00039}00039     cout << \textcolor{stringliteral}{"{}[Model] -\/ Metodo setTime() e getTime(): "{}};}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00040}00040     \mbox{\hyperlink{class_model}{Model}} *m1 = \mbox{\hyperlink{class_model_a3e267e8c78eebe47ecd274e2dbfff56f}{Model::createModel}}(\textcolor{stringliteral}{"{}Model M1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00041}00041     m1-\/>\mbox{\hyperlink{class_model_ab89eff21392ee4e7f58da939238acc7c}{setTime}}(10);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00042}00042     assert(m1-\/>\mbox{\hyperlink{class_model_a41569269c162962571a791c0fe737bca}{getTime}}() == 10);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00043}00043     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00045}00045     \textcolor{keyword}{delete} m1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00046}00046 \}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00048}\mbox{\hyperlink{unit___model_8cpp_af20fb14e5f0d758389d88fefeb8d9d01}{00048}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___model_8cpp_af20fb14e5f0d758389d88fefeb8d9d01}{unit\_Model\_incrementTime}}( \textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00049}00049 \{}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00050}00050     cout << \textcolor{stringliteral}{"{}[Model] -\/ Metodo incrementTime() e getTime(): "{}};}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00051}00051     \mbox{\hyperlink{class_model}{Model}} *m1 = \mbox{\hyperlink{class_model_a3e267e8c78eebe47ecd274e2dbfff56f}{Model::createModel}}(\textcolor{stringliteral}{"{}Model M1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00052}00052     m1-\/>\mbox{\hyperlink{class_model_a55d1cd69fa8d3187e19a5f701260a850}{incrementTime}}(10);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00053}00053     m1-\/>\mbox{\hyperlink{class_model_a55d1cd69fa8d3187e19a5f701260a850}{incrementTime}}(10);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00054}00054     assert(m1-\/>\mbox{\hyperlink{class_model_a41569269c162962571a791c0fe737bca}{getTime}}() == 20);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00055}00055     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00057}00057     \textcolor{keyword}{delete} m1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00058}00058 \}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00060}\mbox{\hyperlink{unit___model_8cpp_a4fa06dc7ad55e19bd871ad7522304a10}{00060}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___model_8cpp_a4fa06dc7ad55e19bd871ad7522304a10}{unit\_Model\_add}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00061}00061 \{}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00062}00062     cout << \textcolor{stringliteral}{"{}[Model] -\/ Metodo add() [flow]: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00063}00063     \mbox{\hyperlink{class_model}{Model}} *m1 = \mbox{\hyperlink{class_model_a3e267e8c78eebe47ecd274e2dbfff56f}{Model::createModel}}(\textcolor{stringliteral}{"{}Model M1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00064}00064     \mbox{\hyperlink{class_flow}{Flow}} *f1 = m1-\/>\mbox{\hyperlink{class_model_aa0aacc111243ebc59b8a24c6c6247c17}{createFlow}}<\mbox{\hyperlink{class_flow_test_unit}{FlowTestUnit}}>(\textcolor{stringliteral}{"{}F1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00065}00065     \textcolor{keyword}{auto} itFlow = m1-\/>\mbox{\hyperlink{class_model_aec9c84edee23eb17b27d6babab7f3ba3}{beginFlows}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00066}00066     assert((*itFlow) == f1);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00067}00067     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00069}00069     cout << \textcolor{stringliteral}{"{}[Model] -\/ Metodo add() [system]: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00070}00070     \mbox{\hyperlink{class_model}{Model}} *m2 = \mbox{\hyperlink{class_model_a3e267e8c78eebe47ecd274e2dbfff56f}{Model::createModel}}(\textcolor{stringliteral}{"{}Model M1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00071}00071     \mbox{\hyperlink{class_system}{System}} *s1 = m1-\/>\mbox{\hyperlink{class_model_a17f1d098f3f7b6b1e4fcb40e0bd7fcff}{createSystem}}(\textcolor{stringliteral}{"{}S1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00072}00072     \textcolor{keyword}{auto} itSystem = m1-\/>\mbox{\hyperlink{class_model_a16873f714ee9c7a9b5106a303246cdfb}{beginSystems}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00073}00073     assert((*itSystem) == s1);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00074}00074     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00076}00076     \textcolor{keyword}{delete} m1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00077}00077     \textcolor{keyword}{delete} f1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00078}00078     \textcolor{keyword}{delete} m2;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00079}00079     \textcolor{keyword}{delete} s1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00080}00080 \}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00082}\mbox{\hyperlink{unit___model_8cpp_af8f2f66c1fe7a88ff43ba214d783819c}{00082}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___model_8cpp_af8f2f66c1fe7a88ff43ba214d783819c}{unit\_Model\_iteratorFlows}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00083}00083 \{}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00084}00084     \mbox{\hyperlink{class_model}{Model}} *m1 = \mbox{\hyperlink{class_model_a3e267e8c78eebe47ecd274e2dbfff56f}{Model::createModel}}(\textcolor{stringliteral}{"{}Model M1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00086}00086     cout << \textcolor{stringliteral}{"{}[Model] -\/ Metodo beginFlows() [flow]: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00087}00087     \mbox{\hyperlink{class_flow}{Flow}} *f1 = m1-\/>\mbox{\hyperlink{class_model_aa0aacc111243ebc59b8a24c6c6247c17}{createFlow}}<\mbox{\hyperlink{class_flow_test_unit}{FlowTestUnit}}>(\textcolor{stringliteral}{"{}F1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00088}00088     \textcolor{keyword}{auto} itFlowBegin = m1-\/>\mbox{\hyperlink{class_model_aec9c84edee23eb17b27d6babab7f3ba3}{beginFlows}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00089}00089     assert((*itFlowBegin) == f1);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00090}00090     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00092}00092     cout << \textcolor{stringliteral}{"{}[Model] -\/ Metodo endFlows() [flow]: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00093}00093     \textcolor{keyword}{auto} itFlowEnd = m1-\/>\mbox{\hyperlink{class_model_a6e3855703dd9181af387982d58dd087a}{endFlows}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00094}00094     assert((*itFlowEnd) != (*itFlowBegin));}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00095}00095     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00097}00097     \textcolor{keyword}{delete} m1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00098}00098     \textcolor{keyword}{delete} f1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00099}00099 \}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00101}\mbox{\hyperlink{unit___model_8cpp_a3b5d652ac7d426ae156204c49f7dd307}{00101}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___model_8cpp_a3b5d652ac7d426ae156204c49f7dd307}{unit\_Model\_iteratorSystems}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00102}00102 \{}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00103}00103     \mbox{\hyperlink{class_model}{Model}} *m1 = \mbox{\hyperlink{class_model_a3e267e8c78eebe47ecd274e2dbfff56f}{Model::createModel}}(\textcolor{stringliteral}{"{}Model M1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00105}00105     cout << \textcolor{stringliteral}{"{}[Model] -\/ Metodo beginSystems() [flow]: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00106}00106     \mbox{\hyperlink{class_system}{System}} *s1 = m1-\/>\mbox{\hyperlink{class_model_a17f1d098f3f7b6b1e4fcb40e0bd7fcff}{createSystem}}(\textcolor{stringliteral}{"{}S1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00107}00107     \textcolor{keyword}{auto} itSystemBegin = m1-\/>\mbox{\hyperlink{class_model_a16873f714ee9c7a9b5106a303246cdfb}{beginSystems}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00108}00108     assert((*itSystemBegin) == s1);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00109}00109     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00111}00111     cout << \textcolor{stringliteral}{"{}[Model] -\/ Metodo endSystems() [system]: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00112}00112     \textcolor{keyword}{auto} itSystemEnd = m1-\/>\mbox{\hyperlink{class_model_a77aeba2772e5b29c204827194cdd0d66}{endSystems}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00113}00113     assert((*itSystemEnd) != (*itSystemBegin));}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00114}00114     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00116}00116     \textcolor{keyword}{delete} m1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00117}00117     \textcolor{keyword}{delete} s1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00118}00118 \}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00120}\mbox{\hyperlink{unit___model_8cpp_a47f444f7adf42d9fe780632ef2e324d6}{00120}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___model_8cpp_a47f444f7adf42d9fe780632ef2e324d6}{unit\_Model\_run}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00121}00121 \{}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00122}00122     cout << \textcolor{stringliteral}{"{}[Model] -\/ Metodo run(): "{}};}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00123}00123     \mbox{\hyperlink{class_model}{Model}} *m1 = \mbox{\hyperlink{class_model_a3e267e8c78eebe47ecd274e2dbfff56f}{Model::createModel}}(\textcolor{stringliteral}{"{}Model M1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00124}00124     \mbox{\hyperlink{class_system}{System}} *s1 = m1-\/>\mbox{\hyperlink{class_model_a17f1d098f3f7b6b1e4fcb40e0bd7fcff}{createSystem}}(\textcolor{stringliteral}{"{}S1"{}}, 100);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00125}00125     \mbox{\hyperlink{class_flow}{Flow}} *f1 = m1-\/>\mbox{\hyperlink{class_model_aa0aacc111243ebc59b8a24c6c6247c17}{createFlow}}<\mbox{\hyperlink{class_flow_test_unit}{FlowTestUnit}}>(\textcolor{stringliteral}{"{}F1"{}}, s1);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00126}00126     m1-\/>\mbox{\hyperlink{class_model_a7ba50c44304ed38f39ca561bb233c9a3}{run}}(0, 1, 4);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00127}00127     assert(m1-\/>\mbox{\hyperlink{class_model_a41569269c162962571a791c0fe737bca}{getTime}}() == 4);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00128}00128     assert(f1-\/>\mbox{\hyperlink{class_flow_a56113d82f4c601d72ca5ec9f76f6fdf0}{getCurrentValue}}() == 10);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00129}00129     assert(s1-\/>\mbox{\hyperlink{class_system_a41b673faa6c199eb8e4f204639fab4f2}{getValue}}() == 90);}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00130}00130     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00132}00132     \textcolor{keyword}{delete} m1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00133}00133     \textcolor{keyword}{delete} s1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00134}00134     \textcolor{keyword}{delete} f1;}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00135}00135 \}}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00137}\mbox{\hyperlink{unit___model_8cpp_ac9809e814596bf9bf3c37918190a866c}{00137}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___model_8cpp_ac9809e814596bf9bf3c37918190a866c}{run\_unit\_tests\_Model}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00138}00138 \{}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00139}00139     \mbox{\hyperlink{unit___model_8cpp_af0c874c71422ff355ec8579c9a859738}{unit\_Model\_constructor}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00140}00140     \mbox{\hyperlink{unit___model_8cpp_ab348ace4d56947bf92a931650a17b240}{unit\_Model\_destructor}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00141}00141     \mbox{\hyperlink{unit___model_8cpp_ae6bc5731af0fce70c9ffc712d3ac6a91}{unit\_Model\_setTime}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00142}00142     \mbox{\hyperlink{unit___model_8cpp_af20fb14e5f0d758389d88fefeb8d9d01}{unit\_Model\_incrementTime}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00143}00143     \mbox{\hyperlink{unit___model_8cpp_a4fa06dc7ad55e19bd871ad7522304a10}{unit\_Model\_add}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00144}00144     \mbox{\hyperlink{unit___model_8cpp_af8f2f66c1fe7a88ff43ba214d783819c}{unit\_Model\_iteratorFlows}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00145}00145     \mbox{\hyperlink{unit___model_8cpp_a3b5d652ac7d426ae156204c49f7dd307}{unit\_Model\_iteratorSystems}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00146}00146     \mbox{\hyperlink{unit___model_8cpp_a47f444f7adf42d9fe780632ef2e324d6}{unit\_Model\_run}}();}
+\DoxyCodeLine{\Hypertarget{unit___model_8cpp_source_l00147}00147 \}}
+
+\end{DoxyCode}

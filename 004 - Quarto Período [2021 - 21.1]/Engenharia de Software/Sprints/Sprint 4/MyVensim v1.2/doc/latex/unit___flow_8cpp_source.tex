@@ -1,0 +1,153 @@
+\hypertarget{unit___flow_8cpp_source}{}\doxysection{unit\+\_\+\+Flow.\+cpp}
+\label{unit___flow_8cpp_source}\index{C:/Users/Enyal/OneDrive/Documentos/UFOP/Engenharia de Software/Sprints/Sprint 4/MyVensim v1.2/test/unit/unit\_Flow.cpp@{C:/Users/Enyal/OneDrive/Documentos/UFOP/Engenharia de Software/Sprints/Sprint 4/MyVensim v1.2/test/unit/unit\_Flow.cpp}}
+\mbox{\hyperlink{unit___flow_8cpp}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{unit___flow_8hpp}{unit\_Flow.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mem__usage_8hpp}{./utils/mem\_usage.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}../../src/Flow.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}../../src/System.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00008}\mbox{\hyperlink{class_flow_test}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{class_flow_test}{FlowTest}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_flow}{Flow}}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00010}00010 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00011}\mbox{\hyperlink{class_flow_test_a4883847a4fb99890633a21dad18636d6}{00011}}     \mbox{\hyperlink{class_flow_test_a4883847a4fb99890633a21dad18636d6}{FlowTest}}(): \mbox{\hyperlink{class_flow}{Flow}}()\{\}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00012}\mbox{\hyperlink{class_flow_test_a1fdb4fa872c5edc989d7d1218f599d53}{00012}}     \mbox{\hyperlink{class_flow_test_a1fdb4fa872c5edc989d7d1218f599d53}{FlowTest}}(\textcolor{keywordtype}{string} \mbox{\hyperlink{class_i_flow_ad8821f76813a184eee647935b0e5060b}{name}}): \mbox{\hyperlink{class_flow}{Flow}}(\mbox{\hyperlink{class_i_flow_ad8821f76813a184eee647935b0e5060b}{name}})\{\}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00013}\mbox{\hyperlink{class_flow_test_ad5248735403be3e1364ab91838fd32e9}{00013}}     \mbox{\hyperlink{class_flow_test_ad5248735403be3e1364ab91838fd32e9}{FlowTest}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_flow_test}{FlowTest}} *flow): \mbox{\hyperlink{class_flow}{Flow}}(flow)\{\}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00015}\mbox{\hyperlink{class_flow_test_a3af7d67a827dc404318a34666fa72067}{00015}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_flow_test_a3af7d67a827dc404318a34666fa72067}{execute}}()\{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00016}00016         \textcolor{keywordflow}{return} 0.1 * \mbox{\hyperlink{class_flow_a1b56c963dc181978655af50b8ce32488}{getSource}}()-\/>\mbox{\hyperlink{class_system_aa7d17369d1034e7d8643a63f69d1901d}{getValue}}();}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00017}00017     \}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00018}00018 \};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00020}\mbox{\hyperlink{unit___flow_8cpp_a4b6e7371ad9b3059a32e0b1600e653a3}{00020}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___flow_8cpp_a4b6e7371ad9b3059a32e0b1600e653a3}{unit\_Flow\_constructor}}( \textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00022}00022     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Construtor padrao sem parametro: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00023}00023     \mbox{\hyperlink{class_flow_test}{FlowTest}} f1;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00024}00024     assert(f1.\mbox{\hyperlink{class_flow_a1b56c963dc181978655af50b8ce32488}{getSource}}() == NULL);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00025}00025     assert(f1.\mbox{\hyperlink{class_flow_af8085a35060629d6774e80704219cbd8}{getTarget}}() == NULL);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00026}00026     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00028}00028     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Construtor com parametro de nome: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00029}00029     \mbox{\hyperlink{class_flow_test}{FlowTest}} f2(\textcolor{stringliteral}{"{}f2"{}});}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00030}00030     assert(f2.\mbox{\hyperlink{class_flow_a1b56c963dc181978655af50b8ce32488}{getSource}}() == NULL);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00031}00031     assert(f2.\mbox{\hyperlink{class_flow_af8085a35060629d6774e80704219cbd8}{getTarget}}() == NULL);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00032}00032     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00033}00033     }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00034}00034     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Construtor de copia: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00035}00035     \mbox{\hyperlink{class_flow_test}{FlowTest}} *f3 = \textcolor{keyword}{new} \mbox{\hyperlink{class_flow_test}{FlowTest}}(\textcolor{stringliteral}{"{}f2"{}});}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00036}00036     \mbox{\hyperlink{class_flow_test}{FlowTest}} *f4 = \textcolor{keyword}{new} \mbox{\hyperlink{class_flow_test}{FlowTest}}(f3);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00037}00037     assert(f4-\/>\mbox{\hyperlink{class_flow_ae722fae0ffe2270a5c84152a80a7d842}{getName}}() == f3-\/>\mbox{\hyperlink{class_flow_ae722fae0ffe2270a5c84152a80a7d842}{getName}}());}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00038}00038     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00039}00039 \}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00041}\mbox{\hyperlink{unit___flow_8cpp_ae158212a296c723df96316c44c67a045}{00041}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___flow_8cpp_ae158212a296c723df96316c44c67a045}{unit\_Flow\_destructor}}( \textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00042}00042 \{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00043}00043     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Destrutor padrao: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00044}00044     \textcolor{keywordtype}{double} memoryBefore, memoryAfter, rss;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00046}00046     \mbox{\hyperlink{mem__usage_8cpp_a76605b32027a2999bb0d15c024211828}{mem\_usage}}(memoryBefore, rss);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00048}00048     \mbox{\hyperlink{class_flow_test}{FlowTest}}* f1 = \textcolor{keyword}{new} \mbox{\hyperlink{class_flow_test}{FlowTest}}();}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00049}00049     \textcolor{keyword}{delete} f1;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00051}00051     \mbox{\hyperlink{mem__usage_8cpp_a76605b32027a2999bb0d15c024211828}{mem\_usage}}(memoryAfter, rss);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00053}00053     assert(memoryBefore == memoryAfter);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00054}00054     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00057}\mbox{\hyperlink{unit___flow_8cpp_a69eb733803c89e3d985adcdd522fa37f}{00057}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___flow_8cpp_a69eb733803c89e3d985adcdd522fa37f}{unit\_Flow\_setCurrentValue}}( \textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00058}00058 \{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00059}00059     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Metodo setCurrentValue() e getCurrentValue(): "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00060}00060     \mbox{\hyperlink{class_flow_test}{FlowTest}} f1 ;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00061}00061     f1.\mbox{\hyperlink{class_flow_a36cee8a36876467a28b656ef15981431}{setCurrentValue}}(4.4);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00062}00062     assert(f1.\mbox{\hyperlink{class_flow_ae69612bbbac517f7f7d91c9bd13cb70d}{getCurrentValue}}() == 4.4);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00063}00063     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00064}00064 \}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00066}\mbox{\hyperlink{unit___flow_8cpp_ad3ef81bd4e2b09e9aed2ba9142e891bf}{00066}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___flow_8cpp_ad3ef81bd4e2b09e9aed2ba9142e891bf}{unit\_Flow\_setName}}( \textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00067}00067 \{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00068}00068     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Metodo setName() e getName() : "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00069}00069     \mbox{\hyperlink{class_flow_test}{FlowTest}} f1 ;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00070}00070     f1.\mbox{\hyperlink{class_flow_ac829599a96f9ae03979d762771a4fea0}{setName}}(\textcolor{stringliteral}{"{}fluxo 1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00071}00071     assert(f1.\mbox{\hyperlink{class_flow_ae722fae0ffe2270a5c84152a80a7d842}{getName}}() == \textcolor{stringliteral}{"{}fluxo 1"{}});}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00072}00072     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00073}00073 \}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00075}\mbox{\hyperlink{unit___flow_8cpp_a2442717bcd816291df7364fea7a84683}{00075}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___flow_8cpp_a2442717bcd816291df7364fea7a84683}{unit\_Flow\_setSource}}( \textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00076}00076 \{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00077}00077     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Metodo setSource() e getSource(): "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00078}00078     \mbox{\hyperlink{class_flow_test}{FlowTest}} f1;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00079}00079     \mbox{\hyperlink{class_system}{System}} *s1 = \textcolor{keyword}{new} \mbox{\hyperlink{class_system}{System}}(\textcolor{stringliteral}{"{}System 1"{}}, 100);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00080}00080     f1.\mbox{\hyperlink{class_flow_a250fc53158862fc0db77b323a33e48a3}{setSource}}(s1);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00081}00081     assert(f1.\mbox{\hyperlink{class_flow_a1b56c963dc181978655af50b8ce32488}{getSource}}() == s1);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00082}00082     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00083}00083 \}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00085}\mbox{\hyperlink{unit___flow_8cpp_a903fcdbe21732defc84d3f8173cbaf3c}{00085}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___flow_8cpp_a903fcdbe21732defc84d3f8173cbaf3c}{unit\_Flow\_setTarget}}( \textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00086}00086 \{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00087}00087     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Metodo setTarget() e getTarget(): "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00088}00088     \mbox{\hyperlink{class_flow_test}{FlowTest}} f1 ;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00089}00089     \mbox{\hyperlink{class_system}{System}} *s1 = \textcolor{keyword}{new} \mbox{\hyperlink{class_system}{System}}(\textcolor{stringliteral}{"{}System 1"{}}, 100);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00090}00090     f1.\mbox{\hyperlink{class_flow_ab69903880174e5bcdc0d815b5de7b3e0}{setTarget}}(s1);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00091}00091     assert(f1.\mbox{\hyperlink{class_flow_af8085a35060629d6774e80704219cbd8}{getTarget}}() == s1);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00092}00092     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00093}00093 \}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00095}\mbox{\hyperlink{unit___flow_8cpp_aa9fa3cdbdf819a1a37bb44a840a1fa14}{00095}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___flow_8cpp_aa9fa3cdbdf819a1a37bb44a840a1fa14}{unit\_Flow\_connect}}( \textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00096}00096 \{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00097}00097     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Metodo connect: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00098}00098     \mbox{\hyperlink{class_flow_test}{FlowTest}} f1 ;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00099}00099     \mbox{\hyperlink{class_system}{System}} *s1 = \textcolor{keyword}{new} \mbox{\hyperlink{class_system}{System}}(\textcolor{stringliteral}{"{}System 1"{}}, 100);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00100}00100     \mbox{\hyperlink{class_system}{System}} *s2 = \textcolor{keyword}{new} \mbox{\hyperlink{class_system}{System}}(\textcolor{stringliteral}{"{}System 2"{}}, 0);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00101}00101     f1.\mbox{\hyperlink{class_flow_a272bdaaea65ea55df803d724b2c8a9e2}{connect}}(s1, s2);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00102}00102     assert(f1.\mbox{\hyperlink{class_flow_a1b56c963dc181978655af50b8ce32488}{getSource}}() == s1);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00103}00103     assert(f1.\mbox{\hyperlink{class_flow_af8085a35060629d6774e80704219cbd8}{getTarget}}() == s2);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00104}00104     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00106}00106 \}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00108}\mbox{\hyperlink{unit___flow_8cpp_afde1feedc7a89ff8baf0a88d1afc35f2}{00108}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___flow_8cpp_afde1feedc7a89ff8baf0a88d1afc35f2}{unit\_Flow\_execute}}( \textcolor{keywordtype}{void} ) }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00109}00109 \{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00110}00110     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Metodo execute: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00111}00111     \mbox{\hyperlink{class_flow_test}{FlowTest}} f1;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00112}00112     \mbox{\hyperlink{class_system}{System}} *s1 = \textcolor{keyword}{new} \mbox{\hyperlink{class_system}{System}}(\textcolor{stringliteral}{"{}System 1"{}}, 100);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00113}00113     f1.\mbox{\hyperlink{class_flow_a250fc53158862fc0db77b323a33e48a3}{setSource}}(s1);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00114}00114     assert(f1.\mbox{\hyperlink{class_flow_test_a3af7d67a827dc404318a34666fa72067}{execute}}() == 10);}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00115}00115     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00116}00116 \}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00118}\mbox{\hyperlink{unit___flow_8cpp_ac8d6df01fb780f4003b93fc0ae7fe9b9}{00118}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___flow_8cpp_ac8d6df01fb780f4003b93fc0ae7fe9b9}{unit\_Flow\_assignmentOperator}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00119}00119 \{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00120}00120     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Metodo da sobrecarga da atribuicao: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00121}00121     \mbox{\hyperlink{class_flow_test}{FlowTest}} f1(\textcolor{stringliteral}{"{}Flow 1 [Original]"{}});}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00122}00122     \mbox{\hyperlink{class_flow_test}{FlowTest}} f2;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00123}00123     f2 = f1;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00124}00124     assert(f2.\mbox{\hyperlink{class_flow_ae722fae0ffe2270a5c84152a80a7d842}{getName}}() == f1.\mbox{\hyperlink{class_flow_ae722fae0ffe2270a5c84152a80a7d842}{getName}}());}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00125}00125     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00127}00127     cout << \textcolor{stringliteral}{"{}[Flow] -\/ Metodo da sobrecarga da atribuicao com alteracao de valor: "{}};}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00128}00128     \mbox{\hyperlink{class_flow_test}{FlowTest}} f3(\textcolor{stringliteral}{"{}Flow 1 [Original]"{}});}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00129}00129     \mbox{\hyperlink{class_flow_test}{FlowTest}} f4;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00130}00130     f4 = f3;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00131}00131     f3.\mbox{\hyperlink{class_flow_ac829599a96f9ae03979d762771a4fea0}{setName}}(\textcolor{stringliteral}{"{}Flow 1 [Novo nome]"{}});}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00132}00132     assert(f4.\mbox{\hyperlink{class_flow_ae722fae0ffe2270a5c84152a80a7d842}{getName}}() == \textcolor{stringliteral}{"{}Flow 1 [Original]"{}});}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00133}00133     cout << \textcolor{stringliteral}{"{}Ok!"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00134}00134 \}}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00135}00135 }
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00136}\mbox{\hyperlink{unit___flow_8cpp_ad22590f3fd206c1de5ae1a673917de8c}{00136}} \textcolor{keywordtype}{void} \mbox{\hyperlink{unit___flow_8cpp_ad22590f3fd206c1de5ae1a673917de8c}{run\_unit\_tests\_Flow}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00137}00137 \{}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00138}00138     \mbox{\hyperlink{unit___flow_8cpp_a4b6e7371ad9b3059a32e0b1600e653a3}{unit\_Flow\_constructor}}();}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00139}00139     \mbox{\hyperlink{unit___flow_8cpp_ae158212a296c723df96316c44c67a045}{unit\_Flow\_destructor}}();}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00140}00140     \mbox{\hyperlink{unit___flow_8cpp_a69eb733803c89e3d985adcdd522fa37f}{unit\_Flow\_setCurrentValue}}();}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00141}00141     \mbox{\hyperlink{unit___flow_8cpp_ad3ef81bd4e2b09e9aed2ba9142e891bf}{unit\_Flow\_setName}}();}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00142}00142     \mbox{\hyperlink{unit___flow_8cpp_a2442717bcd816291df7364fea7a84683}{unit\_Flow\_setSource}}();}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00143}00143     \mbox{\hyperlink{unit___flow_8cpp_a903fcdbe21732defc84d3f8173cbaf3c}{unit\_Flow\_setTarget}}();}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00144}00144     \mbox{\hyperlink{unit___flow_8cpp_aa9fa3cdbdf819a1a37bb44a840a1fa14}{unit\_Flow\_connect}}();}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00145}00145     \mbox{\hyperlink{unit___flow_8cpp_afde1feedc7a89ff8baf0a88d1afc35f2}{unit\_Flow\_execute}}();}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00146}00146     \mbox{\hyperlink{unit___flow_8cpp_ac8d6df01fb780f4003b93fc0ae7fe9b9}{unit\_Flow\_assignmentOperator}}();}
+\DoxyCodeLine{\Hypertarget{unit___flow_8cpp_source_l00147}00147 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyVensim [Interface]: Código-Fonte de src/IFlow.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MyVensim [Interface]
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">IFlow.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_i_flow_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IFLOW_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IFLOW_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;string&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span><a class="code hl_class" href="class_i_system.html">ISystem</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_i_flow.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="class_i_flow.html">IFlow</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_i_flow.html#a197fa36d3e123308aa27f5e1ad71475b">   19</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_i_flow.html#a197fa36d3e123308aa27f5e1ad71475b">~IFlow</a>(){};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_i_flow.html#a35b37c74c1cffa29e2ad536bdcc9dad5">   25</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_i_flow.html#a35b37c74c1cffa29e2ad536bdcc9dad5">getName</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_i_flow.html#a8370be6f457beb410b0090189257656a">   31</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_i_flow.html#a8370be6f457beb410b0090189257656a">setName</a>(<span class="keywordtype">string</span> name) = 0;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_i_flow.html#a763598174803af6b93a6a937904f5b9f">   37</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="class_i_flow.html#a763598174803af6b93a6a937904f5b9f">getCurrentValue</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_i_flow.html#a4dc6f14bae2f20259f03cb5823646148">   43</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_i_flow.html#a4dc6f14bae2f20259f03cb5823646148">setCurrentValue</a>(<span class="keywordtype">double</span> value) = 0;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_i_flow.html#ac21d5a576195a72b6b9288a587f506d5">   49</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_i_system.html">ISystem</a> * <a class="code hl_function" href="class_i_flow.html#ac21d5a576195a72b6b9288a587f506d5">getSource</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_i_flow.html#a3989c0af60a6996d333e63d3a660af8d">   55</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_i_system.html">ISystem</a> * <a class="code hl_function" href="class_i_flow.html#a3989c0af60a6996d333e63d3a660af8d">getTarget</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_i_flow.html#aa3d07a71bb002ee9451d0c73470e5d94">   61</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_i_flow.html#aa3d07a71bb002ee9451d0c73470e5d94">setSource</a>(<a class="code hl_class" href="class_i_system.html">ISystem</a> * source) = 0;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_i_flow.html#acd4fcaf69cd6ae5395a7f8ed9e4f6e57">   67</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_i_flow.html#acd4fcaf69cd6ae5395a7f8ed9e4f6e57">setTarget</a>(<a class="code hl_class" href="class_i_system.html">ISystem</a> * target) = 0;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_i_flow.html#a88f71d509383ff1753df706a269a23ff">   74</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_i_flow.html#a88f71d509383ff1753df706a269a23ff">connect</a>(<a class="code hl_class" href="class_i_system.html">ISystem</a> *source = NULL, <a class="code hl_class" href="class_i_system.html">ISystem</a>* target = NULL) = 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_i_flow.html#af1b467e98d59e66eb1c10964db317ebe">   80</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="class_i_flow.html#af1b467e98d59e66eb1c10964db317ebe">execute</a>() <span class="keyword">const</span> = 0 ;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_i_flow_html"><div class="ttname"><a href="class_i_flow.html">IFlow</a></div><div class="ttdoc">Class Flow.</div><div class="ttdef"><b>Definition:</b> <a href="_i_flow_8hpp_source.html#l00014">IFlow.hpp:14</a></div></div>
+<div class="ttc" id="aclass_i_flow_html_a197fa36d3e123308aa27f5e1ad71475b"><div class="ttname"><a href="class_i_flow.html#a197fa36d3e123308aa27f5e1ad71475b">IFlow::~IFlow</a></div><div class="ttdeci">virtual ~IFlow()</div><div class="ttdef"><b>Definition:</b> <a href="_i_flow_8hpp_source.html#l00019">IFlow.hpp:19</a></div></div>
+<div class="ttc" id="aclass_i_flow_html_a35b37c74c1cffa29e2ad536bdcc9dad5"><div class="ttname"><a href="class_i_flow.html#a35b37c74c1cffa29e2ad536bdcc9dad5">IFlow::getName</a></div><div class="ttdeci">virtual string getName() const =0</div></div>
+<div class="ttc" id="aclass_i_flow_html_a3989c0af60a6996d333e63d3a660af8d"><div class="ttname"><a href="class_i_flow.html#a3989c0af60a6996d333e63d3a660af8d">IFlow::getTarget</a></div><div class="ttdeci">virtual ISystem * getTarget(void) const =0</div></div>
+<div class="ttc" id="aclass_i_flow_html_a4dc6f14bae2f20259f03cb5823646148"><div class="ttname"><a href="class_i_flow.html#a4dc6f14bae2f20259f03cb5823646148">IFlow::setCurrentValue</a></div><div class="ttdeci">virtual void setCurrentValue(double value)=0</div></div>
+<div class="ttc" id="aclass_i_flow_html_a763598174803af6b93a6a937904f5b9f"><div class="ttname"><a href="class_i_flow.html#a763598174803af6b93a6a937904f5b9f">IFlow::getCurrentValue</a></div><div class="ttdeci">virtual double getCurrentValue() const =0</div></div>
+<div class="ttc" id="aclass_i_flow_html_a8370be6f457beb410b0090189257656a"><div class="ttname"><a href="class_i_flow.html#a8370be6f457beb410b0090189257656a">IFlow::setName</a></div><div class="ttdeci">virtual void setName(string name)=0</div></div>
+<div class="ttc" id="aclass_i_flow_html_a88f71d509383ff1753df706a269a23ff"><div class="ttname"><a href="class_i_flow.html#a88f71d509383ff1753df706a269a23ff">IFlow::connect</a></div><div class="ttdeci">virtual void connect(ISystem *source=NULL, ISystem *target=NULL)=0</div></div>
+<div class="ttc" id="aclass_i_flow_html_aa3d07a71bb002ee9451d0c73470e5d94"><div class="ttname"><a href="class_i_flow.html#aa3d07a71bb002ee9451d0c73470e5d94">IFlow::setSource</a></div><div class="ttdeci">virtual void setSource(ISystem *source)=0</div></div>
+<div class="ttc" id="aclass_i_flow_html_ac21d5a576195a72b6b9288a587f506d5"><div class="ttname"><a href="class_i_flow.html#ac21d5a576195a72b6b9288a587f506d5">IFlow::getSource</a></div><div class="ttdeci">virtual ISystem * getSource(void) const =0</div></div>
+<div class="ttc" id="aclass_i_flow_html_acd4fcaf69cd6ae5395a7f8ed9e4f6e57"><div class="ttname"><a href="class_i_flow.html#acd4fcaf69cd6ae5395a7f8ed9e4f6e57">IFlow::setTarget</a></div><div class="ttdeci">virtual void setTarget(ISystem *target)=0</div></div>
+<div class="ttc" id="aclass_i_flow_html_af1b467e98d59e66eb1c10964db317ebe"><div class="ttname"><a href="class_i_flow.html#af1b467e98d59e66eb1c10964db317ebe">IFlow::execute</a></div><div class="ttdeci">virtual double execute() const =0</div></div>
+<div class="ttc" id="aclass_i_system_html"><div class="ttname"><a href="class_i_system.html">ISystem</a></div><div class="ttdoc">Class System.</div><div class="ttdef"><b>Definition:</b> <a href="_i_system_8hpp_source.html#l00012">ISystem.hpp:12</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

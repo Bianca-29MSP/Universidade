@@ -1,0 +1,92 @@
+\hypertarget{_flow_8cpp_source}{}\doxysection{Flow.\+cpp}
+\label{_flow_8cpp_source}\index{C:/Users/Enyal/OneDrive/Documentos/UFOP/Engenharia de Software/Sprints/Sprint 4/MyVensim v1.2/src/Flow.cpp@{C:/Users/Enyal/OneDrive/Documentos/UFOP/Engenharia de Software/Sprints/Sprint 4/MyVensim v1.2/src/Flow.cpp}}
+\mbox{\hyperlink{_flow_8cpp}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_flow_8hpp}{Flow.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_system_8hpp}{System.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00004}\mbox{\hyperlink{class_flow_ac9975e144e606242748197798e87dd32}{00004}} \mbox{\hyperlink{class_flow_ac9975e144e606242748197798e87dd32}{Flow::Flow}}()}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00005}00005 \{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00006}00006     \mbox{\hyperlink{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}{source}} = NULL;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00007}00007     \mbox{\hyperlink{class_i_flow_a5084bab32965265340c02f7203437cff}{target}} = NULL;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00008}00008 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00010}\mbox{\hyperlink{class_flow_a3e1ae7e3c4c3c43fd49b684485a8e91d}{00010}} \mbox{\hyperlink{class_flow_ac9975e144e606242748197798e87dd32}{Flow::Flow}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_flow}{Flow}}* flow)}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00012}00012     \textcolor{keywordflow}{if} (flow == \textcolor{keyword}{this})}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00013}00013         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00015}00015     \mbox{\hyperlink{class_i_flow_ad8821f76813a184eee647935b0e5060b}{name}} = flow-\/>name;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00016}00016     \mbox{\hyperlink{class_i_flow_a6c61252965eec28a0a5bca8675f2db4f}{currentValue}} = flow-\/>currentValue;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00017}00017     \mbox{\hyperlink{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}{source}} = flow-\/>source;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00018}00018     \mbox{\hyperlink{class_i_flow_a5084bab32965265340c02f7203437cff}{target}} = flow-\/>target;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00019}00019 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00021}\mbox{\hyperlink{class_flow_a256ddc9041867bddf103bd042108b095}{00021}} \mbox{\hyperlink{class_flow_ac9975e144e606242748197798e87dd32}{Flow::Flow}}(\textcolor{keywordtype}{string} name)}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00023}00023     \mbox{\hyperlink{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}{source}} = NULL;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00024}00024     \mbox{\hyperlink{class_i_flow_a5084bab32965265340c02f7203437cff}{target}} = NULL;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00025}00025     \mbox{\hyperlink{class_flow_ac829599a96f9ae03979d762771a4fea0}{setName}}(\mbox{\hyperlink{class_i_flow_ad8821f76813a184eee647935b0e5060b}{name}});}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00026}00026 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00028}\mbox{\hyperlink{class_flow_a5991efa6e8cf88c4ef2125cc727db333}{00028}} \mbox{\hyperlink{class_flow_a5991efa6e8cf88c4ef2125cc727db333}{Flow::\string~Flow}}()\{\}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00030}\mbox{\hyperlink{class_flow_ae722fae0ffe2270a5c84152a80a7d842}{00030}} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_flow_ae722fae0ffe2270a5c84152a80a7d842}{Flow::getName}}()}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00031}00031 \{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00032}00032     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_i_flow_ad8821f76813a184eee647935b0e5060b}{name}};}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00033}00033 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00035}\mbox{\hyperlink{class_flow_ac829599a96f9ae03979d762771a4fea0}{00035}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_flow_ac829599a96f9ae03979d762771a4fea0}{Flow::setName}}(\textcolor{keywordtype}{string} name)}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00036}00036 \{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00037}00037     this-\/>name = \mbox{\hyperlink{class_i_flow_ad8821f76813a184eee647935b0e5060b}{name}};}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00038}00038 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00040}\mbox{\hyperlink{class_flow_ae69612bbbac517f7f7d91c9bd13cb70d}{00040}} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_flow_ae69612bbbac517f7f7d91c9bd13cb70d}{Flow::getCurrentValue}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00041}00041 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00042}00042     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_i_flow_a6c61252965eec28a0a5bca8675f2db4f}{currentValue}};}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00045}\mbox{\hyperlink{class_flow_a36cee8a36876467a28b656ef15981431}{00045}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_flow_a36cee8a36876467a28b656ef15981431}{Flow::setCurrentValue}}(\textcolor{keywordtype}{double} value)}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00047}00047     \mbox{\hyperlink{class_i_flow_a6c61252965eec28a0a5bca8675f2db4f}{currentValue}} = value;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00048}00048 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00050}\mbox{\hyperlink{class_flow_a1b56c963dc181978655af50b8ce32488}{00050}} \mbox{\hyperlink{class_system}{System}} * \mbox{\hyperlink{class_flow_a1b56c963dc181978655af50b8ce32488}{Flow::getSource}}(\textcolor{keywordtype}{void})\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00051}00051 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00052}00052     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}{source}};}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00053}00053 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00055}\mbox{\hyperlink{class_flow_af8085a35060629d6774e80704219cbd8}{00055}} \mbox{\hyperlink{class_system}{System}} * \mbox{\hyperlink{class_flow_af8085a35060629d6774e80704219cbd8}{Flow::getTarget}}(\textcolor{keywordtype}{void})\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00056}00056 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00057}00057     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_i_flow_a5084bab32965265340c02f7203437cff}{target}};}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00058}00058 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00060}\mbox{\hyperlink{class_flow_a250fc53158862fc0db77b323a33e48a3}{00060}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_flow_a250fc53158862fc0db77b323a33e48a3}{Flow::setSource}}(\mbox{\hyperlink{class_system}{System}} * source)}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00061}00061 \{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00062}00062     this-\/>source = \mbox{\hyperlink{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}{source}};}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00063}00063 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00065}\mbox{\hyperlink{class_flow_ab69903880174e5bcdc0d815b5de7b3e0}{00065}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_flow_ab69903880174e5bcdc0d815b5de7b3e0}{Flow::setTarget}}(\mbox{\hyperlink{class_system}{System}} * target)}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00066}00066 \{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00067}00067     this-\/>target = \mbox{\hyperlink{class_i_flow_a5084bab32965265340c02f7203437cff}{target}};}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00068}00068 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00070}\mbox{\hyperlink{class_flow_a272bdaaea65ea55df803d724b2c8a9e2}{00070}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_flow_a272bdaaea65ea55df803d724b2c8a9e2}{Flow::connect}}(\mbox{\hyperlink{class_system}{System}} *source, \mbox{\hyperlink{class_system}{System}}* target)}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00071}00071 \{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00072}00072     \mbox{\hyperlink{class_flow_a250fc53158862fc0db77b323a33e48a3}{setSource}}(\mbox{\hyperlink{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}{source}});}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00073}00073     \mbox{\hyperlink{class_flow_ab69903880174e5bcdc0d815b5de7b3e0}{setTarget}}(\mbox{\hyperlink{class_i_flow_a5084bab32965265340c02f7203437cff}{target}});}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00074}00074 \}}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00076}\mbox{\hyperlink{class_flow_a0bad3ebd1722b1266daefafa804c1dc4}{00076}} \mbox{\hyperlink{class_flow}{Flow}}* \mbox{\hyperlink{class_flow_a0bad3ebd1722b1266daefafa804c1dc4}{Flow::operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_flow}{Flow}}* flow)}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00077}00077 \{}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00078}00078     \textcolor{keywordflow}{if} (flow == \textcolor{keyword}{this})}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00079}00079         \textcolor{keywordflow}{return} \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00081}00081     this-\/>\mbox{\hyperlink{class_i_flow_a4ff62306a3f390ff612a38cfcf49431a}{source}} = flow-\/>source;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00082}00082     this-\/>\mbox{\hyperlink{class_i_flow_a5084bab32965265340c02f7203437cff}{target}} = flow-\/>target;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00083}00083     this-\/>\mbox{\hyperlink{class_i_flow_a6c61252965eec28a0a5bca8675f2db4f}{currentValue}} = flow-\/>currentValue;}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00085}00085     \textcolor{keywordflow}{return} \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_flow_8cpp_source_l00086}00086 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,344 @@
+\hypertarget{class_flow_body}{}\doxysection{Referência da Classe Flow\+Body}
+\label{class_flow_body}\index{FlowBody@{FlowBody}}
+
+
+{\ttfamily \#include $<$Flow\+Impl.\+hpp$>$}
+
+
+
+Diagrama de hierarquia para Flow\+Body\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_flow_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para Flow\+Body\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{class_flow_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_flow_body_af7c4dc7b257284ba66176985df9ad544}{Flow\+Body}} ()
+\item 
+\mbox{\hyperlink{class_flow_body_a8e81c2dec81e4fc3b7c9f3d5f3f9e75e}{Flow\+Body}} (string \mbox{\hyperlink{class_flow_body_a71d618d66f2da215d0f712ea6a757323}{name}}, \mbox{\hyperlink{class_system}{System}} $\ast$s=NULL, \mbox{\hyperlink{class_system}{System}} $\ast$t=NULL)
+\item 
+virtual \mbox{\hyperlink{class_flow_body_a178e56af6c29c29b49c1f9f7af7d9311}{$\sim$\+Flow\+Body}} ()
+\item 
+string \mbox{\hyperlink{class_flow_body_af4ae72e8c2ec05eeb54f28617b2dca61}{get\+Name}} () const
+\item 
+void \mbox{\hyperlink{class_flow_body_aa6991ecb893457b14b25ddcf904b0546}{set\+Name}} (string \mbox{\hyperlink{class_flow_body_a71d618d66f2da215d0f712ea6a757323}{name}})
+\item 
+double \mbox{\hyperlink{class_flow_body_ae579e921b035f62f30d45ba26b397dd9}{get\+Current\+Value}} () const
+\item 
+void \mbox{\hyperlink{class_flow_body_ab0684d78951e37c98378a609000dd620}{set\+Current\+Value}} (double value)
+\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_flow_body_a6e13e1721f47644a92377b179d9e35c1}{get\+Source}} (void) const
+\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_flow_body_ab501a71e5280cd7a5b4e0426746bbf37}{get\+Target}} (void) const
+\item 
+void \mbox{\hyperlink{class_flow_body_aa50a239e37120f248e8f819e0310a088}{set\+Source}} (\mbox{\hyperlink{class_system}{System}} $\ast$\mbox{\hyperlink{class_flow_body_a7c46fc66ff02f18c387535e914337c82}{source}})
+\item 
+void \mbox{\hyperlink{class_flow_body_ac8da156892f3cc43d079778fc8067054}{set\+Target}} (\mbox{\hyperlink{class_system}{System}} $\ast$\mbox{\hyperlink{class_flow_body_a4a5d71f46863ff5e9d07161973817a34}{target}})
+\item 
+void \mbox{\hyperlink{class_flow_body_a2d8da9b8a5aaaeb8f03ba6eda2ce3aea}{connect}} (\mbox{\hyperlink{class_system}{System}} $\ast$\mbox{\hyperlink{class_flow_body_a7c46fc66ff02f18c387535e914337c82}{source}}=NULL, \mbox{\hyperlink{class_system}{System}} $\ast$\mbox{\hyperlink{class_flow_body_a4a5d71f46863ff5e9d07161973817a34}{target}}=NULL)
+\item 
+virtual double \mbox{\hyperlink{class_flow_body_a318c83c74344b3806e15e13355dfcdee}{execute}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_flow_body_a71d618d66f2da215d0f712ea6a757323}{name}}
+\item 
+double \mbox{\hyperlink{class_flow_body_a095724b7ccc2b7972e28b6e66b879932}{current\+Value}}
+\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_flow_body_a7c46fc66ff02f18c387535e914337c82}{source}}
+\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_flow_body_a4a5d71f46863ff5e9d07161973817a34}{target}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8hpp_source_l00007}{7}} do arquivo \mbox{\hyperlink{_flow_impl_8hpp_source}{Flow\+Impl.\+hpp}}.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_flow_body_af7c4dc7b257284ba66176985df9ad544}\label{class_flow_body_af7c4dc7b257284ba66176985df9ad544}} 
+\index{FlowBody@{FlowBody}!FlowBody@{FlowBody}}
+\index{FlowBody@{FlowBody}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{FlowBody()}{FlowBody()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Flow\+Body\+::\+Flow\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Esse é o construtor padrão da classe Flow\+Impl 
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00004}{4}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+\mbox{\Hypertarget{class_flow_body_a8e81c2dec81e4fc3b7c9f3d5f3f9e75e}\label{class_flow_body_a8e81c2dec81e4fc3b7c9f3d5f3f9e75e}} 
+\index{FlowBody@{FlowBody}!FlowBody@{FlowBody}}
+\index{FlowBody@{FlowBody}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{FlowBody()}{FlowBody()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Flow\+Body\+::\+Flow\+Body (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{s = {\ttfamily NULL},  }\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{t = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00021}{21}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+Este é o diagrama das funções utilizadas por essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_flow_body_a8e81c2dec81e4fc3b7c9f3d5f3f9e75e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_flow_body_a178e56af6c29c29b49c1f9f7af7d9311}\label{class_flow_body_a178e56af6c29c29b49c1f9f7af7d9311}} 
+\index{FlowBody@{FlowBody}!````~FlowBody@{$\sim$FlowBody}}
+\index{````~FlowBody@{$\sim$FlowBody}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{$\sim$FlowBody()}{~FlowBody()}}
+{\footnotesize\ttfamily Flow\+Body\+::$\sim$\+Flow\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esse é o destrutor padrão da classe \mbox{\hyperlink{class_flow}{Flow}} 
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00028}{28}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_flow_body_a2d8da9b8a5aaaeb8f03ba6eda2ce3aea}\label{class_flow_body_a2d8da9b8a5aaaeb8f03ba6eda2ce3aea}} 
+\index{FlowBody@{FlowBody}!connect@{connect}}
+\index{connect@{connect}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily void Flow\+Body\+::connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{source = {\ttfamily NULL},  }\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{target = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Connecta dois fluxo ao sistema (entrada e saída). 
+\begin{DoxyParams}{Parâmetros}
+{\em source} & -\/ ponteiro para um sistema de entrada. \\
+\hline
+{\em target} & -\/ ponteiro para um sistema de saída. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00070}{70}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+Este é o diagrama das funções utilizadas por essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_flow_body_a2d8da9b8a5aaaeb8f03ba6eda2ce3aea_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_flow_body_a318c83c74344b3806e15e13355dfcdee}\label{class_flow_body_a318c83c74344b3806e15e13355dfcdee}} 
+\index{FlowBody@{FlowBody}!execute@{execute}}
+\index{execute@{execute}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual double Flow\+Body\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implementado por \mbox{\hyperlink{class_flow_exponential_aae8053787ed5a432974bd065b28b2ea4}{Flow\+Exponential}}, \mbox{\hyperlink{class_flow_logistic_a4d4e173e3e6bf113be78a01319f5eaae}{Flow\+Logistic}}, \mbox{\hyperlink{class_flow_complex_f_a1b6cecb5c038c22bad1e049a0d1f8bbd}{Flow\+ComplexF}}, \mbox{\hyperlink{class_flow_complex_g_a1084f1d97ab6e7ba47784cd5cb77b57a}{Flow\+ComplexG}}, \mbox{\hyperlink{class_flow_complex_t_ac41174de6775064949c8cd36225da60b}{Flow\+ComplexT}}, \mbox{\hyperlink{class_flow_complex_r_a0ceb6a2c92b60f24653bfda35a15d786}{Flow\+ComplexR}}, \mbox{\hyperlink{class_flow_complex_u_a7ec0acb0d31d5c65eb57e8abc1ac9e64}{Flow\+ComplexU}}, \mbox{\hyperlink{class_flow_complex_v_a79606307115dd0ceea414c9fae824299}{Flow\+ComplexV}} e \mbox{\hyperlink{class_flow_test_unit_ae695fe657a290dc1ee3f959a15f75d55}{Flow\+Test\+Unit}}.
+
+\mbox{\Hypertarget{class_flow_body_ae579e921b035f62f30d45ba26b397dd9}\label{class_flow_body_ae579e921b035f62f30d45ba26b397dd9}} 
+\index{FlowBody@{FlowBody}!getCurrentValue@{getCurrentValue}}
+\index{getCurrentValue@{getCurrentValue}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{getCurrentValue()}{getCurrentValue()}}
+{\footnotesize\ttfamily double Flow\+Body\+::get\+Current\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retorna o valor atual do fluxo. \begin{DoxyReturn}{Retorna}
+double -\/ valor atual do fluxo. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00040}{40}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+\mbox{\Hypertarget{class_flow_body_af4ae72e8c2ec05eeb54f28617b2dca61}\label{class_flow_body_af4ae72e8c2ec05eeb54f28617b2dca61}} 
+\index{FlowBody@{FlowBody}!getName@{getName}}
+\index{getName@{getName}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Flow\+Body\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retorna o nome do fluxo. \begin{DoxyReturn}{Retorna}
+string -\/ nome do fluxo. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00030}{30}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+\mbox{\Hypertarget{class_flow_body_a6e13e1721f47644a92377b179d9e35c1}\label{class_flow_body_a6e13e1721f47644a92377b179d9e35c1}} 
+\index{FlowBody@{FlowBody}!getSource@{getSource}}
+\index{getSource@{getSource}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{getSource()}{getSource()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}} $\ast$ Flow\+Body\+::get\+Source (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Retorna o ponteiro do sistema de entrada do fluxo. \begin{DoxyReturn}{Retorna}
+\mbox{\hyperlink{class_system}{System}} $\ast$ -\/ ponteiro para um sistema de entrada. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00050}{50}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_flow_body_a6e13e1721f47644a92377b179d9e35c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_flow_body_ab501a71e5280cd7a5b4e0426746bbf37}\label{class_flow_body_ab501a71e5280cd7a5b4e0426746bbf37}} 
+\index{FlowBody@{FlowBody}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}} $\ast$ Flow\+Body\+::get\+Target (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Retorna o ponteiro do sistema de saída do fluxo. \begin{DoxyReturn}{Retorna}
+\mbox{\hyperlink{class_system}{System}} $\ast$ -\/ ponteiro para um sistema de saída. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00055}{55}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_flow_body_ab501a71e5280cd7a5b4e0426746bbf37_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_flow_body_ab0684d78951e37c98378a609000dd620}\label{class_flow_body_ab0684d78951e37c98378a609000dd620}} 
+\index{FlowBody@{FlowBody}!setCurrentValue@{setCurrentValue}}
+\index{setCurrentValue@{setCurrentValue}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{setCurrentValue()}{setCurrentValue()}}
+{\footnotesize\ttfamily void Flow\+Body\+::set\+Current\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+Seta o valor atual do fluxo 
+\begin{DoxyParams}{Parâmetros}
+{\em value} & -\/ novo valor atual do fluxo. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00045}{45}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+\mbox{\Hypertarget{class_flow_body_aa6991ecb893457b14b25ddcf904b0546}\label{class_flow_body_aa6991ecb893457b14b25ddcf904b0546}} 
+\index{FlowBody@{FlowBody}!setName@{setName}}
+\index{setName@{setName}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Flow\+Body\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+Seta o nome do fluxo 
+\begin{DoxyParams}{Parâmetros}
+{\em name} & -\/ nome do fluxo. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00035}{35}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_flow_body_aa6991ecb893457b14b25ddcf904b0546_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_flow_body_aa50a239e37120f248e8f819e0310a088}\label{class_flow_body_aa50a239e37120f248e8f819e0310a088}} 
+\index{FlowBody@{FlowBody}!setSource@{setSource}}
+\index{setSource@{setSource}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{setSource()}{setSource()}}
+{\footnotesize\ttfamily void Flow\+Body\+::set\+Source (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{source }\end{DoxyParamCaption})}
+
+Seta o ponteiro para o sistema de entrada do fluxo. 
+\begin{DoxyParams}{Parâmetros}
+{\em source} & -\/ ponteiro para um sistema de entrada. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00060}{60}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_flow_body_aa50a239e37120f248e8f819e0310a088_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_flow_body_ac8da156892f3cc43d079778fc8067054}\label{class_flow_body_ac8da156892f3cc43d079778fc8067054}} 
+\index{FlowBody@{FlowBody}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}}
+{\footnotesize\ttfamily void Flow\+Body\+::set\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Seta o ponteiro para o sistema de saída do fluxo. 
+\begin{DoxyParams}{Parâmetros}
+{\em target} & -\/ ponteiro para um sistema de saída. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8cpp_source_l00065}{65}} do arquivo \mbox{\hyperlink{_flow_impl_8cpp_source}{Flow\+Impl.\+cpp}}.
+
+Esse é o diagrama das funções que utilizam essa função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_flow_body_ac8da156892f3cc43d079778fc8067054_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_flow_body_a095724b7ccc2b7972e28b6e66b879932}\label{class_flow_body_a095724b7ccc2b7972e28b6e66b879932}} 
+\index{FlowBody@{FlowBody}!currentValue@{currentValue}}
+\index{currentValue@{currentValue}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{currentValue}{currentValue}}
+{\footnotesize\ttfamily double Flow\+Body\+::current\+Value\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui o valor atual do fluxo em determinado tempo 
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8hpp_source_l00010}{10}} do arquivo \mbox{\hyperlink{_flow_impl_8hpp_source}{Flow\+Impl.\+hpp}}.
+
+\mbox{\Hypertarget{class_flow_body_a71d618d66f2da215d0f712ea6a757323}\label{class_flow_body_a71d618d66f2da215d0f712ea6a757323}} 
+\index{FlowBody@{FlowBody}!name@{name}}
+\index{name@{name}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Flow\+Body\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui o nome do fluxo 
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8hpp_source_l00009}{9}} do arquivo \mbox{\hyperlink{_flow_impl_8hpp_source}{Flow\+Impl.\+hpp}}.
+
+\mbox{\Hypertarget{class_flow_body_a7c46fc66ff02f18c387535e914337c82}\label{class_flow_body_a7c46fc66ff02f18c387535e914337c82}} 
+\index{FlowBody@{FlowBody}!source@{source}}
+\index{source@{source}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{source}{source}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}}$\ast$ Flow\+Body\+::source\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui um ponteiro para o sistema de entrada do fluxo 
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8hpp_source_l00011}{11}} do arquivo \mbox{\hyperlink{_flow_impl_8hpp_source}{Flow\+Impl.\+hpp}}.
+
+\mbox{\Hypertarget{class_flow_body_a4a5d71f46863ff5e9d07161973817a34}\label{class_flow_body_a4a5d71f46863ff5e9d07161973817a34}} 
+\index{FlowBody@{FlowBody}!target@{target}}
+\index{target@{target}!FlowBody@{FlowBody}}
+\doxysubsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}}$\ast$ Flow\+Body\+::target\hspace{0.3cm}{\ttfamily [protected]}}
+
+Esse atributo possui um ponteiro para o sistema de saída do fluxo 
+
+Definição na linha \mbox{\hyperlink{_flow_impl_8hpp_source_l00012}{12}} do arquivo \mbox{\hyperlink{_flow_impl_8hpp_source}{Flow\+Impl.\+hpp}}.
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{_flow_impl_8hpp}{Flow\+Impl.\+hpp}}\item 
+src/lib/\mbox{\hyperlink{_flow_impl_8cpp}{Flow\+Impl.\+cpp}}\end{DoxyCompactItemize}

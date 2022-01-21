@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Vensim [Handlebody]: Referência do Arquivo test/unit/unit_Model.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Vensim [Handlebody]
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="dir_6a07fdbc4b50e86806a88566ca8f66e4.html">unit</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo unit_Model.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="unit___model_8hpp_source.html">unit_Model.hpp</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="mem__usage_8hpp_source.html">./utils/mem_usage.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_flow_test_unit_8hpp_source.html">./utils/FlowTestUnit.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_model_8hpp_source.html">../../src/include/Model.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_system_8hpp_source.html">../../src/include/System.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para unit_Model.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp__incl.png" border="0" usemap="#atest_2unit_2unit___model_8cpp" alt=""/></div>
+<map name="atest_2unit_2unit___model_8cpp" id="atest_2unit_2unit___model_8cpp">
+<area shape="rect" title=" " alt="" coords="327,5,488,32"/>
+<area shape="rect" href="unit___model_8hpp.html" title=" " alt="" coords="5,80,116,107"/>
+<area shape="rect" title=" " alt="" coords="141,80,213,107"/>
+<area shape="rect" title=" " alt="" coords="237,80,306,107"/>
+<area shape="rect" href="mem__usage_8hpp.html" title=" " alt="" coords="330,80,485,107"/>
+<area shape="rect" href="_flow_test_unit_8hpp.html" title=" " alt="" coords="509,80,668,107"/>
+<area shape="rect" href="_model_8hpp.html" title=" " alt="" coords="693,80,866,107"/>
+<area shape="rect" href="_system_8hpp.html" title=" " alt="" coords="820,162,1003,189"/>
+<area shape="rect" href="_flow_impl_8hpp.html" title=" " alt="" coords="612,155,733,196"/>
+<area shape="rect" href="_flow_8hpp.html" title=" " alt="" coords="635,244,710,271"/>
+<area shape="rect" href="_bridge_8hpp.html" title=" " alt="" coords="735,244,819,271"/>
+<area shape="rect" title=" " alt="" coords="737,319,792,345"/>
+<area shape="rect" title=" " alt="" coords="757,162,796,189"/>
+</map>
+</div>
+</div>
+<p><a href="unit___model_8cpp_source.html">Vá para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:af0c874c71422ff355ec8579c9a859738"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit___model_8cpp.html#af0c874c71422ff355ec8579c9a859738">unit_Model_constructor</a> (void)</td></tr>
+<tr class="separator:af0c874c71422ff355ec8579c9a859738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab348ace4d56947bf92a931650a17b240"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit___model_8cpp.html#ab348ace4d56947bf92a931650a17b240">unit_Model_destructor</a> (void)</td></tr>
+<tr class="separator:ab348ace4d56947bf92a931650a17b240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6bc5731af0fce70c9ffc712d3ac6a91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit___model_8cpp.html#ae6bc5731af0fce70c9ffc712d3ac6a91">unit_Model_setTime</a> (void)</td></tr>
+<tr class="separator:ae6bc5731af0fce70c9ffc712d3ac6a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20fb14e5f0d758389d88fefeb8d9d01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit___model_8cpp.html#af20fb14e5f0d758389d88fefeb8d9d01">unit_Model_incrementTime</a> (void)</td></tr>
+<tr class="separator:af20fb14e5f0d758389d88fefeb8d9d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa06dc7ad55e19bd871ad7522304a10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit___model_8cpp.html#a4fa06dc7ad55e19bd871ad7522304a10">unit_Model_add</a> (void)</td></tr>
+<tr class="separator:a4fa06dc7ad55e19bd871ad7522304a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8f2f66c1fe7a88ff43ba214d783819c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit___model_8cpp.html#af8f2f66c1fe7a88ff43ba214d783819c">unit_Model_iteratorFlows</a> (void)</td></tr>
+<tr class="separator:af8f2f66c1fe7a88ff43ba214d783819c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b5d652ac7d426ae156204c49f7dd307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit___model_8cpp.html#a3b5d652ac7d426ae156204c49f7dd307">unit_Model_iteratorSystems</a> (void)</td></tr>
+<tr class="separator:a3b5d652ac7d426ae156204c49f7dd307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f444f7adf42d9fe780632ef2e324d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit___model_8cpp.html#a47f444f7adf42d9fe780632ef2e324d6">unit_Model_run</a> (void)</td></tr>
+<tr class="separator:a47f444f7adf42d9fe780632ef2e324d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9809e814596bf9bf3c37918190a866c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit___model_8cpp.html#ac9809e814596bf9bf3c37918190a866c">run_unit_tests_Model</a> (void)</td></tr>
+<tr class="separator:ac9809e814596bf9bf3c37918190a866c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="ac9809e814596bf9bf3c37918190a866c" name="ac9809e814596bf9bf3c37918190a866c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9809e814596bf9bf3c37918190a866c">&#9670;&nbsp;</a></span>run_unit_tests_Model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void run_unit_tests_Model </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="unit___model_8cpp_source.html#l00137">137</a> do arquivo <a class="el" href="unit___model_8cpp_source.html">unit_Model.cpp</a>.</p>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_ac9809e814596bf9bf3c37918190a866c_cgraph.png" border="0" usemap="#aunit___model_8cpp_ac9809e814596bf9bf3c37918190a866c_cgraph" alt=""/></div>
+<map name="aunit___model_8cpp_ac9809e814596bf9bf3c37918190a866c_cgraph" id="aunit___model_8cpp_ac9809e814596bf9bf3c37918190a866c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,335,152,361"/>
+<area shape="rect" href="unit___model_8cpp.html#a4fa06dc7ad55e19bd871ad7522304a10" title=" " alt="" coords="235,183,349,209"/>
+<area shape="rect" href="unit___model_8cpp.html#af0c874c71422ff355ec8579c9a859738" title=" " alt="" coords="213,360,371,387"/>
+<area shape="rect" href="unit___model_8cpp.html#ab348ace4d56947bf92a931650a17b240" title=" " alt="" coords="217,309,367,336"/>
+<area shape="rect" href="unit___model_8cpp.html#af20fb14e5f0d758389d88fefeb8d9d01" title=" " alt="" coords="203,411,381,437"/>
+<area shape="rect" href="unit___model_8cpp.html#af8f2f66c1fe7a88ff43ba214d783819c" title=" " alt="" coords="209,107,375,133"/>
+<area shape="rect" href="unit___model_8cpp.html#a3b5d652ac7d426ae156204c49f7dd307" title=" " alt="" coords="200,259,384,285"/>
+<area shape="rect" href="unit___model_8cpp.html#a47f444f7adf42d9fe780632ef2e324d6" title=" " alt="" coords="237,461,347,488"/>
+<area shape="rect" href="unit___model_8cpp.html#ae6bc5731af0fce70c9ffc712d3ac6a91" title=" " alt="" coords="223,512,361,539"/>
+<area shape="rect" href="class_model.html#aec9c84edee23eb17b27d6babab7f3ba3" title=" " alt="" coords="442,56,573,83"/>
+<area shape="rect" href="class_model.html#a16873f714ee9c7a9b5106a303246cdfb" title=" " alt="" coords="433,157,581,184"/>
+<area shape="rect" href="class_model.html#aa0aacc111243ebc59b8a24c6c6247c17" title=" " alt="" coords="443,107,571,133"/>
+<area shape="rect" href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f" title=" " alt="" coords="439,360,575,387"/>
+<area shape="rect" href="class_model.html#a17f1d098f3f7b6b1e4fcb40e0bd7fcff" title=" " alt="" coords="434,259,581,285"/>
+<area shape="rect" href="class_model.html#a65efd016a60bdc00314eba9699c1b033" title=" " alt="" coords="675,107,762,133"/>
+<area shape="rect" href="class_model_handle.html#a7a622ecc1f5ec050fb2bdb3688cc494e" title=" " alt="" coords="631,360,807,387"/>
+<area shape="rect" href="class_model_body.html#a90b181f64b42446dcf42f608b385f11a" title=" " alt="" coords="855,360,1021,387"/>
+<area shape="rect" href="class_model.html#aa5365ab557ae47efffdf14ba7a46dac8" title=" " alt="" coords="449,411,566,437"/>
+<area shape="rect" href="class_model.html#a41569269c162962571a791c0fe737bca" title=" " alt="" coords="452,512,563,539"/>
+<area shape="rect" href="mem__usage_8cpp.html#a76605b32027a2999bb0d15c024211828" title=" " alt="" coords="461,309,554,336"/>
+<area shape="rect" href="class_model.html#a55d1cd69fa8d3187e19a5f701260a850" title=" " alt="" coords="432,461,583,488"/>
+<area shape="rect" href="class_model.html#a6e3855703dd9181af387982d58dd087a" title=" " alt="" coords="447,5,567,32"/>
+<area shape="rect" href="class_model.html#a77aeba2772e5b29c204827194cdd0d66" title=" " alt="" coords="438,208,577,235"/>
+<area shape="rect" href="class_flow.html#a56113d82f4c601d72ca5ec9f76f6fdf0" title=" " alt="" coords="432,563,583,589"/>
+<area shape="rect" href="class_system.html#a41b673faa6c199eb8e4f204639fab4f2" title=" " alt="" coords="444,613,571,640"/>
+<area shape="rect" href="class_model.html#a7ba50c44304ed38f39ca561bb233c9a3" title=" " alt="" coords="466,664,549,691"/>
+<area shape="rect" href="class_model.html#ab89eff21392ee4e7f58da939238acc7c" title=" " alt="" coords="452,715,563,741"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_ac9809e814596bf9bf3c37918190a866c_icgraph.png" border="0" usemap="#aunit___model_8cpp_ac9809e814596bf9bf3c37918190a866c_icgraph" alt=""/></div>
+<map name="aunit___model_8cpp_ac9809e814596bf9bf3c37918190a866c_icgraph" id="aunit___model_8cpp_ac9809e814596bf9bf3c37918190a866c_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,251,32"/>
+<area shape="rect" href="test_2unit_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4fa06dc7ad55e19bd871ad7522304a10" name="a4fa06dc7ad55e19bd871ad7522304a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa06dc7ad55e19bd871ad7522304a10">&#9670;&nbsp;</a></span>unit_Model_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unit_Model_add </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="unit___model_8cpp_source.html#l00060">60</a> do arquivo <a class="el" href="unit___model_8cpp_source.html">unit_Model.cpp</a>.</p>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_a4fa06dc7ad55e19bd871ad7522304a10_cgraph.png" border="0" usemap="#aunit___model_8cpp_a4fa06dc7ad55e19bd871ad7522304a10_cgraph" alt=""/></div>
+<map name="aunit___model_8cpp_a4fa06dc7ad55e19bd871ad7522304a10_cgraph" id="aunit___model_8cpp_a4fa06dc7ad55e19bd871ad7522304a10_cgraph">
+<area shape="rect" title=" " alt="" coords="5,107,119,133"/>
+<area shape="rect" href="class_model.html#aec9c84edee23eb17b27d6babab7f3ba3" title=" " alt="" coords="175,5,306,32"/>
+<area shape="rect" href="class_model.html#a16873f714ee9c7a9b5106a303246cdfb" title=" " alt="" coords="167,56,315,83"/>
+<area shape="rect" href="class_model.html#aa0aacc111243ebc59b8a24c6c6247c17" title=" " alt="" coords="177,107,305,133"/>
+<area shape="rect" href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f" title=" " alt="" coords="173,157,309,184"/>
+<area shape="rect" href="class_model.html#a17f1d098f3f7b6b1e4fcb40e0bd7fcff" title=" " alt="" coords="167,208,314,235"/>
+<area shape="rect" href="class_model.html#a65efd016a60bdc00314eba9699c1b033" title=" " alt="" coords="407,107,494,133"/>
+<area shape="rect" href="class_model_handle.html#a7a622ecc1f5ec050fb2bdb3688cc494e" title=" " alt="" coords="363,157,539,184"/>
+<area shape="rect" href="class_model_body.html#a90b181f64b42446dcf42f608b385f11a" title=" " alt="" coords="587,157,753,184"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_a4fa06dc7ad55e19bd871ad7522304a10_icgraph.png" border="0" usemap="#aunit___model_8cpp_a4fa06dc7ad55e19bd871ad7522304a10_icgraph" alt=""/></div>
+<map name="aunit___model_8cpp_a4fa06dc7ad55e19bd871ad7522304a10_icgraph" id="aunit___model_8cpp_a4fa06dc7ad55e19bd871ad7522304a10_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,412,32"/>
+<area shape="rect" href="unit___model_8cpp.html#ac9809e814596bf9bf3c37918190a866c" title=" " alt="" coords="104,5,251,32"/>
+<area shape="rect" href="test_2unit_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af0c874c71422ff355ec8579c9a859738" name="af0c874c71422ff355ec8579c9a859738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0c874c71422ff355ec8579c9a859738">&#9670;&nbsp;</a></span>unit_Model_constructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unit_Model_constructor </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="unit___model_8cpp_source.html#l00010">10</a> do arquivo <a class="el" href="unit___model_8cpp_source.html">unit_Model.cpp</a>.</p>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_af0c874c71422ff355ec8579c9a859738_cgraph.png" border="0" usemap="#aunit___model_8cpp_af0c874c71422ff355ec8579c9a859738_cgraph" alt=""/></div>
+<map name="aunit___model_8cpp_af0c874c71422ff355ec8579c9a859738_cgraph" id="aunit___model_8cpp_af0c874c71422ff355ec8579c9a859738_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,163,83"/>
+<area shape="rect" href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f" title=" " alt="" coords="211,5,347,32"/>
+<area shape="rect" href="class_model.html#aa5365ab557ae47efffdf14ba7a46dac8" title=" " alt="" coords="220,56,337,83"/>
+<area shape="rect" href="class_model.html#a41569269c162962571a791c0fe737bca" title=" " alt="" coords="223,107,334,133"/>
+<area shape="rect" href="class_model_handle.html#a7a622ecc1f5ec050fb2bdb3688cc494e" title=" " alt="" coords="395,5,571,32"/>
+<area shape="rect" href="class_model_body.html#a90b181f64b42446dcf42f608b385f11a" title=" " alt="" coords="619,5,785,32"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_af0c874c71422ff355ec8579c9a859738_icgraph.png" border="0" usemap="#aunit___model_8cpp_af0c874c71422ff355ec8579c9a859738_icgraph" alt=""/></div>
+<map name="aunit___model_8cpp_af0c874c71422ff355ec8579c9a859738_icgraph" id="aunit___model_8cpp_af0c874c71422ff355ec8579c9a859738_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,456,32"/>
+<area shape="rect" href="unit___model_8cpp.html#ac9809e814596bf9bf3c37918190a866c" title=" " alt="" coords="104,5,251,32"/>
+<area shape="rect" href="test_2unit_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab348ace4d56947bf92a931650a17b240" name="ab348ace4d56947bf92a931650a17b240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab348ace4d56947bf92a931650a17b240">&#9670;&nbsp;</a></span>unit_Model_destructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unit_Model_destructor </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="unit___model_8cpp_source.html#l00021">21</a> do arquivo <a class="el" href="unit___model_8cpp_source.html">unit_Model.cpp</a>.</p>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_ab348ace4d56947bf92a931650a17b240_cgraph.png" border="0" usemap="#aunit___model_8cpp_ab348ace4d56947bf92a931650a17b240_cgraph" alt=""/></div>
+<map name="aunit___model_8cpp_ab348ace4d56947bf92a931650a17b240_cgraph" id="aunit___model_8cpp_ab348ace4d56947bf92a931650a17b240_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,156,57"/>
+<area shape="rect" href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f" title=" " alt="" coords="204,5,340,32"/>
+<area shape="rect" href="mem__usage_8cpp.html#a76605b32027a2999bb0d15c024211828" title=" " alt="" coords="225,56,319,83"/>
+<area shape="rect" href="class_model_handle.html#a7a622ecc1f5ec050fb2bdb3688cc494e" title=" " alt="" coords="388,5,564,32"/>
+<area shape="rect" href="class_model_body.html#a90b181f64b42446dcf42f608b385f11a" title=" " alt="" coords="612,5,779,32"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_ab348ace4d56947bf92a931650a17b240_icgraph.png" border="0" usemap="#aunit___model_8cpp_ab348ace4d56947bf92a931650a17b240_icgraph" alt=""/></div>
+<map name="aunit___model_8cpp_ab348ace4d56947bf92a931650a17b240_icgraph" id="aunit___model_8cpp_ab348ace4d56947bf92a931650a17b240_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,449,32"/>
+<area shape="rect" href="unit___model_8cpp.html#ac9809e814596bf9bf3c37918190a866c" title=" " alt="" coords="104,5,251,32"/>
+<area shape="rect" href="test_2unit_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af20fb14e5f0d758389d88fefeb8d9d01" name="af20fb14e5f0d758389d88fefeb8d9d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af20fb14e5f0d758389d88fefeb8d9d01">&#9670;&nbsp;</a></span>unit_Model_incrementTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unit_Model_incrementTime </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="unit___model_8cpp_source.html#l00048">48</a> do arquivo <a class="el" href="unit___model_8cpp_source.html">unit_Model.cpp</a>.</p>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_af20fb14e5f0d758389d88fefeb8d9d01_cgraph.png" border="0" usemap="#aunit___model_8cpp_af20fb14e5f0d758389d88fefeb8d9d01_cgraph" alt=""/></div>
+<map name="aunit___model_8cpp_af20fb14e5f0d758389d88fefeb8d9d01_cgraph" id="aunit___model_8cpp_af20fb14e5f0d758389d88fefeb8d9d01_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,183,83"/>
+<area shape="rect" href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f" title=" " alt="" coords="238,5,374,32"/>
+<area shape="rect" href="class_model.html#a41569269c162962571a791c0fe737bca" title=" " alt="" coords="251,56,361,83"/>
+<area shape="rect" href="class_model.html#a55d1cd69fa8d3187e19a5f701260a850" title=" " alt="" coords="231,107,381,133"/>
+<area shape="rect" href="class_model_handle.html#a7a622ecc1f5ec050fb2bdb3688cc494e" title=" " alt="" coords="429,5,605,32"/>
+<area shape="rect" href="class_model_body.html#a90b181f64b42446dcf42f608b385f11a" title=" " alt="" coords="653,5,820,32"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_af20fb14e5f0d758389d88fefeb8d9d01_icgraph.png" border="0" usemap="#aunit___model_8cpp_af20fb14e5f0d758389d88fefeb8d9d01_icgraph" alt=""/></div>
+<map name="aunit___model_8cpp_af20fb14e5f0d758389d88fefeb8d9d01_icgraph" id="aunit___model_8cpp_af20fb14e5f0d758389d88fefeb8d9d01_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,476,32"/>
+<area shape="rect" href="unit___model_8cpp.html#ac9809e814596bf9bf3c37918190a866c" title=" " alt="" coords="104,5,251,32"/>
+<area shape="rect" href="test_2unit_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af8f2f66c1fe7a88ff43ba214d783819c" name="af8f2f66c1fe7a88ff43ba214d783819c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8f2f66c1fe7a88ff43ba214d783819c">&#9670;&nbsp;</a></span>unit_Model_iteratorFlows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unit_Model_iteratorFlows </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="unit___model_8cpp_source.html#l00082">82</a> do arquivo <a class="el" href="unit___model_8cpp_source.html">unit_Model.cpp</a>.</p>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_af8f2f66c1fe7a88ff43ba214d783819c_cgraph.png" border="0" usemap="#aunit___model_8cpp_af8f2f66c1fe7a88ff43ba214d783819c_cgraph" alt=""/></div>
+<map name="aunit___model_8cpp_af8f2f66c1fe7a88ff43ba214d783819c_cgraph" id="aunit___model_8cpp_af8f2f66c1fe7a88ff43ba214d783819c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,172,108"/>
+<area shape="rect" href="class_model.html#aec9c84edee23eb17b27d6babab7f3ba3" title=" " alt="" coords="223,5,353,32"/>
+<area shape="rect" href="class_model.html#aa0aacc111243ebc59b8a24c6c6247c17" title=" " alt="" coords="224,56,352,83"/>
+<area shape="rect" href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f" title=" " alt="" coords="220,107,356,133"/>
+<area shape="rect" href="class_model.html#a6e3855703dd9181af387982d58dd087a" title=" " alt="" coords="228,157,348,184"/>
+<area shape="rect" href="class_model.html#a65efd016a60bdc00314eba9699c1b033" title=" " alt="" coords="449,56,535,83"/>
+<area shape="rect" href="class_model_handle.html#a7a622ecc1f5ec050fb2bdb3688cc494e" title=" " alt="" coords="404,107,580,133"/>
+<area shape="rect" href="class_model_body.html#a90b181f64b42446dcf42f608b385f11a" title=" " alt="" coords="628,107,795,133"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_af8f2f66c1fe7a88ff43ba214d783819c_icgraph.png" border="0" usemap="#aunit___model_8cpp_af8f2f66c1fe7a88ff43ba214d783819c_icgraph" alt=""/></div>
+<map name="aunit___model_8cpp_af8f2f66c1fe7a88ff43ba214d783819c_icgraph" id="aunit___model_8cpp_af8f2f66c1fe7a88ff43ba214d783819c_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,465,32"/>
+<area shape="rect" href="unit___model_8cpp.html#ac9809e814596bf9bf3c37918190a866c" title=" " alt="" coords="104,5,251,32"/>
+<area shape="rect" href="test_2unit_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3b5d652ac7d426ae156204c49f7dd307" name="a3b5d652ac7d426ae156204c49f7dd307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b5d652ac7d426ae156204c49f7dd307">&#9670;&nbsp;</a></span>unit_Model_iteratorSystems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unit_Model_iteratorSystems </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="unit___model_8cpp_source.html#l00101">101</a> do arquivo <a class="el" href="unit___model_8cpp_source.html">unit_Model.cpp</a>.</p>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_a3b5d652ac7d426ae156204c49f7dd307_cgraph.png" border="0" usemap="#aunit___model_8cpp_a3b5d652ac7d426ae156204c49f7dd307_cgraph" alt=""/></div>
+<map name="aunit___model_8cpp_a3b5d652ac7d426ae156204c49f7dd307_cgraph" id="aunit___model_8cpp_a3b5d652ac7d426ae156204c49f7dd307_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,189,108"/>
+<area shape="rect" href="class_model.html#a16873f714ee9c7a9b5106a303246cdfb" title=" " alt="" coords="237,5,385,32"/>
+<area shape="rect" href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f" title=" " alt="" coords="243,56,379,83"/>
+<area shape="rect" href="class_model.html#a17f1d098f3f7b6b1e4fcb40e0bd7fcff" title=" " alt="" coords="238,107,385,133"/>
+<area shape="rect" href="class_model.html#a77aeba2772e5b29c204827194cdd0d66" title=" " alt="" coords="242,157,381,184"/>
+<area shape="rect" href="class_model_handle.html#a7a622ecc1f5ec050fb2bdb3688cc494e" title=" " alt="" coords="433,56,609,83"/>
+<area shape="rect" href="class_model_body.html#a90b181f64b42446dcf42f608b385f11a" title=" " alt="" coords="657,56,824,83"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_a3b5d652ac7d426ae156204c49f7dd307_icgraph.png" border="0" usemap="#aunit___model_8cpp_a3b5d652ac7d426ae156204c49f7dd307_icgraph" alt=""/></div>
+<map name="aunit___model_8cpp_a3b5d652ac7d426ae156204c49f7dd307_icgraph" id="aunit___model_8cpp_a3b5d652ac7d426ae156204c49f7dd307_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,483,32"/>
+<area shape="rect" href="unit___model_8cpp.html#ac9809e814596bf9bf3c37918190a866c" title=" " alt="" coords="104,5,251,32"/>
+<area shape="rect" href="test_2unit_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a47f444f7adf42d9fe780632ef2e324d6" name="a47f444f7adf42d9fe780632ef2e324d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47f444f7adf42d9fe780632ef2e324d6">&#9670;&nbsp;</a></span>unit_Model_run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unit_Model_run </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="unit___model_8cpp_source.html#l00120">120</a> do arquivo <a class="el" href="unit___model_8cpp_source.html">unit_Model.cpp</a>.</p>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_a47f444f7adf42d9fe780632ef2e324d6_cgraph.png" border="0" usemap="#aunit___model_8cpp_a47f444f7adf42d9fe780632ef2e324d6_cgraph" alt=""/></div>
+<map name="aunit___model_8cpp_a47f444f7adf42d9fe780632ef2e324d6_cgraph" id="aunit___model_8cpp_a47f444f7adf42d9fe780632ef2e324d6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,157,116,184"/>
+<area shape="rect" href="class_model.html#aa0aacc111243ebc59b8a24c6c6247c17" title=" " alt="" coords="175,5,303,32"/>
+<area shape="rect" href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f" title=" " alt="" coords="171,56,307,83"/>
+<area shape="rect" href="class_model.html#a17f1d098f3f7b6b1e4fcb40e0bd7fcff" title=" " alt="" coords="166,107,313,133"/>
+<area shape="rect" href="class_flow.html#a56113d82f4c601d72ca5ec9f76f6fdf0" title=" " alt="" coords="164,157,315,184"/>
+<area shape="rect" href="class_model.html#a41569269c162962571a791c0fe737bca" title=" " alt="" coords="184,208,295,235"/>
+<area shape="rect" href="class_system.html#a41b673faa6c199eb8e4f204639fab4f2" title=" " alt="" coords="176,259,303,285"/>
+<area shape="rect" href="class_model.html#a7ba50c44304ed38f39ca561bb233c9a3" title=" " alt="" coords="198,309,281,336"/>
+<area shape="rect" href="class_model.html#a65efd016a60bdc00314eba9699c1b033" title=" " alt="" coords="407,5,494,32"/>
+<area shape="rect" href="class_model_handle.html#a7a622ecc1f5ec050fb2bdb3688cc494e" title=" " alt="" coords="363,56,539,83"/>
+<area shape="rect" href="class_model_body.html#a90b181f64b42446dcf42f608b385f11a" title=" " alt="" coords="587,56,753,83"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_a47f444f7adf42d9fe780632ef2e324d6_icgraph.png" border="0" usemap="#aunit___model_8cpp_a47f444f7adf42d9fe780632ef2e324d6_icgraph" alt=""/></div>
+<map name="aunit___model_8cpp_a47f444f7adf42d9fe780632ef2e324d6_icgraph" id="aunit___model_8cpp_a47f444f7adf42d9fe780632ef2e324d6_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,409,32"/>
+<area shape="rect" href="unit___model_8cpp.html#ac9809e814596bf9bf3c37918190a866c" title=" " alt="" coords="104,5,251,32"/>
+<area shape="rect" href="test_2unit_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae6bc5731af0fce70c9ffc712d3ac6a91" name="ae6bc5731af0fce70c9ffc712d3ac6a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6bc5731af0fce70c9ffc712d3ac6a91">&#9670;&nbsp;</a></span>unit_Model_setTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unit_Model_setTime </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="unit___model_8cpp_source.html#l00037">37</a> do arquivo <a class="el" href="unit___model_8cpp_source.html">unit_Model.cpp</a>.</p>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_ae6bc5731af0fce70c9ffc712d3ac6a91_cgraph.png" border="0" usemap="#aunit___model_8cpp_ae6bc5731af0fce70c9ffc712d3ac6a91_cgraph" alt=""/></div>
+<map name="aunit___model_8cpp_ae6bc5731af0fce70c9ffc712d3ac6a91_cgraph" id="aunit___model_8cpp_ae6bc5731af0fce70c9ffc712d3ac6a91_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,144,83"/>
+<area shape="rect" href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f" title=" " alt="" coords="192,5,328,32"/>
+<area shape="rect" href="class_model.html#a41569269c162962571a791c0fe737bca" title=" " alt="" coords="205,56,315,83"/>
+<area shape="rect" href="class_model.html#ab89eff21392ee4e7f58da939238acc7c" title=" " alt="" coords="205,107,315,133"/>
+<area shape="rect" href="class_model_handle.html#a7a622ecc1f5ec050fb2bdb3688cc494e" title=" " alt="" coords="376,5,552,32"/>
+<area shape="rect" href="class_model_body.html#a90b181f64b42446dcf42f608b385f11a" title=" " alt="" coords="600,5,767,32"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="unit___model_8cpp_ae6bc5731af0fce70c9ffc712d3ac6a91_icgraph.png" border="0" usemap="#aunit___model_8cpp_ae6bc5731af0fce70c9ffc712d3ac6a91_icgraph" alt=""/></div>
+<map name="aunit___model_8cpp_ae6bc5731af0fce70c9ffc712d3ac6a91_icgraph" id="aunit___model_8cpp_ae6bc5731af0fce70c9ffc712d3ac6a91_icgraph">
+<area shape="rect" title=" " alt="" coords="299,5,437,32"/>
+<area shape="rect" href="unit___model_8cpp.html#ac9809e814596bf9bf3c37918190a866c" title=" " alt="" coords="104,5,251,32"/>
+<area shape="rect" href="test_2unit_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

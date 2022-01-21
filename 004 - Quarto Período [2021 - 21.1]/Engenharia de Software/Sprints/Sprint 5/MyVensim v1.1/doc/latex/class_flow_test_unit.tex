@@ -1,0 +1,141 @@
+\hypertarget{class_flow_test_unit}{}\doxysection{Referência da Classe Flow\+Test\+Unit}
+\label{class_flow_test_unit}\index{FlowTestUnit@{FlowTestUnit}}
+
+
+Class \mbox{\hyperlink{class_flow_test_unit}{Flow\+Test\+Unit}}.  
+
+
+
+
+{\ttfamily \#include $<$Flow\+Test\+Unit.\+hpp$>$}
+
+
+
+Diagrama de hierarquia para Flow\+Test\+Unit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_flow_test_unit__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para Flow\+Test\+Unit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_flow_test_unit__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_flow_test_unit_a8a7a7826e52c92beee88d07aedc0b0f0}{Flow\+Test\+Unit}} ()
+\item 
+\mbox{\hyperlink{class_flow_test_unit_a55cab4851c5c2722a2d88a0556bfa836}{Flow\+Test\+Unit}} (string \mbox{\hyperlink{class_flow_impl_a4f3915297f6ef9d76acc5f9fef67342c}{name}}, \mbox{\hyperlink{class_system}{System}} $\ast$s=NULL, \mbox{\hyperlink{class_system}{System}} $\ast$t=NULL)
+\item 
+\mbox{\hyperlink{class_flow_test_unit_a33ef42b3a16074ea44a0747f16366072}{Flow\+Test\+Unit}} (const \mbox{\hyperlink{class_flow_impl}{Flow\+Impl}} $\ast$flow)
+\item 
+virtual \mbox{\hyperlink{class_flow_test_unit_ac4fe066e2768ca1a6d5c9792f0b8c874}{$\sim$\+Flow\+Test\+Unit}} ()
+\item 
+double \mbox{\hyperlink{class_flow_test_unit_ae695fe657a290dc1ee3f959a15f75d55}{execute}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Outros membros herdados}
+
+
+\doxysubsection{Descrição detalhada}
+Class \mbox{\hyperlink{class_flow_test_unit}{Flow\+Test\+Unit}}. 
+
+Está classe herda o \mbox{\hyperlink{class_flow}{Flow}} e implementa a execucao 
+
+Definição na linha \mbox{\hyperlink{_flow_test_unit_8hpp_source_l00010}{10}} do arquivo \mbox{\hyperlink{_flow_test_unit_8hpp_source}{Flow\+Test\+Unit.\+hpp}}.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_flow_test_unit_a8a7a7826e52c92beee88d07aedc0b0f0}\label{class_flow_test_unit_a8a7a7826e52c92beee88d07aedc0b0f0}} 
+\index{FlowTestUnit@{FlowTestUnit}!FlowTestUnit@{FlowTestUnit}}
+\index{FlowTestUnit@{FlowTestUnit}!FlowTestUnit@{FlowTestUnit}}
+\doxysubsubsection{\texorpdfstring{FlowTestUnit()}{FlowTestUnit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Flow\+Test\+Unit\+::\+Flow\+Test\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Esse é o destrutor padrão da classe \mbox{\hyperlink{class_flow_test_unit}{Flow\+Test\+Unit}} 
+
+Definição na linha \mbox{\hyperlink{_flow_test_unit_8cpp_source_l00004}{4}} do arquivo \mbox{\hyperlink{_flow_test_unit_8cpp_source}{Flow\+Test\+Unit.\+cpp}}.
+
+\mbox{\Hypertarget{class_flow_test_unit_a55cab4851c5c2722a2d88a0556bfa836}\label{class_flow_test_unit_a55cab4851c5c2722a2d88a0556bfa836}} 
+\index{FlowTestUnit@{FlowTestUnit}!FlowTestUnit@{FlowTestUnit}}
+\index{FlowTestUnit@{FlowTestUnit}!FlowTestUnit@{FlowTestUnit}}
+\doxysubsubsection{\texorpdfstring{FlowTestUnit()}{FlowTestUnit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Flow\+Test\+Unit\+::\+Flow\+Test\+Unit (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{s = {\ttfamily NULL},  }\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{t = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Esse é um construtor que possui atributo inicial para o fluxo 
+\begin{DoxyParams}{Parâmetros}
+{\em name} & nome do fluxo. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{_flow_test_unit_8cpp_source_l00006}{6}} do arquivo \mbox{\hyperlink{_flow_test_unit_8cpp_source}{Flow\+Test\+Unit.\+cpp}}.
+
+\mbox{\Hypertarget{class_flow_test_unit_a33ef42b3a16074ea44a0747f16366072}\label{class_flow_test_unit_a33ef42b3a16074ea44a0747f16366072}} 
+\index{FlowTestUnit@{FlowTestUnit}!FlowTestUnit@{FlowTestUnit}}
+\index{FlowTestUnit@{FlowTestUnit}!FlowTestUnit@{FlowTestUnit}}
+\doxysubsubsection{\texorpdfstring{FlowTestUnit()}{FlowTestUnit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Flow\+Test\+Unit\+::\+Flow\+Test\+Unit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_flow_impl}{Flow\+Impl}} $\ast$}]{flow }\end{DoxyParamCaption})}
+
+Esse é o construtor copia da classe \mbox{\hyperlink{class_flow}{Flow}}. 
+\begin{DoxyParams}{Parâmetros}
+{\em flow} & fluxo para ser copiado \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{_flow_test_unit_8cpp_source_l00008}{8}} do arquivo \mbox{\hyperlink{_flow_test_unit_8cpp_source}{Flow\+Test\+Unit.\+cpp}}.
+
+\mbox{\Hypertarget{class_flow_test_unit_ac4fe066e2768ca1a6d5c9792f0b8c874}\label{class_flow_test_unit_ac4fe066e2768ca1a6d5c9792f0b8c874}} 
+\index{FlowTestUnit@{FlowTestUnit}!````~FlowTestUnit@{$\sim$FlowTestUnit}}
+\index{````~FlowTestUnit@{$\sim$FlowTestUnit}!FlowTestUnit@{FlowTestUnit}}
+\doxysubsubsection{\texorpdfstring{$\sim$FlowTestUnit()}{~FlowTestUnit()}}
+{\footnotesize\ttfamily Flow\+Test\+Unit\+::$\sim$\+Flow\+Test\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esse é o destrutor padrão da classe \mbox{\hyperlink{class_flow}{Flow}} 
+
+Definição na linha \mbox{\hyperlink{_flow_test_unit_8cpp_source_l00010}{10}} do arquivo \mbox{\hyperlink{_flow_test_unit_8cpp_source}{Flow\+Test\+Unit.\+cpp}}.
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_flow_test_unit_ae695fe657a290dc1ee3f959a15f75d55}\label{class_flow_test_unit_ae695fe657a290dc1ee3f959a15f75d55}} 
+\index{FlowTestUnit@{FlowTestUnit}!execute@{execute}}
+\index{execute@{execute}!FlowTestUnit@{FlowTestUnit}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily double Flow\+Test\+Unit\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Método que possui a implementacao da quacao \begin{DoxyReturn}{Retorna}
+double -\/ valor calculado pela execucao da equacao do flow 
+\end{DoxyReturn}
+
+
+Implementa \mbox{\hyperlink{class_flow_a59a51b935f1e72373f6a94aa3ccaf981}{Flow}}.
+
+
+
+Definição na linha \mbox{\hyperlink{_flow_test_unit_8cpp_source_l00012}{12}} do arquivo \mbox{\hyperlink{_flow_test_unit_8cpp_source}{Flow\+Test\+Unit.\+cpp}}.
+
+Este é o diagrama das funções utilizadas por essa função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_flow_test_unit_ae695fe657a290dc1ee3f959a15f75d55_cgraph}
+\end{center}
+\end{figure}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+test/unit/utils/\mbox{\hyperlink{_flow_test_unit_8hpp}{Flow\+Test\+Unit.\+hpp}}\item 
+test/unit/utils/\mbox{\hyperlink{_flow_test_unit_8cpp}{Flow\+Test\+Unit.\+cpp}}\end{DoxyCompactItemize}

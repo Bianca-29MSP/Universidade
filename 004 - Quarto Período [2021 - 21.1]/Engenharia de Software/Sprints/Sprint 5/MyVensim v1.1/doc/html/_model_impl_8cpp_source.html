@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Vensim [Components + Fabricas]: Código-Fonte de src/lib/ModelImpl.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Vensim [Components + Fabricas]
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">ModelImpl.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_model_impl_8cpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;../include/ModelImpl.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../include/SystemImpl.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>list&lt;Model *&gt; <a class="code hl_variable" href="class_model_impl.html#af4193e82199a53b2e03a835401f773d6">ModelImpl::models</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_model_impl.html#a081505846c37ce9928f2176d77db4bc8">    6</a></span><a class="code hl_function" href="class_model_impl.html#a081505846c37ce9928f2176d77db4bc8">ModelImpl::ModelImpl</a>(){</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_function" href="class_model_impl.html#a7ac1d69a8391299d0bd4e50bb41ab1f5">setTime</a>(0);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>};</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_model_impl.html#a0f8677546b2c1e3120ebb9e760211c58">   10</a></span><a class="code hl_function" href="class_model_impl.html#a081505846c37ce9928f2176d77db4bc8">ModelImpl::ModelImpl</a>(<span class="keywordtype">string</span> name){</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_function" href="class_model_impl.html#a7ac1d69a8391299d0bd4e50bb41ab1f5">setTime</a>(0);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_function" href="class_model_impl.html#ad981f9ffd75244b672db981bba52517c">setName</a>(<a class="code hl_variable" href="class_model_impl.html#aa32e79af7c5dfa46a3ea476796a33fb4">name</a>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_model_impl.html#a427f422a6d356b94afbe3937d6452a2b">   15</a></span><a class="code hl_function" href="class_model_impl.html#a427f422a6d356b94afbe3937d6452a2b">ModelImpl::~ModelImpl</a>(){}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> ModelImpl::add(<a class="code hl_class" href="class_flow.html">Flow</a> * flow) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_variable" href="class_model_impl.html#abc8ccec53799b9ab0e4ced8f36daceb5">flows</a>.push_back(flow);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> ModelImpl::add(<a class="code hl_class" href="class_system.html">System</a> * system) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_variable" href="class_model_impl.html#a57cd5c5175dc25278650f082f2175c9a">systems</a>.push_back(system);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_model_impl.html#a441c1dad7c254c38b8b2921f6e8f7062">   25</a></span><a class="code hl_typedef" href="class_model.html#a49d3ea0da604bbda57e89cab6c576469">ModelImpl::iteratorFlow</a> <a class="code hl_function" href="class_model_impl.html#a441c1dad7c254c38b8b2921f6e8f7062">ModelImpl::beginFlows</a>()</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_model_impl.html#abc8ccec53799b9ab0e4ced8f36daceb5">flows</a>.begin();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_model_impl.html#a6ecf4892f835641af7eda570457a1697">   30</a></span><a class="code hl_typedef" href="class_model.html#a49d3ea0da604bbda57e89cab6c576469">ModelImpl::iteratorFlow</a> <a class="code hl_function" href="class_model_impl.html#a6ecf4892f835641af7eda570457a1697">ModelImpl::endFlows</a>()</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_model_impl.html#abc8ccec53799b9ab0e4ced8f36daceb5">flows</a>.end();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_model_impl.html#a9728536cf9beba8dd6f6bfb0ed95fc76">   35</a></span><a class="code hl_typedef" href="class_model.html#ab37cf35f046997a57540e9664fc9a227">ModelImpl::iteratorSystem</a> <a class="code hl_function" href="class_model_impl.html#a9728536cf9beba8dd6f6bfb0ed95fc76">ModelImpl::beginSystems</a>()</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_model_impl.html#a57cd5c5175dc25278650f082f2175c9a">systems</a>.begin();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_model_impl.html#a8e26cc631666b2299a6c553c13d64bbe">   40</a></span><a class="code hl_typedef" href="class_model.html#ab37cf35f046997a57540e9664fc9a227">ModelImpl::iteratorSystem</a> <a class="code hl_function" href="class_model_impl.html#a8e26cc631666b2299a6c553c13d64bbe">ModelImpl::endSystems</a>()</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_model_impl.html#a57cd5c5175dc25278650f082f2175c9a">systems</a>.end();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_model_impl.html#a7ac1d69a8391299d0bd4e50bb41ab1f5">   45</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_model_impl.html#a7ac1d69a8391299d0bd4e50bb41ab1f5">ModelImpl::setTime</a>(<span class="keywordtype">double</span> time) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    this-&gt;time = <a class="code hl_variable" href="class_model_impl.html#aad5b642a4500713444c44bdadd5d19dc">time</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_model_impl.html#ae3ff615e42e9c4822d13314ea3d48c5a">   49</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="class_model_impl.html#ae3ff615e42e9c4822d13314ea3d48c5a">ModelImpl::getTime</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_model_impl.html#aad5b642a4500713444c44bdadd5d19dc">time</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_model_impl.html#ad981f9ffd75244b672db981bba52517c">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_model_impl.html#ad981f9ffd75244b672db981bba52517c">ModelImpl::setName</a>(<span class="keywordtype">string</span> name) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    this-&gt;name = <a class="code hl_variable" href="class_model_impl.html#aa32e79af7c5dfa46a3ea476796a33fb4">name</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_model_impl.html#a027d6617b69c45b92243c3caca352ba5">   57</a></span><span class="keywordtype">string</span> <a class="code hl_function" href="class_model_impl.html#a027d6617b69c45b92243c3caca352ba5">ModelImpl::getName</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_model_impl.html#aa32e79af7c5dfa46a3ea476796a33fb4">name</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_model_impl.html#a9cf6df5934e6fe4da0bd1acb99ec877a">   61</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_model_impl.html#a9cf6df5934e6fe4da0bd1acb99ec877a">ModelImpl::incrementTime</a>(<span class="keywordtype">double</span> increment) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_variable" href="class_model_impl.html#aad5b642a4500713444c44bdadd5d19dc">time</a> += increment;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_model_impl.html#add5a351d7e6b92630877e8b0a7f81c4a">   65</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_model_impl.html#add5a351d7e6b92630877e8b0a7f81c4a">ModelImpl::run</a>(<span class="keywordtype">double</span> start, <span class="keywordtype">double</span> end, <span class="keywordtype">double</span> increment)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">for</span>(<span class="keywordtype">double</span> i = start; i &lt; end; i+=increment) </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = <a class="code hl_function" href="class_model_impl.html#a441c1dad7c254c38b8b2921f6e8f7062">beginFlows</a>(); it != <a class="code hl_function" href="class_model_impl.html#a6ecf4892f835641af7eda570457a1697">endFlows</a>(); it++)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            (*it)-&gt;setCurrentValue((*it)-&gt;execute());</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }    </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = <a class="code hl_function" href="class_model_impl.html#a441c1dad7c254c38b8b2921f6e8f7062">beginFlows</a>(); it != <a class="code hl_function" href="class_model_impl.html#a6ecf4892f835641af7eda570457a1697">endFlows</a>(); it++)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <a class="code hl_class" href="class_system.html">System</a> *source = (*it)-&gt;getSource();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <a class="code hl_class" href="class_system.html">System</a> *target = (*it)-&gt;getTarget();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">if</span>(source != NULL)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                source-&gt;<a class="code hl_function" href="class_system.html#a7421d2e6970a0c4169a2febe254f2060">setValue</a>(source-&gt;<a class="code hl_function" href="class_system.html#a41b673faa6c199eb8e4f204639fab4f2">getValue</a>() - (*it)-&gt;getCurrentValue());</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">if</span>(target != NULL) </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                target-&gt;<a class="code hl_function" href="class_system.html#a7421d2e6970a0c4169a2febe254f2060">setValue</a>(target-&gt;<a class="code hl_function" href="class_system.html#a41b673faa6c199eb8e4f204639fab4f2">getValue</a>() + (*it)-&gt;getCurrentValue());</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_function" href="class_model_impl.html#a9cf6df5934e6fe4da0bd1acb99ec877a">incrementTime</a>(increment);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_model_impl.html#a1d9a493a6f31896bc8e0c0972666c29e">   93</a></span><a class="code hl_class" href="class_system.html">System</a>* <a class="code hl_function" href="class_model_impl.html#a1d9a493a6f31896bc8e0c0972666c29e">ModelImpl::createSystem</a>(<span class="keywordtype">string</span> name, <span class="keywordtype">double</span> value) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_class" href="class_system.html">System</a> *s = <span class="keyword">new</span> <a class="code hl_class" href="class_system_impl.html">SystemImpl</a>(<a class="code hl_variable" href="class_model_impl.html#aa32e79af7c5dfa46a3ea476796a33fb4">name</a>, value);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    add(s);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">return</span> s;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f">   99</a></span><a class="code hl_class" href="class_model.html">Model</a> * <a class="code hl_function" href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f">Model::createModel</a>(<span class="keywordtype">string</span> name) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="class_model_impl.html#acfe9f7887fa9561bbbac88a1486f8e6c">ModelImpl::createModel</a>(name);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="class_model_impl.html#acfe9f7887fa9561bbbac88a1486f8e6c">  103</a></span><a class="code hl_class" href="class_model.html">Model</a> * <a class="code hl_function" href="class_model_impl.html#acfe9f7887fa9561bbbac88a1486f8e6c">ModelImpl::createModel</a>(<span class="keywordtype">string</span> name) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_class" href="class_model.html">Model</a> * m = <span class="keyword">new</span> <a class="code hl_function" href="class_model_impl.html#a081505846c37ce9928f2176d77db4bc8">ModelImpl</a>(<a class="code hl_variable" href="class_model_impl.html#aa32e79af7c5dfa46a3ea476796a33fb4">name</a>);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_variable" href="class_model_impl.html#af4193e82199a53b2e03a835401f773d6">models</a>.push_back(m);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="ttc" id="aclass_flow_html"><div class="ttname"><a href="class_flow.html">Flow</a></div><div class="ttdoc">Class Flow.</div><div class="ttdef"><b>Definition:</b> <a href="_flow_8hpp_source.html#l00014">Flow.hpp:14</a></div></div>
+<div class="ttc" id="aclass_model_html"><div class="ttname"><a href="class_model.html">Model</a></div><div class="ttdoc">Class Model.</div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00016">Model.hpp:16</a></div></div>
+<div class="ttc" id="aclass_model_html_a3e267e8c78eebe47ecd274e2dbfff56f"><div class="ttname"><a href="class_model.html#a3e267e8c78eebe47ecd274e2dbfff56f">Model::createModel</a></div><div class="ttdeci">static Model * createModel(string name)</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00099">ModelImpl.cpp:99</a></div></div>
+<div class="ttc" id="aclass_model_html_a49d3ea0da604bbda57e89cab6c576469"><div class="ttname"><a href="class_model.html#a49d3ea0da604bbda57e89cab6c576469">Model::iteratorFlow</a></div><div class="ttdeci">list&lt; Flow * &gt;::iterator iteratorFlow</div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00018">Model.hpp:18</a></div></div>
+<div class="ttc" id="aclass_model_html_ab37cf35f046997a57540e9664fc9a227"><div class="ttname"><a href="class_model.html#ab37cf35f046997a57540e9664fc9a227">Model::iteratorSystem</a></div><div class="ttdeci">list&lt; System * &gt;::iterator iteratorSystem</div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00019">Model.hpp:19</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_a027d6617b69c45b92243c3caca352ba5"><div class="ttname"><a href="class_model_impl.html#a027d6617b69c45b92243c3caca352ba5">ModelImpl::getName</a></div><div class="ttdeci">string getName() const</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00057">ModelImpl.cpp:57</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_a081505846c37ce9928f2176d77db4bc8"><div class="ttname"><a href="class_model_impl.html#a081505846c37ce9928f2176d77db4bc8">ModelImpl::ModelImpl</a></div><div class="ttdeci">ModelImpl()</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00006">ModelImpl.cpp:6</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_a1d9a493a6f31896bc8e0c0972666c29e"><div class="ttname"><a href="class_model_impl.html#a1d9a493a6f31896bc8e0c0972666c29e">ModelImpl::createSystem</a></div><div class="ttdeci">System * createSystem(string name, double value=0)</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00093">ModelImpl.cpp:93</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_a427f422a6d356b94afbe3937d6452a2b"><div class="ttname"><a href="class_model_impl.html#a427f422a6d356b94afbe3937d6452a2b">ModelImpl::~ModelImpl</a></div><div class="ttdeci">virtual ~ModelImpl()</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00015">ModelImpl.cpp:15</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_a441c1dad7c254c38b8b2921f6e8f7062"><div class="ttname"><a href="class_model_impl.html#a441c1dad7c254c38b8b2921f6e8f7062">ModelImpl::beginFlows</a></div><div class="ttdeci">iteratorFlow beginFlows()</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00025">ModelImpl.cpp:25</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_a57cd5c5175dc25278650f082f2175c9a"><div class="ttname"><a href="class_model_impl.html#a57cd5c5175dc25278650f082f2175c9a">ModelImpl::systems</a></div><div class="ttdeci">list&lt; System * &gt; systems</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8hpp_source.html#l00015">ModelImpl.hpp:15</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_a6ecf4892f835641af7eda570457a1697"><div class="ttname"><a href="class_model_impl.html#a6ecf4892f835641af7eda570457a1697">ModelImpl::endFlows</a></div><div class="ttdeci">iteratorFlow endFlows()</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00030">ModelImpl.cpp:30</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_a7ac1d69a8391299d0bd4e50bb41ab1f5"><div class="ttname"><a href="class_model_impl.html#a7ac1d69a8391299d0bd4e50bb41ab1f5">ModelImpl::setTime</a></div><div class="ttdeci">void setTime(double time)</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00045">ModelImpl.cpp:45</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_a8e26cc631666b2299a6c553c13d64bbe"><div class="ttname"><a href="class_model_impl.html#a8e26cc631666b2299a6c553c13d64bbe">ModelImpl::endSystems</a></div><div class="ttdeci">iteratorSystem endSystems()</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00040">ModelImpl.cpp:40</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_a9728536cf9beba8dd6f6bfb0ed95fc76"><div class="ttname"><a href="class_model_impl.html#a9728536cf9beba8dd6f6bfb0ed95fc76">ModelImpl::beginSystems</a></div><div class="ttdeci">iteratorSystem beginSystems()</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00035">ModelImpl.cpp:35</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_a9cf6df5934e6fe4da0bd1acb99ec877a"><div class="ttname"><a href="class_model_impl.html#a9cf6df5934e6fe4da0bd1acb99ec877a">ModelImpl::incrementTime</a></div><div class="ttdeci">void incrementTime(double increment=1)</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00061">ModelImpl.cpp:61</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_aa32e79af7c5dfa46a3ea476796a33fb4"><div class="ttname"><a href="class_model_impl.html#aa32e79af7c5dfa46a3ea476796a33fb4">ModelImpl::name</a></div><div class="ttdeci">string name</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8hpp_source.html#l00013">ModelImpl.hpp:13</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_aad5b642a4500713444c44bdadd5d19dc"><div class="ttname"><a href="class_model_impl.html#aad5b642a4500713444c44bdadd5d19dc">ModelImpl::time</a></div><div class="ttdeci">double time</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8hpp_source.html#l00012">ModelImpl.hpp:12</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_abc8ccec53799b9ab0e4ced8f36daceb5"><div class="ttname"><a href="class_model_impl.html#abc8ccec53799b9ab0e4ced8f36daceb5">ModelImpl::flows</a></div><div class="ttdeci">list&lt; Flow * &gt; flows</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8hpp_source.html#l00014">ModelImpl.hpp:14</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_acfe9f7887fa9561bbbac88a1486f8e6c"><div class="ttname"><a href="class_model_impl.html#acfe9f7887fa9561bbbac88a1486f8e6c">ModelImpl::createModel</a></div><div class="ttdeci">static Model * createModel(string name)</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00103">ModelImpl.cpp:103</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_ad981f9ffd75244b672db981bba52517c"><div class="ttname"><a href="class_model_impl.html#ad981f9ffd75244b672db981bba52517c">ModelImpl::setName</a></div><div class="ttdeci">void setName(string name)</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00053">ModelImpl.cpp:53</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_add5a351d7e6b92630877e8b0a7f81c4a"><div class="ttname"><a href="class_model_impl.html#add5a351d7e6b92630877e8b0a7f81c4a">ModelImpl::run</a></div><div class="ttdeci">void run(double start=0, double end=0, double increment=0)</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00065">ModelImpl.cpp:65</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_ae3ff615e42e9c4822d13314ea3d48c5a"><div class="ttname"><a href="class_model_impl.html#ae3ff615e42e9c4822d13314ea3d48c5a">ModelImpl::getTime</a></div><div class="ttdeci">double getTime() const</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8cpp_source.html#l00049">ModelImpl.cpp:49</a></div></div>
+<div class="ttc" id="aclass_model_impl_html_af4193e82199a53b2e03a835401f773d6"><div class="ttname"><a href="class_model_impl.html#af4193e82199a53b2e03a835401f773d6">ModelImpl::models</a></div><div class="ttdeci">static list&lt; Model * &gt; models</div><div class="ttdef"><b>Definition:</b> <a href="_model_impl_8hpp_source.html#l00016">ModelImpl.hpp:16</a></div></div>
+<div class="ttc" id="aclass_system_html"><div class="ttname"><a href="class_system.html">System</a></div><div class="ttdoc">Class System.</div><div class="ttdef"><b>Definition:</b> <a href="_system_8hpp_source.html#l00012">System.hpp:12</a></div></div>
+<div class="ttc" id="aclass_system_html_a41b673faa6c199eb8e4f204639fab4f2"><div class="ttname"><a href="class_system.html#a41b673faa6c199eb8e4f204639fab4f2">System::getValue</a></div><div class="ttdeci">virtual double getValue() const =0</div></div>
+<div class="ttc" id="aclass_system_html_a7421d2e6970a0c4169a2febe254f2060"><div class="ttname"><a href="class_system.html#a7421d2e6970a0c4169a2febe254f2060">System::setValue</a></div><div class="ttdeci">virtual void setValue(double value)=0</div></div>
+<div class="ttc" id="aclass_system_impl_html"><div class="ttname"><a href="class_system_impl.html">SystemImpl</a></div><div class="ttdoc">Class System.</div><div class="ttdef"><b>Definition:</b> <a href="_system_impl_8hpp_source.html#l00012">SystemImpl.hpp:12</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>
